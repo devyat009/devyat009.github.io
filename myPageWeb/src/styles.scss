@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+$color-white: #ffffff;
+
+.page-footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 102%;
+    height: 100%;
+    margin-left: -10px;
+    height: 60px;
+    line-height: 60px;
+    background-color: #455075;
+    align-items: center;
+    align-content: center;
+    
+    & p {
+        color: $color-white;
+        margin-left: 10px;
+    }
+}
+
+.page-header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 102%;
+    height: 100%;
+    margin-left: -10px;
+    height: 60px;
+    line-height: 60px;
+    background-color: #4d5c8f;
+    align-items: center;
+    align-content: center;
+
+    & p {
+        color: $color-white;
+        margin-left: 10px;
+    }
+}
