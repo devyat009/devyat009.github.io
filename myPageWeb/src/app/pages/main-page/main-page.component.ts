@@ -7,7 +7,9 @@ import { PageFooterComponent } from '../shared/page-footer/page-footer.component
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
+  avaibleToWork: boolean = true;
 
+  
   constructor() { }
 
   ngOnInit() {

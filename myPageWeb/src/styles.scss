@@ -4,6 +4,12 @@ $color-white: #ffffff;
 $color-black: #000000;
 $low-transparency: rgba(0, 0, 0, 0.1);
 $midnight-blue: #191970;
+$color-green: #00ff7f;
+$color-green-light: #adffc0;
+$color-green-dark: #227740;
+$color-orange: #ffc300;
+$color-orange-dark: #503e14;
+$color-orange-light: #ffeab8;
 
 html,
 body {
@@ -26,6 +32,63 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    .retangle {
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+        width: 50%;
+        height: 50%;
+
+        .bi-dot{
+            user-select: none;
+
+            & a {
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: 600;
+            }
+        }
+        
+        .work-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+
+            .avaibleWork {
+                background-color: $color-green-light;
+                border-radius: 15px;
+    
+                .bi-dot {
+                    color: $color-green-dark;
+                }
+                
+                a {
+                    color: $color-green-dark;
+                    user-select: none;
+                    margin-right: 10px;
+                    font-weight: 600;
+                }
+            }
+    
+            .unavaibleWork {
+                background-color: $color-orange;
+                border-radius: 15px;
+
+                .bi-dot{
+                    color: $color-orange-dark;
+                }
+
+                a {
+                    color: $color-orange-dark;
+                    user-select: none;
+                    margin-right: 10px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
 }
 
 .app-page-footer {
@@ -160,10 +223,12 @@ main {
         .bi-house,
         .bi-briefcase-fill {
             cursor: pointer;
+            user-select: none;
         }
 
         .svg-cursor {
             cursor: pointer;
+            user-select: none;
             // margin-left: 10px;
             height: 35px;
             width: 35px;
@@ -175,9 +240,14 @@ main {
             // border-radius: 50%; /* Round shape */
             //transition: background-color 0.3s, color 0.3s; /* Smooth transition */
         }
+        
+        .svg-cursor i {
+            user-select: none;
+        }
 
         .svg-cursor:active {
             background-color: $low-transparency;
+            user-select: none;
             /* Round background */
             border-radius: 100%;
             /* Make the background circular */
@@ -188,11 +258,13 @@ main {
         .svg-cursor.selected i {
             color: $color-white;
             background-color: $low-transparency;
+            user-select: none;
             /* Change icon color */
         }
 
         .svg-cursor.selected {
             background-color: $low-transparency;
+            user-select: none;
             /* Black background when selected */
             border-radius: 100%;
             /* Round shape */
@@ -200,6 +272,10 @@ main {
             /* White icon when selected */
             height: 35px;
             width: 35px;
+        }
+
+        & a {
+            user-select: none;
         }
     }
 }

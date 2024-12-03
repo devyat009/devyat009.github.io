@@ -3,7 +3,25 @@
     <app-page-header></app-page-header>
     <div class="content-container col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12"
       style="width: 95%; align-content: center; padding-left: 5%; ">
-      <h2>About Me:</h2>
+
+      <div class="flex retangle row">
+        <div class="work-info flex center-content ">
+          <i class="bi bi-dot">
+            <a>Developer</a>
+          </i>
+          <div *ngIf="avaibleToWork == true"   class="avaibleWork flex center-content">
+            <i class="bi bi-dot bi-6x"></i>
+            <a>Avaible to work</a>
+          </div>
+          <div *ngIf="avaibleToWork == false" class="unavaibleWork flex center-content">
+            <i class="bi bi-dot bi-6x"></i>
+            <a>Unavaible to work</a>
+          </div>
+        </div>
+        <div>hiiiii</div>
+      </div>
+
+      <!-- <h2>About Me:</h2>
       <p>Hello! I'm a student in System Development. As bilingual, I can speak in English and Brazilian Portuguese (my
         mother tongue). I have some knowledge in programming in Java, Python, and UX Design.</p>
 
@@ -56,7 +74,7 @@
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
     </div>
     <app-page-footer class="app-page-footer"></app-page-footer>
   </div>
