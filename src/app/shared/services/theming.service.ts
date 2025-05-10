@@ -33,7 +33,7 @@ export class ThemeService {
 
     if (themeLink) {
       // Atualiza o arquivo CSS do tema
-      this.renderer.setAttribute(themeLink, 'href', `assets/themes/${theme}.css`);
+      this.renderer.setAttribute(themeLink, 'href', `assets/themes/${theme}.css?t=${Date.now()}`);
 
       // Atualiza classes no body para estilos adicionais
       this.renderer.removeClass(this.document.body, this.currentTheme);
