@@ -1,12 +1,13 @@
 /* Tailwind base styles */
 //@use "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
 
 
 
 /* Custom Dark Theme Overrides */
-$primary-color: #ca2929;
+$primary-color: #333333;
 $primary-color-text: #fff;
-$background-color: #14db6d;
+$background-color: #1A1A1A;
 
 body {
   background-color: $background-color;

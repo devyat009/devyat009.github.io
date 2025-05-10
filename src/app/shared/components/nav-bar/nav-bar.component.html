@@ -1,0 +1,21 @@
+<div class="grid grid-cols-12 gap-4">
+  <div class="col-span-12 sm:col-span-12 md:col-span-12">
+    <div class="flex justify-between w-full">
+      <div class="col-span-6 sm:col-span-6 md:col-span-6">
+        <h2 class="text-4xl font-bold secondary-color-text">Devyat</h2>
+      </div>
+      <div class="col-span-6 sm:col-span-6 md:col-span-6">
+        <p-button label="{{theme ? 'Light' : 'Dark'}}" (onClick)="changeTheme(!theme)">
+          <i *ngIf="theme === false" class="material-symbols-outlined md-10 mr-3">dark_mode</i>
+          <i *ngIf="theme === true" class="material-symbols-outlined md-10 mr-3">light_mode</i>
+        </p-button>
+        <a>test</a>
+        <!-- <p-button *ngIf="!theme" icon="pi pi-moon" (onClick)="changeTheme(!theme)"></p-button>
+        <p-button *ngIf="theme" icon="pi pi-sun" (onClick)="changeTheme(!theme)"></p-button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-blue-500 text-white p-4">Tailwind Test</div>
+<i class="pi pi-check" style="font-size: 24px;"></i>

@@ -26,6 +26,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -105,14 +106,15 @@
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeicons/primeicons.css",
               "src/styles.scss",
+
               {
                 "bundleName": "dark-theme",
-                "input": "src/themes-dark.scss",
+                "input": "src/theme-dark.scss",
                 "inject": false
               },
               {
                 "bundleName": "light-theme",
-                "input": "src/themes-light.scss",
+                "input": "src/theme-light.scss",
                 "inject": false
               }
 

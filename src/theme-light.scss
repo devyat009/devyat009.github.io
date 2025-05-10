@@ -1,0 +1,26 @@
+/* Tailwind base styles */
+//@use "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
+
+
+
+@import '~primeng/resources/themes/lara-light-indigo/theme.css';
+@import '~primeng/resources/primeng.min.css';
+@import '~primeicons/primeicons.css';
+
+/* Custom Dark Theme Overrides */
+$primary-color: #596dc7;
+$secondary-color: #161735;
+$primary-color-text: #fff;
+$secondary-color-text: #596dc7;
+$background-color: #14db6d;
+
+body {
+  background-color: $background-color;
+  color: $primary-color-text;
+}
+
+.primary-color {
+  color: $primary-color;
+}
+

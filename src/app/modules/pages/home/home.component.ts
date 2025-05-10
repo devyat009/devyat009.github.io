@@ -1,0 +1,14 @@
+import { Component, Renderer2 } from '@angular/core';
+
+@Component({
+  selector: 'home-page',
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
+})
+export class HomeComponent {
+
+
+  ngOnInit() {
+    console.log('started home');
+  }
+}
