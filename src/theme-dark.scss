@@ -4,13 +4,23 @@
 
 
 
-/* Custom Dark Theme Overrides */
-$primary-color: #333333;
-$primary-color-text: #fff;
-$background-color: #1A1A1A;
+// @import '~primeng/resources/themes/lara-light-indigo/theme.css';
+// @import '~primeng/resources/primeng.min.css';
+// @import '~primeicons/primeicons.css';
 
-body {
+/* Custom Dark Theme Overrides */
+$primary-color: #596dc7;
+$secondary-color: #161735;
+$primary-color-text: #fff;
+$secondary-color-text: #596dc7;
+$background-color: #161616;
+
+body.theme-dark {
   background-color: $background-color;
   color: $primary-color-text;
+}
+
+.primary-color {
+  color: $primary-color;
 }
 

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app-crud": {
+    "app-my-page": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,12 +17,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/app-crud",
+            "outputPath": "dist/app-my-page",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -38,13 +36,30 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/primeicons/primeicons.css",
+              "src/styles.scss",
+
+              {
+                "bundleName": "dark-theme",
+                "input": "src/theme-dark.scss",
+                "inject": false
+              },
+              {
+                "bundleName": "light-theme",
+                "input": "src/theme-light.scss",
+                "inject": false
+              }
             ],
             "scripts": [],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
+            },
+            "sourceMap": {
+              "scripts": true,
+              "styles": false,
+              "vendor": false
             }
           },
           "configurations": {
@@ -75,10 +90,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "app-crud:build:production"
+              "buildTarget": "app-my-page:build:production"
             },
             "development": {
-              "buildTarget": "app-crud:build:development"
+              "buildTarget": "app-my-page:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -102,8 +117,6 @@
               }
             ],
             "styles": [
-              "node_modules/primeng/resources/themes/lara-light-indigo/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeicons/primeicons.css",
               "src/styles.scss",
 

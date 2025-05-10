@@ -21,14 +21,16 @@ export class AppComponent {
 
   ngOnInit() {
     console.log('started app');
-    const theme = this.storageService.get('theme');
-    if(theme) {
-      console.log('theme found, setting theme...', theme);
-      this.themeService.switchTheme(theme);
+    const savedTheme = this.storageService.get('theme');
+    if (savedTheme) {
+      console.log('Found saved theme:', savedTheme);
+      this.setTheme(savedTheme as 'theme-light' | 'theme-dark');
+    } else {
+      console.log('No saved theme found, using default (light)');
+      this.setTheme('theme-light');
     }
   }
-
-  changeTheme(theme: string) {
-    this.themeService.switchTheme(theme);
+  setTheme(theme: 'theme-light' | 'theme-dark') {
+    this.themeService.setTheme(theme);
   }
 }

@@ -24,6 +24,6 @@ export class NavBarComponent {
 
   changeTheme(theme: boolean) {
     this.theme = theme;
-    this._themeService.switchTheme(theme? 'theme-dark' : 'theme-light');
+    this._themeService.setTheme(theme? 'theme-dark' : 'theme-light');
   }
 }
