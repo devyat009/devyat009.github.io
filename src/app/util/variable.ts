@@ -1,1 +1,0 @@
-export const SALARIO_MINIMO = 1412.00

@@ -1,0 +1,15 @@
+/* Tailwind base styles */
+//@use "tailwindcss";
+
+
+
+/* Custom Dark Theme Overrides */
+$primary-color: #ca2929;
+$primary-color-text: #fff;
+$background-color: #14db6d;
+
+body {
+  background-color: $background-color;
+  color: $primary-color-text;
+}
+
