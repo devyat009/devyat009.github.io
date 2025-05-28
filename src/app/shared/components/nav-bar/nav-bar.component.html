@@ -9,12 +9,13 @@
           <i *ngIf="theme === false" class="material-symbols-outlined md-10 mr-3">dark_mode</i>
           <i *ngIf="theme === true" class="material-symbols-outlined md-10 mr-3">light_mode</i>
         </p-button>
-        <a>test</a>
         <!-- <p-button *ngIf="!theme" icon="pi pi-moon" (onClick)="changeTheme(!theme)"></p-button>
         <p-button *ngIf="theme" icon="pi pi-sun" (onClick)="changeTheme(!theme)"></p-button> -->
       </div>
     </div>
   </div>
+
+  <p-menubar [model]="items" class="bg-white dark:bg-gray-900 shadow-md rounded-md my-4"></p-menubar>
 </div>
 
 <div class="bg-blue-500 text-white p-4">Tailwind Test</div>
