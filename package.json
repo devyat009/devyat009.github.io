@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "clean:themes": "del-cli src/assets/themes/*.css",
+    "prebuild:themes": "npm run clean:themes",
     "build:themes": "sass --no-source-map src/theme-light.scss src/assets/themes/theme-light.css && sass --no-source-map src/theme-dark.scss src/assets/themes/theme-dark.css",
+    "prewatch:themes:sass": "npm run clean:themes",
     "watch:themes": "concurrently \"npm run watch:themes:sass\" \"npm run start:ng\"",
     "watch:themes:sass": "sass --watch src/theme-light.scss:src/assets/themes/theme-light.css src/theme-dark.scss:src/assets/themes/theme-dark.css --no-source-map",
     "start": "npm run build:themes && ng serve",
@@ -45,6 +48,7 @@
     "@types/node": "^18.18.0",
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
+    "del-cli": "^6.0.0",
     "jasmine-core": "~5.6.0",
     "karma": "^6.4.4",
     "karma-chrome-launcher": "~3.2.0",

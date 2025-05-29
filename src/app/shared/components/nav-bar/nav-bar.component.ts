@@ -3,7 +3,10 @@ import { Button } from 'primeng/button';
 import { ThemeService } from '../../services/theming.service';
 import { CommonModule } from '@angular/common';
 import { MenubarModule } from 'primeng/menubar';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ToggleButtonModule } from 'primeng/togglebutton';
 import { MenuItem } from 'primeng/api';
+import { StorageService } from '../../services/storageService.service';
 @Component({
   selector: 'nav-bar-component',
   templateUrl: './nav-bar.component.html',
@@ -12,7 +15,8 @@ import { MenuItem } from 'primeng/api';
     Button,
     CommonModule,
     MenubarModule,
-
+    ToolbarModule,
+    ToggleButtonModule
   ],
 })
 export class NavBarComponent {
@@ -25,11 +29,13 @@ export class NavBarComponent {
   ];
   
   constructor(
-    private _themeService: ThemeService
+    private _themeService: ThemeService,
+    private _storageService: StorageService,
   ) {}
 
   ngOnInit() {
     console.log('started navbar');
+    this._storageService.get('theme') === 'theme-dark' ? this.theme = true : this.theme = false;
   }
 
   changeTheme(theme: boolean) {

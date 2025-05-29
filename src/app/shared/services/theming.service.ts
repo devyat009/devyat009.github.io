@@ -30,13 +30,19 @@ export class ThemeService {
   setTheme(theme: 'theme-light' | 'theme-dark', saveToStorage: boolean = true) {
     if (this.currentTheme === theme) return;
 
-    //const themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
+    const themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
+    // themeLink.href = `assets/themes/${theme}.css?t=${Date.now()}`;
+    // themeLink.onload = () => {
+    //   document.body.className = theme;
+    //   document.body.style.visibility = 'visible';
+    // };
+    
 
-    //if (themeLink) {
-      // Atualiza o arquivo CSS do tema
-      //this.renderer.setAttribute(themeLink, 'href', `assets/themes/${theme}.css?t=${Date.now()}`);
+    if (themeLink) {
+      //Atualiza o arquivo CSS do tema
+      this.renderer.setAttribute(themeLink, 'href', `assets/themes/${theme}.css?t=${Date.now()}`);
 
-      // Atualiza classes no body para estilos adicionais
+      //Atualiza classes no body para estilos adicionais
       this.renderer.removeClass(this.document.body, this.currentTheme);
       this.renderer.addClass(this.document.body, theme);
 
@@ -46,7 +52,7 @@ export class ThemeService {
       if (saveToStorage) {
         this.storageService.set('theme', theme);
       }
-    //}
+    }
   }
 
   toggleTheme() {

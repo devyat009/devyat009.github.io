@@ -6,6 +6,7 @@
 $primary-color: #596dc7; //#596dc7
 $secondary-color: #161735; //#161735
 $tertiary-color: #379186; //#f0f0f0
+$fourth-color: #e0e0e0;
 
 // Text colors palette
 $primary-color-text: #000;
@@ -18,87 +19,108 @@ $background-color: #ffffff;
 $background-color-light: #dddddd;
 
 body.theme-light {
+
+  --primary-color: #596dc7; //#596dc7
+  --secondary-color: #161735; //#161735
+  --tertiary-color: #379186; //#f0f0f0
+  --fourth-color: #e0e0e0;
+
   background-color: $background-color;
   color: $primary-color-text;
 
   // Global Text Variables
-.t-primary {
-  color: $primary-color-text;
-}
-.t-secondary {
-  color: $secondary-color-text;
-}
-.t-tertiary {
-  color: $tertiary-color-text;
-}
-.t-fourth {
-  color: $fourth-color-text;
-}
-
-// Global Background Variables
-.bg-primary {
-  background-color: $primary-color;
-}
-
-.bg-secondary {
-  background-color: $secondary-color;
-}
-
-.bg-tertiary {
-  background-color: $tertiary-color;
-}
-
-.bg-main {
-  background-color: $background-color;
-}
-
-.bg-main-light {
-  background-color: $background-color;
-}
-
-
-// Text Variables for specific elements
-h1.large {
-  // font-family: "Helvetica Now Display DW",sans-serif;
-  font-weight: 800;
-  //font-size: 1.50rem;
-  letter-spacing: -.01em;
-}
-
-h5 {
-  font-family: 'Helvetica Now Display DW', sans-serif;
-  font-size: 1.25rem; // 20px
-  font-weight: 500;
-  line-height: 1.5;
-}
-h6 {
-  font-family: 'Helvetica Now Display DW', sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-
-// Spacing Wrapper
-.wrapper {
-  width:100%;
-  padding:0 14px
-}
-@media (min-width:768px) and (min-height:620px) {
-  .wrapper {
-    padding:0 30px
+  .t-primary {
+    color: $primary-color-text;
   }
-}
-@media (min-width:1280px) {
-  .wrapper {
-    position:relative;
-    padding:0 40px
+  .t-secondary {
+    color: $secondary-color-text;
   }
-}
-@media (min-width:1480px) {
-  .wrapper {
-    max-width:1480px;
-    margin:0 auto;
+  .t-tertiary {
+    color: $tertiary-color-text;
   }
-}
+  .t-fourth {
+    color: $fourth-color-text;
+  }
+
+  // Global Background Variables
+  .bg-primary {
+    background-color: $primary-color;
+  }
+
+  .bg-secondary {
+    background-color: $secondary-color;
+  }
+
+  .bg-tertiary {
+    background-color: $tertiary-color;
+  }
+
+  .bg-main {
+    background-color: $background-color;
+  }
+
+  .bg-main-light {
+    background-color: $background-color;
+  }
+
+
+  // Text Variables for specific elements
+  h1.large {
+    // font-family: "Helvetica Now Display DW",sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: -.01em;
+  }
+
+  h5 {
+    font-family: 'Helvetica Now Display DW', sans-serif;
+    font-size: 1.25rem; // 20px
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  h6 {
+    font-family: 'Helvetica Now Display DW', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+
+  // Spacing Wrapper
+  .wrapper {
+    width:100%;
+    padding:0 14px
+  }
+  @media (min-width:768px) and (min-height:620px) {
+    .wrapper {
+      padding:0 30px
+    }
+  }
+  @media (min-width:1280px) {
+    .wrapper {
+      position:relative;
+      padding:0 40px
+    }
+  }
+  @media (min-width:1480px) {
+    .wrapper {
+      max-width:1480px;
+      margin:0 auto;
+    }
+  }
+
+  // PrimeNg Modules
+
+  //ToggleButton
+  .p-togglebutton {
+    --p-togglebutton-background: #f0f0f0;
+    --p-togglebutton-checked-background: #596dc7;
+    --p-togglebutton-color: #161735;
+    --p-togglebutton-checked-color: #fff;
+    --p-togglebutton-border-radius: 8px;
+    --p-togglebutton-content-padding: 0.5rem;
+  }
+  .p-togglebutton:hover {
+    --p-togglebutton-background: #e0e0e0;
+  }
 }
 
