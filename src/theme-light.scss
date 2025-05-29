@@ -1,18 +1,15 @@
-/* Tailwind base styles */
-//@use "tailwindcss";
+// Importing Google Material Symbols Icons
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
 
+// Colors palette
+$primary-color: #596dc7; //#596dc7
+$secondary-color: #161735; //#161735
+$tertiary-color: #379186; //#f0f0f0
 
-
-// @import 'primeng/resources/themes/lara-light-indigo/theme.css';
-// @import 'primeng/resources/primeng.min.css';
-// @import 'primeicons/primeicons.css';
-
-/* Custom Dark Theme Overrides */
-$primary-color: #596dc7;
-$secondary-color: #161735;
+// Text colors palette
 $primary-color-text: #000;
 $secondary-color-text: #596dc7;
+$tertiary-color-text: #379186;
 $background-color: #ffffff;
 
 body.theme-light {
@@ -20,7 +17,28 @@ body.theme-light {
   color: $primary-color-text;
 }
 
-.primary-color {
-  color: $primary-color;
+
+// Global Text Variables
+.t-primary {
+  color: $primary-color-text;
+}
+.t-secondary {
+  color: $secondary-color-text;
 }
 
+.t-tertiary {
+  color: $tertiary-color-text;
+}
+
+// Global Background Variables
+.bg-primary {
+  background-color: $primary-color;
+}
+
+.bg-secondary {
+  background-color: $secondary-color;
+}
+
+.bg-tertiary {
+  background-color: $tertiary-color;
+}

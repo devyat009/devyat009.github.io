@@ -1,11 +1,29 @@
-/* Tailwind base styles */
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap");
-/* Custom Dark Theme Overrides */
 body.theme-dark {
   background-color: #161616;
   color: #fff;
 }
 
-.primary-color {
+.t-primary {
+  color: #fff;
+}
+
+.t-secondary {
   color: #596dc7;
+}
+
+.t-tertiary {
+  color: #314e4b;
+}
+
+.bg-primary {
+  background-color: #596dc7;
+}
+
+.bg-secondary {
+  background-color: #161735;
+}
+
+.bg-tertiary {
+  background-color: #314e4b;
 }
