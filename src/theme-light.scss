@@ -1,3 +1,4 @@
+@use "sass:color";
 // Importing Google Material Symbols Icons
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
 
@@ -10,24 +11,28 @@ $tertiary-color: #379186; //#f0f0f0
 $primary-color-text: #000;
 $secondary-color-text: #596dc7;
 $tertiary-color-text: #379186;
+$fourth-color-text: #878a8f;
+
+// Main background color
 $background-color: #ffffff;
+$background-color-light: #dddddd;
 
 body.theme-light {
   background-color: $background-color;
   color: $primary-color-text;
-}
 
-
-// Global Text Variables
+  // Global Text Variables
 .t-primary {
   color: $primary-color-text;
 }
 .t-secondary {
   color: $secondary-color-text;
 }
-
 .t-tertiary {
   color: $tertiary-color-text;
+}
+.t-fourth {
+  color: $fourth-color-text;
 }
 
 // Global Background Variables
@@ -42,3 +47,58 @@ body.theme-light {
 .bg-tertiary {
   background-color: $tertiary-color;
 }
+
+.bg-main {
+  background-color: $background-color;
+}
+
+.bg-main-light {
+  background-color: $background-color;
+}
+
+
+// Text Variables for specific elements
+h1.large {
+  // font-family: "Helvetica Now Display DW",sans-serif;
+  font-weight: 800;
+  //font-size: 1.50rem;
+  letter-spacing: -.01em;
+}
+
+h5 {
+  font-family: 'Helvetica Now Display DW', sans-serif;
+  font-size: 1.25rem; // 20px
+  font-weight: 500;
+  line-height: 1.5;
+}
+h6 {
+  font-family: 'Helvetica Now Display DW', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
+// Spacing Wrapper
+.wrapper {
+  width:100%;
+  padding:0 14px
+}
+@media (min-width:768px) and (min-height:620px) {
+  .wrapper {
+    padding:0 30px
+  }
+}
+@media (min-width:1280px) {
+  .wrapper {
+    position:relative;
+    padding:0 40px
+  }
+}
+@media (min-width:1480px) {
+  .wrapper {
+    max-width:1480px;
+    margin:0 auto;
+  }
+}
+}
+

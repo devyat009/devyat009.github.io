@@ -7,7 +7,7 @@ import { StorageService } from "./storageService.service";
 })
 export class ThemeService {
   private renderer: Renderer2;
-  private currentTheme: string = 'light';
+  private currentTheme: string = 'theme-light';
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -24,16 +24,17 @@ export class ThemeService {
     } else {
       this.setTheme('theme-light', false);
     }
+    console.log('Initialized theme:');
   }
 
   setTheme(theme: 'theme-light' | 'theme-dark', saveToStorage: boolean = true) {
     if (this.currentTheme === theme) return;
 
-    const themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
+    //const themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
 
-    if (themeLink) {
+    //if (themeLink) {
       // Atualiza o arquivo CSS do tema
-      this.renderer.setAttribute(themeLink, 'href', `assets/themes/${theme}.css?t=${Date.now()}`);
+      //this.renderer.setAttribute(themeLink, 'href', `assets/themes/${theme}.css?t=${Date.now()}`);
 
       // Atualiza classes no body para estilos adicionais
       this.renderer.removeClass(this.document.body, this.currentTheme);
@@ -45,7 +46,7 @@ export class ThemeService {
       if (saveToStorage) {
         this.storageService.set('theme', theme);
       }
-    }
+    //}
   }
 
   toggleTheme() {

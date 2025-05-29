@@ -21,16 +21,17 @@ export class AppComponent {
 
   ngOnInit() {
     console.log('started app');
-    const savedTheme = this.storageService.get('theme');
-    if (savedTheme) {
-      console.log('Found saved theme:', savedTheme);
-      this.setTheme(savedTheme as 'theme-light' | 'theme-dark');
-    } else {
-      console.log('No saved theme found, using default (light)');
-      this.setTheme('theme-light');
-    }
+    this.themeService.initializeTheme();
+    // const savedTheme = this.storageService.get('theme');
+    // if (savedTheme) {
+    //   console.log('Found saved theme:', savedTheme);
+    //   this.setTheme(savedTheme as 'theme-light' | 'theme-dark');
+    // } else {
+    //   console.log('No saved theme found, using default (light)');
+    //   this.setTheme('theme-light');
+    // }
   }
-  setTheme(theme: 'theme-light' | 'theme-dark') {
-    this.themeService.setTheme(theme);
+  setTheme(theme: 'theme-light' | 'theme-dark', saveToStorage: boolean = true) {
+    this.themeService.setTheme(theme, false);
   }
 }

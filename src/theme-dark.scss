@@ -1,3 +1,4 @@
+@use "sass:color";
 // Importing Google Material Symbols Icons
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
 
@@ -8,36 +9,91 @@ $tertiary-color: #314e4b;
 
 // Text colors palette
 $primary-color-text: #fff;
-$secondary-color-text: #596dc7;
+$secondary-color-text: #62c759;
 $tertiary-color-text: #314e4b;
+$fourth-color-text: #878a8f;
+
+// Main background color
 $background-color: #161616;
+$background-color-light: #222222;
 
 body.theme-dark {
   background-color: $background-color;
   color: $primary-color-text;
+
+  // Global Text Variables
+  .t-primary {
+    color: $primary-color-text;
+  }
+  .t-secondary {
+    color: $secondary-color-text;
+  }
+  .t-tertiary {
+    color: $tertiary-color-text;
+  }
+  .t-fourth {
+    color: $fourth-color-text;
+  }
+
+  // Global background Variables
+  .bg-primary {
+    background-color: $primary-color;
+  }
+
+  .bg-secondary {
+    background-color: $secondary-color;
+  }
+
+  .bg-tertiary {
+    background-color: $tertiary-color;
+  }
+
+  .bg-main {
+    background-color: $background-color;
+  }
+  .bg-main-light {
+    background-color: $background-color-light;
+  }
+
+  // Text Variables for specific elements
+  h1.large {
+    //font-family: "Helvetica Now Display DW",sans-serif;
+    font-size: 2em;
+    font-weight: 800;
+    letter-spacing: -.01em;
+  }
+
+  h5 {
+    font-family: 'Helvetica Now Display DW', sans-serif;
+    font-size: 1.25rem; // 20px
+    font-weight: 500;
+    line-height: 1.5;
+    color: $primary-color-text;
+  }
+
+  // Spacing Wrapper
+  .wrapper {
+    width:100%;
+    padding:0 14px
+  }
+  @media (min-width:768px) and (min-height:620px) {
+    .wrapper {
+      padding:0 30px
+    }
+  }
+  @media (min-width:1280px) {
+    .wrapper {
+      position:relative;
+      padding:0 40px
+    }
+  }
+  @media (min-width:1480px) {
+    .wrapper {
+      max-width:1480px;
+      margin:0 auto;
+    }
+  }
 }
 
-// Global Text Variables
-.t-primary {
-  color: $primary-color-text;
-}
-.t-secondary {
-  color: $secondary-color-text;
-}
 
-.t-tertiary {
-  color: $tertiary-color-text;
-}
 
-// Global background Variables
-.bg-primary {
-  background-color: $primary-color;
-}
-
-.bg-secondary {
-  background-color: $secondary-color;
-}
-
-.bg-tertiary {
-  background-color: $tertiary-color;
-}
