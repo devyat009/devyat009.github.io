@@ -2,58 +2,59 @@
 // Importing Google Material Symbols Icons
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
 
-// Colors palette
-$primary-color: #596dc7; //#596dc7
-$secondary-color: #161735; //#161735
-$tertiary-color: #314e4b;
-$fourth-color: #e0e0e0;
-
-// Text colors palette
-$primary-color-text: #fff;
-$secondary-color-text: #84da7d;
-$tertiary-color-text: #314e4b;
-$fourth-color-text: #878a8f;
-
-// Main background color
-$background-color: #161616;
-$background-color-light: #222222;
-
 body.theme-dark {
-  background-color: $background-color;
-  color: $primary-color-text;
+
+  // Colors palette
+  --primary-color: #596dc7; //#596dc7
+  --secondary-color: #161735; //#161735
+  --tertiary-color: #314e4b;
+  --fourth-color: #818181;
+
+  // Text colors palette
+  --primary-color-text: #fff;
+  --secondary-color-text: #84da7d;
+  --tertiary-color-text: #314e4b;
+  --fourth-color-text: #878a8f;
+
+  // Main background color
+  --background-color: #161616;
+  --background-color-light: #222222;
+
+  background-color: var(--background-color);
+  color: var(--primary-color-text);
 
   // Global Text Variables
   .t-primary {
-    color: $primary-color-text;
+    color: var(--primary-color-text);
   }
   .t-secondary {
-    color: $secondary-color-text;
+    color: var(--secondary-color-text);
   }
   .t-tertiary {
-    color: $tertiary-color-text;
+    color: var(--tertiary-color-text);
   }
   .t-fourth {
-    color: $fourth-color-text;
+    color: var(--fourth-color-text);
   }
 
   // Global background Variables
   .bg-primary {
-    background-color: $primary-color;
+    background-color: var(--primary-color);
   }
 
   .bg-secondary {
-    background-color: $secondary-color;
+    background-color: var(--secondary-color);
   }
 
   .bg-tertiary {
-    background-color: $tertiary-color;
+    background-color: var(--tertiary-color);
   }
 
   .bg-main {
-    background-color: $background-color;
+    background-color: var(--background-color);
   }
   .bg-main-light {
-    background-color: $background-color-light;
+    background-color: var(--background-color-light);
   }
 
   // Text Variables for specific elements
@@ -69,7 +70,7 @@ body.theme-dark {
     font-size: 1.25rem; // 20px
     font-weight: 500;
     line-height: 1.5;
-    color: $primary-color-text;
+    color: var(--primary-color-text);
   }
 
   // Spacing Wrapper
@@ -96,5 +97,25 @@ body.theme-dark {
   }
 }
 
+  // PrimeNg Modules
 
+  //ToggleButton
+  .p-togglebutton {
+    --p-togglebutton-background: #f0f0f0;
+    --p-togglebutton-checked-background: #596dc7;
+    --p-togglebutton-color: #161735;
+    --p-togglebutton-checked-color: #fff;
+    --p-togglebutton-border-radius: 8px;
+    --p-togglebutton-content-padding: 0.5rem;
+  }
+  .p-togglebutton:hover {
+    --p-togglebutton-background: #e0e0e0;
+  }
 
+  .bt-primary {
+    --p-button-background: var(--primary-color);
+    --p-button-color: var(--primary-color-text);
+  }
+  .bt-primary:hover {
+    --p-button-background: var(var(--fourth-color));
+  }

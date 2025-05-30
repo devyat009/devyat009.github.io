@@ -2,65 +2,59 @@
 // Importing Google Material Symbols Icons
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
 
-// Colors palette
-$primary-color: #596dc7; //#596dc7
-$secondary-color: #161735; //#161735
-$tertiary-color: #379186; //#f0f0f0
-$fourth-color: #e0e0e0;
-
-// Text colors palette
-$primary-color-text: #000;
-$secondary-color-text: #596dc7;
-$tertiary-color-text: #379186;
-$fourth-color-text: #878a8f;
-
-// Main background color
-$background-color: #ffffff;
-$background-color-light: #dddddd;
-
 body.theme-light {
-
+  // Colors palette
   --primary-color: #596dc7; //#596dc7
   --secondary-color: #161735; //#161735
   --tertiary-color: #379186; //#f0f0f0
   --fourth-color: #e0e0e0;
 
-  background-color: $background-color;
-  color: $primary-color-text;
+  // Text colors palette
+  --primary-color-text: #000;
+  --secondary-color-text: #596dc7;
+  --tertiary-color-text: #379186;
+  --fourth-color-text: #878a8f;
+
+  // Main background color
+  --background-color: #ffffff;
+  --background-color-light: #dddddd;
+
+  background-color: var(--background-color);
+  color: var(--primary-color-text);
 
   // Global Text Variables
   .t-primary {
-    color: $primary-color-text;
+    color: var(--primary-color-text);
   }
   .t-secondary {
-    color: $secondary-color-text;
+    color: var(--secondary-color-text);
   }
   .t-tertiary {
-    color: $tertiary-color-text;
+    color: var(--tertiary-color-text);
   }
   .t-fourth {
-    color: $fourth-color-text;
+    color: var(--fourth-color-text);
   }
 
   // Global Background Variables
   .bg-primary {
-    background-color: $primary-color;
+    background-color: var(--primary-color);
   }
 
   .bg-secondary {
-    background-color: $secondary-color;
+    background-color: var(--secondary-color);
   }
 
   .bg-tertiary {
-    background-color: $tertiary-color;
+    background-color: var(--tertiary-color);
   }
 
   .bg-main {
-    background-color: $background-color;
+    background-color: var(--background-color);
   }
 
   .bg-main-light {
-    background-color: $background-color;
+    background-color: var(--background-color);
   }
 
 
@@ -108,6 +102,7 @@ body.theme-light {
     }
   }
 
+}
   // PrimeNg Modules
 
   //ToggleButton
@@ -122,5 +117,13 @@ body.theme-light {
   .p-togglebutton:hover {
     --p-togglebutton-background: #e0e0e0;
   }
-}
+
+  .bt-primary {
+    --p-button-background: var(--primary-color);
+    --p-button-color: var(--primary-color-text);
+    --p-button-border-radius: 8px;
+  }
+  .bt-primary:hover {
+    --p-button-background: var(--fourth-color);
+  }
 

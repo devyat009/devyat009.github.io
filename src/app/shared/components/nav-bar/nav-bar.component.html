@@ -3,12 +3,42 @@
     <div class="flex justify-between items-center w-full">
       <div class="ml-6 flex flex-col">
           <h1 class="large font-bold t-secondary mr-6 inline-block">Devyat</h1>
+      </div>
+      <div class="flex items-center w-full">
+        <div class="mr-6 ml-6">
+          <p-button label="Home" routerLink="/" styleClass="bt-primary text-xl flex items-center justify-center">
+            <ng-template pTemplate="icon" clas="ml-3">
+              <i class="material-symbols-outlined text-3xl align-middle mr-2">dashboard</i>
+            </ng-template>
+          </p-button>
         </div>
-      <div class="mr-6 ml-6">
-        <p-button label="{{theme ? '' : ''}}" (onClick)="changeTheme(!theme)" styleClass="p-button-lg px-6 py-3">
+        <div class="mr-6 ml-6">
+          <p-button label="Work" routerLink="/work" styleClass="bt-primary text-xl flex items-center justify-center">
+            <ng-template pTemplate="icon" clas="ml-3">
+              <i class="material-symbols-outlined text-3xl align-middle mr-2">work</i>
+            </ng-template>
+          </p-button>
+        </div>
+        <div class="mr-6 ml-6">
+          <p-button label="About Me" routerLink="/about" styleClass="bt-primary text-xl flex items-center justify-center">
+            <ng-template pTemplate="icon">
+              <i class="material-symbols-outlined text-3xl align-middle mr-2">person</i>
+            </ng-template>
+          </p-button>
+        </div>
+        <div class="mr-6 ml-6">
+          <p-button label="Contact" routerLink="/contact" styleClass="bt-primary text-xl flex items-center justify-center">
+            <ng-template pTemplate="icon">
+              <i class="material-symbols-outlined text-3xl align-middle mr-2">contact_mail</i>
+            </ng-template>
+          </p-button>
+        </div>
+      </div>
+      <div class="mr-6">
+        <p-button label="{{theme ? '' : ''}}" (onClick)="changeTheme(!theme)" styleClass="p-button-rounded px-24 py-24 text-xl flex items-center justify-center">
           <ng-template pTemplate="icon">
-            <i *ngIf="theme === false" class="material-symbols-outlined text-4xl">dark_mode</i>
-            <i *ngIf="theme === true" class="material-symbols-outlined text-4xl">light_mode</i>
+            <i *ngIf="theme === false" class="material-symbols-outlined text-3xl align-middle relative top-[0px]">dark_mode</i>
+            <i *ngIf="theme === true" class="material-symbols-outlined text-3xl align-middle relative top-[0px]">light_mode</i>
           </ng-template>
         </p-button>
       </div>
