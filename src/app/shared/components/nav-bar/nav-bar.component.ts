@@ -7,6 +7,8 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { MenuItem } from 'primeng/api';
 import { StorageService } from '../../services/storageService.service';
+import { RouterLink } from '@angular/router';
+
 @Component({
   selector: 'nav-bar-component',
   templateUrl: './nav-bar.component.html',
@@ -21,13 +23,8 @@ import { StorageService } from '../../services/storageService.service';
 })
 export class NavBarComponent {
   theme: boolean = false; // false = light, true = dark
+  animateIcon: boolean = false;
 
-  items: MenuItem[] = [
-    { label: 'Home', icon: 'pi pi-home', routerLink: '/' },
-    { label: 'Sobre', icon: 'pi pi-user', routerLink: '/about' },
-    { label: 'Contato', icon: 'pi pi-envelope', routerLink: '/contact' }
-  ];
-  
   constructor(
     private _themeService: ThemeService,
     private _storageService: StorageService,

@@ -2,6 +2,7 @@
 @use 'src/theme-light.scss' as themeLight;
 @use 'src/theme-dark.scss' as themeDark;
 
+// Rounded Button
 ::ng-deep .p-button-rounded {
   border-radius: 50% !important;
   height: 32px !important;
@@ -12,15 +13,40 @@
   align-items: center;
   justify-content: center;
 }
+
+
+// Dark theme button Animation
+@keyframes bounce-up-down {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-16px); }
+  60% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
 ::ng-deep .p-button-rounded:hover {
-  background-color: var(--fourth-color) !important;
+  //background-color: var(--fourth-color) !important;
+  scale: 1.1;
+  color: var(--secondary-color-text) !important;
 }
 
-  ::ng-deep .bt-primary {
-    --p-button-background: var(--primary-color);
-    --p-button-color: var(--primary-color-text);
-    --p-button-border-radius: 8px;
-  }
-  ::ng-deep .bt-primary:hover {
-    --p-button-background: var(--fourth-color);
-  }
+::ng-deep .p-button-rounded .material-symbols-outlined.icon-animate {
+  animation: bounce-up-down 0.5s;
+}
+::ng-deep .p-button-rounded,
+::ng-deep .p-button-rounded .p-button,
+::ng-deep .p-button-rounded .p-button-label,
+::ng-deep .p-button-rounded .p-button-icon,
+::ng-deep .p-button-rounded .material-symbols-outlined {
+  overflow: visible !important;
+}
+
+// Primary Button Navigation
+::ng-deep .bt-primary {
+  //background-color: var(--primary-color);
+  color: var(--primary-color-text);
+  border-radius: 5px;
+}
+::ng-deep .bt-primary:hover {
+  //background-color: var(--fourth-color) !important;
+  scale: 1.1;
+  color: var(--secondary-color-text) !important;
+}

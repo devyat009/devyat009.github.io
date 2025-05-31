@@ -22,6 +22,7 @@ body.theme-dark {
 
   background-color: var(--background-color);
   color: var(--primary-color-text);
+  font-family: 'Roboto', Arial, sans-serif;
 
   // Global Text Variables
   .t-primary {
@@ -58,6 +59,10 @@ body.theme-dark {
   }
 
   // Text Variables for specific elements
+  .serif-text {
+  font-family: 'Roboto Serif', serif;
+  }
+
   h1.large {
     //font-family: "Helvetica Now Display DW",sans-serif;
     font-size: 2em;
@@ -66,11 +71,16 @@ body.theme-dark {
   }
 
   h5 {
-    font-family: 'Helvetica Now Display DW', sans-serif;
+    font-family: 'Helvetica Now Display', sans-serif;
     font-size: 1.25rem; // 20px
     font-weight: 500;
     line-height: 1.5;
-    color: var(--primary-color-text);
+    letter-spacing: 0.15em;
+  }
+  h6 {
+    font-family: 'Helvetica Now Display', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
   }
 
   // Spacing Wrapper
@@ -99,19 +109,7 @@ body.theme-dark {
 
   // PrimeNg Modules
 
-  //ToggleButton
-  .p-togglebutton {
-    --p-togglebutton-background: #f0f0f0;
-    --p-togglebutton-checked-background: #596dc7;
-    --p-togglebutton-color: #161735;
-    --p-togglebutton-checked-color: #fff;
-    --p-togglebutton-border-radius: 8px;
-    --p-togglebutton-content-padding: 0.5rem;
-  }
-  .p-togglebutton:hover {
-    --p-togglebutton-background: #e0e0e0;
-  }
-
+  //Primary Button
   .bt-primary {
     --p-button-background: var(--primary-color);
     --p-button-color: var(--primary-color-text);

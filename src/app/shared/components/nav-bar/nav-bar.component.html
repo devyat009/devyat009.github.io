@@ -1,66 +1,49 @@
-<div class="bg-main-light grid grid-cols-12 gap-4 py-4 shadow-md rounded-md">
+<div class="bg-main-light grid grid-cols-12 gap-4 py-4 shadow-md rounded-bl-sm rounded-br-sm">
   <div class="col-span-12">
     <div class="flex justify-between items-center w-full">
       <div class="ml-6 flex flex-col">
-          <h1 class="large font-bold t-secondary mr-6 inline-block">Devyat</h1>
+          <h1 class="large font-bold t-secondary mr-6 inline-block select-none serif-text">Devyat</h1>
       </div>
       <div class="flex items-center w-full">
         <div class="mr-6 ml-6">
-          <p-button label="Home" routerLink="/" styleClass="bt-primary text-xl flex items-center justify-center">
-            <ng-template pTemplate="icon" clas="ml-3">
-              <i class="material-symbols-outlined text-3xl align-middle mr-2">dashboard</i>
-            </ng-template>
-          </p-button>
-        </div>
-        <div class="mr-6 ml-6">
-          <p-button label="Work" routerLink="/work" styleClass="bt-primary text-xl flex items-center justify-center">
-            <ng-template pTemplate="icon" clas="ml-3">
-              <i class="material-symbols-outlined text-3xl align-middle mr-2">work</i>
-            </ng-template>
-          </p-button>
-        </div>
-        <div class="mr-6 ml-6">
-          <p-button label="About Me" routerLink="/about" styleClass="bt-primary text-xl flex items-center justify-center">
+          <p-button label="Home" routerLink="/" styleClass="bt-primary text-xl flex flex-col items-center justify-center">
             <ng-template pTemplate="icon">
-              <i class="material-symbols-outlined text-3xl align-middle mr-2">person</i>
+              <i class="material-symbols-outlined text-3xl">dashboard</i>
             </ng-template>
           </p-button>
         </div>
         <div class="mr-6 ml-6">
-          <p-button label="Contact" routerLink="/contact" styleClass="bt-primary text-xl flex items-center justify-center">
+          <p-button label="Work" routerLink="/work" styleClass="bt-primary text-xl flex flex-col items-center justify-center">
+            <ng-template pTemplate="icon" class="ml-3">
+              <i class="material-symbols-outlined text-3xl align-middle">work</i>
+            </ng-template>
+          </p-button>
+        </div>
+        <div class="mr-6 ml-6">
+          <p-button label="About Me" routerLink="/about" styleClass="bt-primary text-xl flex flex-col items-center justify-center">
             <ng-template pTemplate="icon">
-              <i class="material-symbols-outlined text-3xl align-middle mr-2">contact_mail</i>
+              <i class="material-symbols-outlined text-3xl align-middle">person</i>
+            </ng-template>
+          </p-button>
+        </div>
+        <div class="mr-6 ml-6">
+          <p-button label="Contact" routerLink="/contact" styleClass="bt-primary text-xl flex flex-col items-center justify-center group">
+            <ng-template pTemplate="icon">
+              <i class="material-symbols-outlined text-3xl align-middle group-hover:hidden">contact_mail</i>
             </ng-template>
           </p-button>
         </div>
       </div>
       <div class="mr-6">
-        <p-button label="{{theme ? '' : ''}}" (onClick)="changeTheme(!theme)" styleClass="p-button-rounded px-24 py-24 text-xl flex items-center justify-center">
+        <p-button label="{{theme ? '' : ''}}" (onClick)="changeTheme(!theme); animateIcon = true" styleClass="p-button-rounded px-24 py-24 text-xl flex items-center justify-center">
           <ng-template pTemplate="icon">
-            <i *ngIf="theme === false" class="material-symbols-outlined text-3xl align-middle relative top-[0px]">dark_mode</i>
-            <i *ngIf="theme === true" class="material-symbols-outlined text-3xl align-middle relative top-[0px]">light_mode</i>
+            <i *ngIf="theme === false" [ngClass]="{'icon-animate': animateIcon}" (animationend)="animateIcon = false"
+              class="material-symbols-outlined text-3xl align-middle relative top-[0px]">bedtime</i>
+            <i *ngIf="theme === true" [ngClass]="{'icon-animate': animateIcon}" (animationend)="animateIcon = false"
+              class="material-symbols-outlined text-3xl align-middle relative top-[0px]">bedtime_off</i>
           </ng-template>
         </p-button>
       </div>
     </div>
   </div>
 </div>
-
-<!-- <p-toolbar>
-  <ng-template pTemplate="start">
-    <div class="flex items-center">
-
-    </div>
-  </ng-template>
-  <ng-template pTemplate="end">
-    <div class="flex items-center">
-          <i *ngIf="theme === false" class="material-symbols-outlined md-10">dark_mode</i>
-          <i *ngIf="theme === true" class="material-symbols-outlined md-10">light_mode</i>
-        <p-toggle-button onLabel="Light" offLabel="Dark" (onChange)="changeTheme(!theme)" class="mr-4 "></p-toggle-button>
-    </div>
-  </ng-template>
-</p-toolbar> -->
-
-<!-- <div class="secondary-color t-primary bg-tertiary p-4">Tailwind Test <i class="pi pi-check" style="font-size: 24px;"></i></div> -->
-
-<!-- <p-menubar [model]="items" class="bg:secondary-color-text shadow-md rounded-md my-4"></p-menubar> -->
