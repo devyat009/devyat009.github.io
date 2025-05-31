@@ -3,27 +3,66 @@ body.theme-light {
   background-color: #ffffff;
   color: #000;
 }
-
-.t-primary {
+body.theme-light .t-primary {
   color: #000;
 }
-
-.t-secondary {
+body.theme-light .t-secondary {
   color: #596dc7;
 }
-
-.t-tertiary {
+body.theme-light .t-tertiary {
   color: #379186;
 }
-
-.bg-primary {
+body.theme-light .t-fourth {
+  color: #878a8f;
+}
+body.theme-light .bg-primary {
   background-color: #596dc7;
 }
-
-.bg-secondary {
+body.theme-light .bg-secondary {
   background-color: #161735;
 }
-
-.bg-tertiary {
+body.theme-light .bg-tertiary {
   background-color: #379186;
+}
+body.theme-light .bg-main {
+  background-color: #ffffff;
+}
+body.theme-light .bg-main-light {
+  background-color: #ffffff;
+}
+body.theme-light h1.large {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+body.theme-light h5 {
+  font-family: "Helvetica Now Display DW", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+body.theme-light h6 {
+  font-family: "Helvetica Now Display DW", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+body.theme-light .wrapper {
+  width: 100%;
+  padding: 0 14px;
+}
+@media (min-width: 768px) and (min-height: 620px) {
+  body.theme-light .wrapper {
+    padding: 0 30px;
+  }
+}
+@media (min-width: 1280px) {
+  body.theme-light .wrapper {
+    position: relative;
+    padding: 0 40px;
+  }
+}
+@media (min-width: 1480px) {
+  body.theme-light .wrapper {
+    max-width: 1480px;
+    margin: 0 auto;
+  }
 }

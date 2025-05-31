@@ -2,4 +2,13 @@
 @use './theme-light.scss';
 @use './theme-dark.scss';
 @use './tailwind.css';
+@use "sass:color";
 
+  .bt-primary {
+    --p-button-background: var(--primary-color);
+    --p-button-color: var(--primary-color-text);
+    --p-button-border-radius: 8px;
+  }
+  .bt-primary:hover {
+    --p-button-background: var(--fourth-color);
+  }

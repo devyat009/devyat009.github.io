@@ -1,0 +1,26 @@
+// Theme import
+@use 'src/theme-light.scss' as themeLight;
+@use 'src/theme-dark.scss' as themeDark;
+
+::ng-deep .p-button-rounded {
+  border-radius: 50% !important;
+  height: 32px !important;
+  width: 32px !important;
+  //border-color: var(--fourth-color) !important;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+::ng-deep .p-button-rounded:hover {
+  background-color: var(--fourth-color) !important;
+}
+
+  ::ng-deep .bt-primary {
+    --p-button-background: var(--primary-color);
+    --p-button-color: var(--primary-color-text);
+    --p-button-border-radius: 8px;
+  }
+  ::ng-deep .bt-primary:hover {
+    --p-button-background: var(--fourth-color);
+  }

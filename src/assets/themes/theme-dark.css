@@ -3,27 +3,63 @@ body.theme-dark {
   background-color: #161616;
   color: #fff;
 }
-
-.t-primary {
+body.theme-dark .t-primary {
   color: #fff;
 }
-
-.t-secondary {
-  color: #596dc7;
+body.theme-dark .t-secondary {
+  color: #62c759;
 }
-
-.t-tertiary {
+body.theme-dark .t-tertiary {
   color: #314e4b;
 }
-
-.bg-primary {
+body.theme-dark .t-fourth {
+  color: #878a8f;
+}
+body.theme-dark .bg-primary {
   background-color: #596dc7;
 }
-
-.bg-secondary {
+body.theme-dark .bg-secondary {
   background-color: #161735;
 }
-
-.bg-tertiary {
+body.theme-dark .bg-tertiary {
   background-color: #314e4b;
+}
+body.theme-dark .bg-main {
+  background-color: #161616;
+}
+body.theme-dark .bg-main-light {
+  background-color: #222222;
+}
+body.theme-dark h1.large {
+  font-size: 2em;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+body.theme-dark h5 {
+  font-family: "Helvetica Now Display DW", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #fff;
+}
+body.theme-dark .wrapper {
+  width: 100%;
+  padding: 0 14px;
+}
+@media (min-width: 768px) and (min-height: 620px) {
+  body.theme-dark .wrapper {
+    padding: 0 30px;
+  }
+}
+@media (min-width: 1280px) {
+  body.theme-dark .wrapper {
+    position: relative;
+    padding: 0 40px;
+  }
+}
+@media (min-width: 1480px) {
+  body.theme-dark .wrapper {
+    max-width: 1480px;
+    margin: 0 auto;
+  }
 }

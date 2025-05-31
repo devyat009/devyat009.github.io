@@ -1,0 +1,10 @@
+// Theme import
+@use 'src/theme-light.scss';
+@use 'src/theme-dark.scss';
+
+// Home Page
+.home-page {
+  .home-top {
+    padding-top: 140px;
+  }
+}

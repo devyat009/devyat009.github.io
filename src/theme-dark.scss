@@ -1,43 +1,121 @@
+@use "sass:color";
 // Importing Google Material Symbols Icons
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap');
 
-// Colors palette
-$primary-color: #596dc7; //#596dc7
-$secondary-color: #161735; //#161735
-$tertiary-color: #314e4b;
-
-// Text colors palette
-$primary-color-text: #fff;
-$secondary-color-text: #596dc7;
-$tertiary-color-text: #314e4b;
-$background-color: #161616;
-
 body.theme-dark {
-  background-color: $background-color;
-  color: $primary-color-text;
+
+  // Colors palette
+  --primary-color: #596dc7; //#596dc7
+  --secondary-color: #161735; //#161735
+  --tertiary-color: #314e4b;
+  --fourth-color: #818181;
+
+  // Text colors palette
+  --primary-color-text: #fff;
+  --secondary-color-text: #84da7d;
+  --tertiary-color-text: #314e4b;
+  --fourth-color-text: #878a8f;
+
+  // Main background color
+  --background-color: #161616;
+  --background-color-light: #222222;
+
+  background-color: var(--background-color);
+  color: var(--primary-color-text);
+
+  // Global Text Variables
+  .t-primary {
+    color: var(--primary-color-text);
+  }
+  .t-secondary {
+    color: var(--secondary-color-text);
+  }
+  .t-tertiary {
+    color: var(--tertiary-color-text);
+  }
+  .t-fourth {
+    color: var(--fourth-color-text);
+  }
+
+  // Global background Variables
+  .bg-primary {
+    background-color: var(--primary-color);
+  }
+
+  .bg-secondary {
+    background-color: var(--secondary-color);
+  }
+
+  .bg-tertiary {
+    background-color: var(--tertiary-color);
+  }
+
+  .bg-main {
+    background-color: var(--background-color);
+  }
+  .bg-main-light {
+    background-color: var(--background-color-light);
+  }
+
+  // Text Variables for specific elements
+  h1.large {
+    //font-family: "Helvetica Now Display DW",sans-serif;
+    font-size: 2em;
+    font-weight: 800;
+    letter-spacing: -.01em;
+  }
+
+  h5 {
+    font-family: 'Helvetica Now Display DW', sans-serif;
+    font-size: 1.25rem; // 20px
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--primary-color-text);
+  }
+
+  // Spacing Wrapper
+  .wrapper {
+    width:100%;
+    padding:0 14px
+  }
+  @media (min-width:768px) and (min-height:620px) {
+    .wrapper {
+      padding:0 30px
+    }
+  }
+  @media (min-width:1280px) {
+    .wrapper {
+      position:relative;
+      padding:0 40px
+    }
+  }
+  @media (min-width:1480px) {
+    .wrapper {
+      max-width:1480px;
+      margin:0 auto;
+    }
+  }
 }
 
-// Global Text Variables
-.t-primary {
-  color: $primary-color-text;
-}
-.t-secondary {
-  color: $secondary-color-text;
-}
+  // PrimeNg Modules
 
-.t-tertiary {
-  color: $tertiary-color-text;
-}
+  //ToggleButton
+  .p-togglebutton {
+    --p-togglebutton-background: #f0f0f0;
+    --p-togglebutton-checked-background: #596dc7;
+    --p-togglebutton-color: #161735;
+    --p-togglebutton-checked-color: #fff;
+    --p-togglebutton-border-radius: 8px;
+    --p-togglebutton-content-padding: 0.5rem;
+  }
+  .p-togglebutton:hover {
+    --p-togglebutton-background: #e0e0e0;
+  }
 
-// Global background Variables
-.bg-primary {
-  background-color: $primary-color;
-}
-
-.bg-secondary {
-  background-color: $secondary-color;
-}
-
-.bg-tertiary {
-  background-color: $tertiary-color;
-}
+  .bt-primary {
+    --p-button-background: var(--primary-color);
+    --p-button-color: var(--primary-color-text);
+  }
+  .bt-primary:hover {
+    --p-button-background: var(var(--fourth-color));
+  }
