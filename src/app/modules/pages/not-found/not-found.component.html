@@ -1,0 +1,43 @@
+<div class="notfound-bg">
+  <div class="stars">
+    <span *ngFor="let star of stars" class="star"
+      [style.top.%]="star.top"
+      [style.left.%]="star.left"
+      [style.animationDelay.s]="star.delay"
+      [style.width.px]="star.size"
+      [style.height.px]="star.size"
+    ></span>
+  </div>
+  <div class="alien-ship">
+    <svg viewBox="0 0 120 48" width="120" height="48">
+      <!-- Nave -->
+      <ellipse cx="60" cy="36" rx="50" ry="10" fill="#b3e0ff" opacity="0.7" />
+      <ellipse cx="60" cy="32" rx="35" ry="8" fill="#4fd1c5" />
+      <!-- Cúpula -->
+      <ellipse cx="60" cy="24" rx="18" ry="10" fill="#fff" opacity="0.8" />
+      <!-- Alienígena -->
+      <ellipse cx="60" cy="24" rx="5" ry="7" fill="#7fffd4" />
+      <circle cx="58" cy="22" r="1.2" fill="#222" />
+      <circle cx="62" cy="22" r="1.2" fill="#222" />
+      <ellipse cx="60" cy="27" rx="2" ry="1" fill="#222" />
+      <!-- Luzes da nave -->
+      <circle cx="35" cy="36" r="2" fill="#ffe066" />
+      <circle cx="50" cy="40" r="2" fill="#ffe066" />
+      <circle cx="70" cy="40" r="2" fill="#ffe066" />
+      <circle cx="85" cy="36" r="2" fill="#ffe066" />
+    </svg>
+  </div>
+  <div class="notfound-content">
+    <h1
+      class="notfound-404"
+      [style.transform]="transform"
+      (mousemove)="onMouseMove($event)"
+      (mouseleave)="resetMove()"
+      (mouseenter)="resetMove()"
+    >
+      {{ 'TITLE_404' | translate }}
+    </h1>
+    <p>{{ 'SUBTITLE_404' | translate }}</p>
+    <button [routerLink]="'/'" class="notfound-btn">{{ 'BUTTON_404' | translate }}</button>
+  </div>
+</div>

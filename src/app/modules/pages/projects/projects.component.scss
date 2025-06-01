@@ -2,9 +2,9 @@
 @use 'src/theme-light.scss';
 @use 'src/theme-dark.scss';
 
-// Home Page
-.home-page {
-  .home-top {
+// Projects Page
+.projects-page {
+  .projects-top {
     padding-top: 140px;
 
     a {
@@ -16,16 +16,7 @@
       color: var(--secondary-color-text);
       scale: 1.1;
     }
-  }
-}
-.home-footer {
-  a {
-      color: var(--primary-color-text);
-      font-weight: 700;
-  }
 
-  a:hover {
-    color: var(--secondary-color-text);
-    scale: 1.1;
   }
 }
+

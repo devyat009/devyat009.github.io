@@ -1,40 +1,50 @@
 <div class="bg-main-light grid grid-cols-12 gap-4 py-4 shadow-md rounded-bl-sm rounded-br-sm">
   <div class="col-span-12">
     <div class="flex justify-between items-center w-full">
-      <div class="ml-6 flex flex-col">
-          <h1 class="large font-bold t-secondary mr-6 inline-block select-none serif-text">Devyat</h1>
+      <div class="ml-2 flex flex-col">
+          <h1 class="large font-bold t-secondary ml-2 mr-6 inline-block select-none ">Devyat</h1>
       </div>
-      <div class="flex items-center w-full">
-        <div class="mr-6 ml-6">
-          <p-button label="Home" routerLink="/" styleClass="bt-primary text-xl flex flex-col items-center justify-center">
+      <!-- Menu Desktop -->
+      <div class="flex items-center w-full hidden md:flex">
+        <div class="mr-2 ml-2">
+          <p-button label="{{ 'HOME' | translate }}" routerLink="/" styleClass="bt-primary text-xl flex flex-col items-center justify-center">
             <ng-template pTemplate="icon">
               <i class="material-symbols-outlined text-3xl">dashboard</i>
             </ng-template>
           </p-button>
         </div>
-        <div class="mr-6 ml-6">
-          <p-button label="Work" routerLink="/work" styleClass="bt-primary text-xl flex flex-col items-center justify-center">
+        <div class="mr-2 ml-2">
+          <p-button label="{{ 'PROJECTS' | translate }}" routerLink="/projects" styleClass="bt-primary text-xl flex flex-col items-center justify-center">
             <ng-template pTemplate="icon" class="ml-3">
               <i class="material-symbols-outlined text-3xl align-middle">work</i>
             </ng-template>
           </p-button>
         </div>
-        <div class="mr-6 ml-6">
-          <p-button label="About Me" routerLink="/about" styleClass="bt-primary text-xl flex flex-col items-center justify-center">
+        <div class="mr-2 ml-2">
+          <p-button label="{{ 'ABOUT' | translate }}" routerLink="/about" styleClass="bt-primary text-xl flex flex-col items-center justify-center">
             <ng-template pTemplate="icon">
               <i class="material-symbols-outlined text-3xl align-middle">person</i>
             </ng-template>
           </p-button>
         </div>
-        <div class="mr-6 ml-6">
-          <p-button label="Contact" routerLink="/contact" styleClass="bt-primary text-xl flex flex-col items-center justify-center group">
+        <div class="mr-2 ml-2">
+          <p-button label="{{ 'CONTACT' | translate }}" routerLink="/contact" styleClass="bt-primary text-xl flex flex-col items-center justify-center group">
             <ng-template pTemplate="icon">
               <i class="material-symbols-outlined text-3xl align-middle group-hover:hidden">contact_mail</i>
             </ng-template>
           </p-button>
         </div>
       </div>
-      <div class="mr-6">
+      <div class="mr-6 hidden md:flex">
+        <div class="language-switcher" (click)="onSwitchLanguage(currentLang === 'pt-br' ? 'en' : 'pt-br')">
+          <span class="flip-text">
+            <span class="front">{{ currentLang === 'pt-br' ? 'PT-BR' : 'EN' }}</span>
+            <span class="back">{{ currentLang === 'pt-br' ? 'EN' : 'PT-BR' }}</span>
+          </span>
+          <i class="material-symbols-outlined switch-icon">swap_horiz</i>
+        </div>
+      </div>
+      <div class="mr-6 hidden md:flex">
         <p-button label="{{theme ? '' : ''}}" (onClick)="changeTheme(!theme); animateIcon = true" styleClass="p-button-rounded px-24 py-24 text-xl flex items-center justify-center">
           <ng-template pTemplate="icon">
             <i *ngIf="theme === false" [ngClass]="{'icon-animate': animateIcon}" (animationend)="animateIcon = false"
@@ -44,6 +54,41 @@
           </ng-template>
         </p-button>
       </div>
+
+      <!--Menu mobile -->
+      <div class="md:hidden flex items-center">
+        <p-button (click)="showMobileMenu = !showMobileMenu" class="p-2 rounded bg-transparent hover:bg-gray-200 transition">
+          <span class="mr-2">Menu</span>
+          <ng-template pTemplate="icon">
+            <i class="material-symbols-outlined text-3xl">menu</i>
+          </ng-template>
+        </p-button>
+      </div>
+      <!-- Menu mobile dropdown -->
+      <div *ngIf="showMobileMenu"
+        class="md:hidden mt-2 bg-main-light rounded shadow-lg p-4 z-50 absolute top-12 right-0 w-64">
+        <p-button class="block w-full text-left py-2" (click)="navigateTo('/'); showMobileMenu = false">{{ 'HOME' | translate }}</p-button>
+        <p-button class="block w-full text-left py-2" (click)="navigateTo('/projects'); showMobileMenu = false">{{ 'PROJECTS' | translate }}</p-button>
+        <p-button class="block w-full text-left py-2" (click)="navigateTo('/about'); showMobileMenu = false">{{ 'ABOUT' | translate }}</p-button>
+        <p-button class="block w-full text-left py-2" (click)="navigateTo('/contact'); showMobileMenu = false">{{ 'CONTACT' | translate }}</p-button>
+        <div class="language-switcher" (click)="onSwitchLanguage(currentLang === 'pt-br' ? 'en' : 'pt-br')">
+          <span class="flip-text flex justify-start">
+            <span class="front">{{ currentLang === 'pt-br' ? 'PT-BR' : 'EN' }}</span>
+            <span class="back">{{ currentLang === 'pt-br' ? 'EN' : 'PT-BR' }}</span>
+          </span>
+          <i class="material-symbols-outlined switch-icon">swap_horiz</i>
+        </div>
+        <p-button
+          (onClick)="changeTheme(!theme); animateIcon = true"
+          styleClass="p-button-rounded text-xl whitespace-nowrap max-w-full">
+          <span class="ml-21 mr-2">{{theme ? ('THEME_LIGHT' | translate) : ('THEME_DARK' | translate)}}</span>
+          <ng-template pTemplate="icon">
+            <i *ngIf="theme === false" [ngClass]="{'icon-animate': animateIcon}" (animationend)="animateIcon = false"
+              class="material-symbols-outlined text-3xl align-middle relative top-[0px]">bedtime</i>
+            <i *ngIf="theme === true" [ngClass]="{'icon-animate': animateIcon}" (animationend)="animateIcon = false"
+              class="material-symbols-outlined text-3xl align-middle relative top-[0px]">bedtime_off</i>
+          </ng-template>
+        </p-button>
     </div>
   </div>
 </div>

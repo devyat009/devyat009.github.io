@@ -15,6 +15,7 @@ body.theme-light {
   --secondary-color-text: #596dc7;
   --tertiary-color-text: #379186;
   --fourth-color-text: #878a8f;
+  --fifth-color-text: #646464;
 
   // Main background color
   --background-color: #ffffff;
@@ -37,6 +38,9 @@ body.theme-light {
   .t-fourth {
     color: var(--fourth-color-text);
   }
+  .t-fifth {
+    color: var(--fifth-color-text);
+  }
 
   // Global Background Variables
   .bg-primary {
@@ -49,6 +53,14 @@ body.theme-light {
 
   .bg-tertiary {
     background-color: var(--tertiary-color);
+  }
+
+  .bg-fourth {
+    background-color: var(--fourth-color);
+  }
+
+  .bg-fifth {
+    background-color: var(--fifth-color-text);
   }
 
   .bg-main {

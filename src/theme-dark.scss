@@ -7,18 +7,19 @@ body.theme-dark {
   // Colors palette
   --primary-color: #596dc7; //#596dc7
   --secondary-color: #161735; //#161735
-  --tertiary-color: #314e4b;
-  --fourth-color: #818181;
+  --tertiary-color: #314e4b; //#f0f0f0
+  --fourth-color: #818181; //#818181
 
   // Text colors palette
-  --primary-color-text: #fff;
-  --secondary-color-text: #84da7d;
+  --primary-color-text: #fff; //#fff
+  --secondary-color-text: #596dc7;
   --tertiary-color-text: #314e4b;
-  --fourth-color-text: #878a8f;
+  --fourth-color-text: #878a8f; //#878a8f
+  --fifth-color-text: #b0b0b0; //#b0b0b0
 
   // Main background color
-  --background-color: #161616;
-  --background-color-light: #222222;
+  --background-color: #101010; //#161616
+  --background-color-light: #{color.adjust(#101010, $lightness: 1)}; //#222222
 
   background-color: var(--background-color);
   color: var(--primary-color-text);
@@ -37,6 +38,9 @@ body.theme-dark {
   .t-fourth {
     color: var(--fourth-color-text);
   }
+  .t-fifth {
+    color: var(--fifth-color-text);
+  }
 
   // Global background Variables
   .bg-primary {
@@ -50,6 +54,14 @@ body.theme-dark {
   .bg-tertiary {
     background-color: var(--tertiary-color);
   }
+
+    .bg-fourth {
+      background-color: var(--fourth-color);
+    }
+
+    .bg-fifth {
+      background-color: var(--fifth-color-text);
+    }
 
   .bg-main {
     background-color: var(--background-color);

@@ -1,37 +1,52 @@
 import { Component, Renderer2 } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError, RouterModule } from '@angular/router';
 import { ThemeService } from './shared/services/theming.service';
 import { NavBarComponent } from "./shared/components/nav-bar/nav-bar.component";
 import { StorageService } from './shared/services/storageService.service';
+import { SharedTranslationService } from './core/translation/shared-translation-service.component';
+import { AppLoadingComponent } from './shared/components/app-loading/app-loading.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavBarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  imports: [
+    RouterModule,
+    NavBarComponent,
+    AppLoadingComponent,
+    CommonModule
+  ],
 })
 export class AppComponent {
   title = 'my-page';
-
+  loading: boolean = false;
 
   constructor(
     private themeService: ThemeService,
-    private storageService: StorageService
-  ) {}
+    private storageService: StorageService,
+    private translationService: SharedTranslationService,
+    private router: Router,
+  ) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) this.loading = true;
+      if (event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError) this.loading = false;
+    });
+  }
 
   ngOnInit() {
-    console.log('started app');
+    this.loading = true;
     this.themeService.initializeTheme();
-    // const savedTheme = this.storageService.get('theme');
-    // if (savedTheme) {
-    //   console.log('Found saved theme:', savedTheme);
-    //   this.setTheme(savedTheme as 'theme-light' | 'theme-dark');
-    // } else {
-    //   console.log('No saved theme found, using default (light)');
-    //   this.setTheme('theme-light');
-    // }
+    this.translationService.initializeTranslations();
+    this.loading = false;
   }
   setTheme(theme: 'theme-light' | 'theme-dark', saveToStorage: boolean = true) {
     this.themeService.setTheme(theme, false);
+  }
+
+  switchLanguage(language: string): void {
+    this.translationService.changeLanguageByUrl(language);
+    this.translationService.changeLanguage(language, 'nav-bar');
+    this.translationService.changeLanguage(language, 'not-found');
   }
 }
