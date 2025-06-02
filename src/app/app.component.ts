@@ -30,7 +30,12 @@ export class AppComponent {
   ) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) this.loading = true;
-      if (event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError) this.loading = false;
+      if (event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError)
+        {
+          this.loading = false;
+          const lang = this.storageService.get('language') || 'pt-br';
+          this.translationService.loadPageTranslations(lang, this.translationService.getCurrentPage());
+        }
     });
   }
 

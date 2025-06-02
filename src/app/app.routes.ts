@@ -18,7 +18,11 @@ export const routes: Routes = [
     loadComponent: () => import('./modules/pages/contact/contact.component').then((c) => c.ContactComponent)
   },
   {
-    path: '**',
+    path: 'not-found',
     loadComponent: () => import('./modules/pages/not-found/not-found.component').then((c) => c.NotFoundComponent)
+  },
+  {
+    path: '**',
+    redirectTo: '/not-found'
   }
 ];

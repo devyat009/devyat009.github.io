@@ -17,6 +17,24 @@
       scale: 1.1;
     }
 
+    .project-card {
+      .cover{
+        a {
+        color: #ffff !important;
+        i {
+          font-size: 17px;
+        }
+        }
+        a:hover {
+          scale:1.06;
+          border-bottom: none;
+        }
+      }
+    }
+    .project-card:hover {
+      transform: scale(1.02);
+      transition: transform 0.3s ease-in-out;
+    }
   }
 }
 

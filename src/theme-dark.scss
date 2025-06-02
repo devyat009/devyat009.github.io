@@ -19,7 +19,7 @@ body.theme-dark {
 
   // Main background color
   --background-color: #101010; //#161616
-  --background-color-light: #{color.adjust(#101010, $lightness: 1)}; //#222222
+  --background-color-light: #{color.adjust(#101010, $lightness: 5%)}; //#222222
 
   background-color: var(--background-color);
   color: var(--primary-color-text);
