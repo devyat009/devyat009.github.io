@@ -1,0 +1,31 @@
+{
+  "NAME": "Higor Stanley",
+  "TITLE_01": "Hello",
+  "TITLE_02": "World",
+  "SUBTITLE": "Welcome, I'm",
+  "SUBTITLE_01": ", front-end/backend developer and PC enthusiast.",
+
+
+  "PROJECTS": "Projects",
+  "OR": "or",
+  "ABOUT": "About Me",
+
+  "CONTACT_INFO": "Contact",
+  "CONTACT_INFO_SUBTITLE": "infomation",
+  "CONTACT_INFO_MESSAGE": "Feel free to reach out to me anytime. I prefer to communicate via email.",
+
+  "LATEST_PROJECTS": "Latest",
+  "LATEST_PROJECTS_SUBTITLE": "projects",
+
+  "CURRENT_WORKING": "Current",
+  "CURRENT_WORKING_SUBTITLE": "availability",
+  "CURRENT_WORKING_MESSAGE": "I’m currently engaged in projects, but always open to exciting new opportunities —let’s connect!",
+
+  "FOLLOW_ME": "Follow",
+  "FOLLOW_ME_SUBTITLE": "me on",
+
+  "MADE_WITH": "Made with",
+  "IN": "in",
+  "COUNTRY": "Brazil",
+  "CITY": "Brasília"
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/modules/pages/contact/contact.component.ts", "src/app/modules/pages/contact/contact.component.html"],
+  "sourcesContent": ["import { Component } from \"@angular/core\";\r\nimport { TranslateModule } from \"@ngx-translate/core\";\r\n\r\n@Component({\r\n  selector: 'contact-page',\r\n  templateUrl: './contact.component.html',\r\n  styleUrl: './contact.component.scss',\r\n  imports: [\r\n    TranslateModule,\r\n  ]\r\n})\r\nexport class ContactComponent {\r\n  constructor() {}\r\n\r\n  ngOnInit() {\r\n    // Any initialization logic can go here\r\n  }\r\n}\r\n", "<p>contact</p>\r\n"],
+  "mappings": ";uGAWA,IAAaA,GAAgB,IAAA,CAAvB,MAAOA,CAAgB,CAC3BC,aAAA,CAAe,CAEfC,UAAQ,CACN,4CAJSF,EAAgB,2BAAhBA,EAAgBG,UAAA,CAAA,CAAA,cAAA,CAAA,EAAAC,MAAA,EAAAC,KAAA,EAAAC,SAAA,SAAAC,EAAAC,EAAA,CAAAD,EAAA,ICX7BE,EAAA,EAAA,GAAA,EAAGC,EAAA,EAAA,SAAA,EAAOC,EAAA,kBDQNC,CAAe,EAAAC,cAAA,CAAA,CAAA,SAGNb,CAAgB,GAAA",
+  "names": ["ContactComponent", "constructor", "ngOnInit", "selectors", "decls", "vars", "template", "rf", "ctx", "\u0275\u0275elementStart", "\u0275\u0275text", "\u0275\u0275elementEnd", "TranslateModule", "encapsulation"]
+}

@@ -1,0 +1,2 @@
+import{Ma as n,Xb as i,cb as o,db as c,ub as a}from"./chunk-VGZF3OOY.js";var d=(()=>{class t{constructor(){}ngOnInit(){}static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["contact-page"]],decls:2,vars:0,template:function(e,p){e&1&&(o(0,"p"),a(1,"contact"),c())},dependencies:[i],encapsulation:2})}return t})();export{d as ContactComponent};
+//# sourceMappingURL=chunk-J2MO56PK.js.map
