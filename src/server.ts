@@ -41,6 +41,11 @@ app.use(
  * Handle all other requests by rendering the Angular application.
  */
 app.use('/**', (req, res, next) => {
+  express.static(browserDistFolder, {
+    maxAge: '1y',
+    index: false,
+    redirect: false
+  }),
   angularApp
     .handle(req)
     .then((response) =>

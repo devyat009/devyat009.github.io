@@ -38,6 +38,7 @@ export class SharedTranslationService {
     }
   }
   getCurrentPage(): string {
+    if (typeof window === 'undefined') return 'home'; // fallback for SSR
   const cleanUrl = this.router.url.split('?')[0].split('#')[0];
   const segments = cleanUrl.split('/').filter(Boolean);
   return segments[0];

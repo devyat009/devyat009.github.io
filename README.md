@@ -18,3 +18,8 @@ Theme only copile
 ```bash
 npm run build:themes
 ```
+
+## Testing
+```
+npx http-server docs
+```

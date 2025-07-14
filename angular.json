@@ -24,6 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/assets/favicon.ico",
               "src/assets",
               {
                 "glob": "**/*",
@@ -32,7 +33,7 @@
               {
                 "glob": "**/*.css",
                 "input": "src/assets/themes",
-                "output": "/assets/themes/"
+                "output": "assets/themes/"
               }
             ],
             "styles": [
@@ -65,7 +66,9 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "optimization": false,
+              "outputHashing": "all",
+              "baseHref": "/"
             },
             "development": {
               "optimization": false,
