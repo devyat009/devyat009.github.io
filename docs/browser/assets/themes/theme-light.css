@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap");
+body.theme-light {
+  --primary-color: #596dc7;
+  --secondary-color: #161735;
+  --tertiary-color: #379186;
+  --fourth-color: #e0e0e0;
+  --primary-color-text: #000;
+  --secondary-color-text: #596dc7;
+  --tertiary-color-text: #379186;
+  --fourth-color-text: #878a8f;
+  --fifth-color-text: #646464;
+  --background-color: #ffffff;
+  --background-color-light: #dddddd;
+  background-color: var(--background-color);
+  color: var(--primary-color-text);
+  font-family: "Roboto", Arial, sans-serif;
+}
+body.theme-light .t-primary {
+  color: var(--primary-color-text);
+}
+body.theme-light .t-secondary {
+  color: var(--secondary-color-text);
+}
+body.theme-light .t-tertiary {
+  color: var(--tertiary-color-text);
+}
+body.theme-light .t-fourth {
+  color: var(--fourth-color-text);
+}
+body.theme-light .t-fifth {
+  color: var(--fifth-color-text);
+}
+body.theme-light .bg-primary {
+  background-color: var(--primary-color);
+}
+body.theme-light .bg-secondary {
+  background-color: var(--secondary-color);
+}
+body.theme-light .bg-tertiary {
+  background-color: var(--tertiary-color);
+}
+body.theme-light .bg-fourth {
+  background-color: var(--fourth-color);
+}
+body.theme-light .bg-fifth {
+  background-color: var(--fifth-color-text);
+}
+body.theme-light .bg-main {
+  background-color: var(--background-color);
+}
+body.theme-light .bg-main-light {
+  background-color: var(--background-color);
+}
+body.theme-light .serif-text {
+  font-family: "Roboto Serif", serif;
+}
+body.theme-light h1.large {
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+}
+body.theme-light h5 {
+  font-family: "Helvetica Now Display", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+}
+body.theme-light h6 {
+  font-family: "Helvetica Now Display", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+body.theme-light .wrapper {
+  width: 100%;
+  padding: 0 14px;
+}
+@media (min-width: 768px) and (min-height: 620px) {
+  body.theme-light .wrapper {
+    padding: 0 30px;
+  }
+}
+@media (min-width: 1280px) {
+  body.theme-light .wrapper {
+    position: relative;
+    padding: 0 40px;
+  }
+}
+@media (min-width: 1480px) {
+  body.theme-light .wrapper {
+    max-width: 1480px;
+    margin: 0 auto;
+  }
+}
+
+.bt-primary {
+  --p-button-background: var(--primary-color);
+  --p-button-color: var(--primary-color-text);
+  --p-button-border-radius: 8px;
+}
+
+.bt-primary:hover {
+  --p-button-background: var(--fourth-color);
+}

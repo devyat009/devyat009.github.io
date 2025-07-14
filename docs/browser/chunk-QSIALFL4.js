@@ -1,0 +1,2 @@
+import{Ma as n,Xb as a,cb as o,db as i,ub as r}from"./chunk-VGZF3OOY.js";var u=(()=>{class e{constructor(){}ngOnInit(){}static \u0275fac=function(t){return new(t||e)};static \u0275cmp=n({type:e,selectors:[["about-page"]],decls:2,vars:0,template:function(t,c){t&1&&(o(0,"p"),r(1,"about"),i())},dependencies:[a],encapsulation:2})}return e})();export{u as AboutComponent};
+//# sourceMappingURL=chunk-QSIALFL4.js.map

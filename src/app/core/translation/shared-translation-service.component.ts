@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -6,17 +6,22 @@ import { from, Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { StorageService } from 'src/app/shared/services/storageService.service';
 import { Router } from '@angular/router';
+import { isPlatformServer } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedTranslationService {
+  private isServer: boolean;
   constructor(
     private readonly translate: TranslateService,
     private readonly http: HttpClient,
     private readonly storageService: StorageService,
-    private readonly router: Router
-  ) {}
+    private readonly router: Router,
+    @Inject(PLATFORM_ID) platformId: object
+  ) {
+    this.isServer = isPlatformServer(platformId);
+  }
   /**
    * Change language the entire application
    * @param language - The language to be loaded
@@ -61,6 +66,9 @@ export class SharedTranslationService {
    * @param page - The page path
    */
   loadPageTranslations(language: string, page: string): void {
+    if (this.isServer) {
+      return;
+    }
     const normalizedLanguage = language.toLowerCase();
     console.log(normalizedLanguage);
 
