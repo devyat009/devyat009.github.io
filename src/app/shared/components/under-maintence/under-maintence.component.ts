@@ -31,7 +31,7 @@ export class UnderMaintenceComponent {
     this.translate.loadPageTranslations(lang, 'under-maintence');
   }
 
-  // Paralax effect
+  // Paralax effect on mouse
   onMouseMove(event: MouseEvent) {
     const el = (event.target as HTMLElement).getBoundingClientRect();
     const x = ((event.clientX - el.left) / el.width - 0.5) * 20;
