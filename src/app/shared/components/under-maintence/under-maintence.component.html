@@ -9,7 +9,7 @@
     ></span>
   </div>
 
-  <div class="maintence-content">
+  <div class="maintence-content relative flex flex-col items-center justify-center text-center">
     <div class="maintence-illustration">
       <div class="loading-dots">
         <div class="dot"></div>
@@ -20,7 +20,7 @@
 
 
     <h1
-      class="maintence-title"
+      class="maintence-title large"
       [style.transform]="transform"
       (mousemove)="onMouseMove($event)"
       (mouseleave)="resetMove()"

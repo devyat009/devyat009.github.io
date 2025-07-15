@@ -1,11 +1,11 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError, RouterModule } from '@angular/router';
 import { ThemeService } from './shared/services/theming.service';
 import { NavBarComponent } from "./shared/components/nav-bar/nav-bar.component";
 import { StorageService } from './shared/services/storageService.service';
 import { SharedTranslationService } from './core/translation/shared-translation-service.component';
 import { AppLoadingComponent } from './shared/components/app-loading/app-loading.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +27,7 @@ export class AppComponent {
     private storageService: StorageService,
     private translationService: SharedTranslationService,
     private router: Router,
+    @Inject(PLATFORM_ID) private platformId: object,
   ) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) this.loading = true;
@@ -44,6 +45,13 @@ export class AppComponent {
     this.themeService.initializeTheme();
     this.translationService.initializeTranslations();
     this.loading = false;
+    if (isPlatformBrowser(this.platformId)) {
+      const redirect = sessionStorage.getItem('redirect');
+      if (redirect) {
+        sessionStorage.removeItem('redirect');
+        this.router.navigateByUrl(redirect);
+      }
+    }
   }
   setTheme(theme: 'theme-light' | 'theme-dark', saveToStorage: boolean = true) {
     this.themeService.setTheme(theme, false);

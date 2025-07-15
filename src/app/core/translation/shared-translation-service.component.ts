@@ -35,6 +35,10 @@ export class SharedTranslationService {
 
   changeLanguageByUrl(language: string): void {
     const page = this.getCurrentPage();
+    if (page == undefined)
+    {
+      console.warn('Warning: Translation page is undefined:', page);
+    }
     if (page) {
       this.changeLanguage(language, page, true);
     } else {
