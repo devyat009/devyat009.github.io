@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { TranslateModule } from "@ngx-translate/core";
+import { UnderMaintenceComponent } from "src/app/shared/components/under-maintence/under-maintence.component";
 
 @Component({
   selector: 'contact-page',
@@ -7,7 +8,8 @@ import { TranslateModule } from "@ngx-translate/core";
   styleUrl: './contact.component.scss',
   imports: [
     TranslateModule,
-  ]
+    UnderMaintenceComponent
+]
 })
 export class ContactComponent {
   constructor() {}
