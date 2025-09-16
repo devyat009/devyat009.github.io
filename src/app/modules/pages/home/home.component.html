@@ -22,8 +22,73 @@
         </div>
 
 
-        <div class="home-middle">
+        <div class="home-middle mt-12">
+          <h5 class="t-fourth">{{ 'LATEST_PROJECTS' | translate }}</h5>
+          <h1 class="t-primary text-3xl font-bold">{{ 'LATEST_PROJECTS_SUBTITLE' | translate }}</h1>
 
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-stretch mt-6">
+            <!-- Project Card 01 -->
+            <div class="project-card group flex flex-col rounded-sm shadow-lg overflow-hidden bg-main-light min-h-[400px] max-h-[500px] relative">
+              <div class="cover flex-1 w-full h-full flex flex-col justify-end">
+                <img src="https://publicador.sestsenat.org.br/arquivos/4cb790ab-38d5-43f3-96b8-0f9db1b8fa51.png"
+                  alt="Emprega Transporte" class="w-full h-full object-cover">
+                <!-- Overlay de hover -->
+                <div class="absolute inset-0 bg-black/70 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="project-overlay-content pl-8">
+                    <h1 class="text-white text-lg font-semibold mb-2">{{'PROJECTS_01_TITLE' | translate }}</h1>
+                    <div class="text-white text-sm mb-4 pr-4 text-left">
+                      {{'PROJECTS_01_DESCRIPTION' | translate }}
+                    </div>
+                    <a href="https://empregatransporte.com.br" target="_blank"
+                      class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded transition">
+                      {{'BUTTON_VISIT' | translate }}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Project Card 02 -->
+            <div
+              class="project-card group flex flex-col rounded-sm shadow-lg overflow-hidden bg-main-light min-h-[400px] max-h-[500px] relative">
+              <div class="cover flex-1 w-full h-full flex flex-col justify-end">
+                <img src="assets/img/projects/portalsestsenat.png" alt="Portal SEST SENAT" class="w-full h-full object-cover">
+                <!-- Overlay de hover -->
+                <div
+                  class="absolute inset-0 bg-black/70 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="project-overlay-content pl-8">
+                    <h1 class="text-white text-lg font-semibold mb-2">{{'PROJECTS_02_TITLE' | translate }}</h1>
+                    <div class="text-white text-sm mb-4 pr-4 text-left">
+                      {{'PROJECTS_02_DESCRIPTION' | translate }}
+                    </div>
+                    <a href="https://www.sestsenat.org.br" target="_blank"
+                      class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded transition">
+                      {{'BUTTON_VISIT' | translate }}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Project Card 03 -->
+            <div class="project-card group flex flex-col rounded-sm shadow-lg overflow-hidden bg-main-light min-h-[400px] max-h-[500px] relative">
+              <div class="cover flex-1 w-full h-full flex flex-col justify-end">
+                <img src="https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/mockups/busmapmockup.png"
+                  alt="OnibusDf" class="w-full h-full object-contain">
+                <!-- Overlay de hover -->
+                <div class="absolute inset-0 bg-black/70 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="project-overlay-content pl-8">
+                    <h1 class="text-white text-lg font-semibold mb-2">{{'PROJECTS_BUS_TITLE' | translate }}</h1>
+                    <div class="text-white text-sm mb-4 pr-4 text-left">
+                      {{'PROJECTS_BUS_DESCRIPTION' | translate }}
+                    </div>
+                    <a href="https://github.com/devyat009/onibus-df-app" target="_blank"
+                      class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded transition">
+                      {{'BUTTON_VISIT' | translate }}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="home-bottom">
@@ -34,62 +99,5 @@
     </div>
   </div>
 
-  <footer class="home-footer bg-main mt-12 px-2 py-10 rounded-t-lg">
-    <hr class="t-fourth mx-6 my-4">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 justify-center items-center">
-      <!-- Contact -->
-      <div class="ml-3">
-        <h3 class="font-bold text-lg mb-2">{{"CONTACT_INFO" | translate }} <span class="block">{{"CONTACT_INFO_SUBTITLE"
-            |
-            translate}}&nbsp;—</span></h3>
-        <p class="mb-2 text-sm t-fifth">
-          {{"CONTACT_INFO_MESSAGE" | translate }}
-        </p>
-        <ul class="text-sm">
-          <li>
-            E-mail: <a class="text-primary underline"
-              href="mailto:stanleyhigor1&#64;gmail.com" target="_blank" rel="noopener noreferrer">stanleyhigor1&#64;gmail.com</a>
-          </li>
-          <!-- <li>
-              P: <span class="text-gray-700">+55 61 99999999</span>
-            </li> -->
-        </ul>
-      </div>
-      <!-- Latest Projects -->
-      <div class="ml-3">
-        <h3 class="font-bold text-lg mb-2">{{"LATEST_PROJECTS" | translate }} <span
-            class="block">{{"LATEST_PROJECTS_SUBTITLE" | translate }}&nbsp;—</span></h3>
-        <ul class="text-sm space-y-1">
-          <li><a href="https://empregatransporte.sestsenat.org.br/" target="_blank" rel="noopener noreferrer" class="t-primary underline">Emprega Transporte
-              SEST</a></li>
-          <li><a href="https://sestsenat.org.br/home" target="_blank" rel="noopener noreferrer" class="t-primary underline">Sest Senat</a></li>
-          <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="t-primary underline hidden">Youtube</a></li>
-        </ul>
-      </div>
-      <!-- Availability -->
-      <div class="ml-3">
-        <h3 class="font-bold text-lg mb-2">{{"CURRENT_WORKING" | translate }} <span
-            class="block">{{"CURRENT_WORKING_SUBTITLE" | translate }}&nbsp;—</span></h3>
-        <p class="text-sm t-fifth">
-          {{"CURRENT_WORKING_MESSAGE" | translate }}
-        </p>
-      </div>
-      <!-- Social -->
-      <div class="ml-3">
-        <h3 class="font-bold text-lg mb-2">{{"FOLLOW_ME" | translate }} <span class="block">{{"FOLLOW_ME_SUBTITLE" |
-            translate}}&nbsp;—</span></h3>
-        <ul class="text-sm space-y-1">
-          <li><a href="https://github.com/devyat009" class="text-primary underline" target="_blank" rel="noopener noreferrer">Github</a></li>
-          <li><a href="https://www.linkedin.com/" class="text-primary underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="mt-10 flex flex-col items-center text-xs">
-      <p class="text-center">
-        © 2025 {{ 'NAME' | translate}}<br>
-        {{"MADE_WITH" | translate}} <span class="text-red-500">♥</span> {{"IN" | translate }} {{"CITY" | translate}},
-        {{"COUNTRY" | translate}}.
-      </p>
-    </div>
-  </footer>
+  <app-footer></app-footer>
 </div>

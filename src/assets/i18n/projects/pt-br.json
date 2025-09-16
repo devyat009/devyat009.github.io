@@ -13,5 +13,9 @@
   "PROJECTS_LOKING_DESCRIPTION": "Estou sempre em busca de novas oportunidades para colaborar em projetos interessantes. Se você tem uma ideia ou um projeto em que acha que eu possa contribuir, sinta-se à vontade para entrar em contato!",
   "PROJECTS_LOKING_ENTERPRISE": "Entre em Contato",
 
-  "PROJECTS_TITLE_PERSONAL": "Projetos Pessoais"
+  "PROJECTS_TITLE_PERSONAL": "Projetos Pessoais",
+
+  "PROJECTS_BUS_TITLE": "ÔnibusDF",
+  "PROJECTS_BUS_DESCRIPTION": "Aplicativo para consulta de horários, itinerários e localização de ônibus em tempo real no Distrito Federal. Permite visualizar paradas próximas e planejar rotas.",
+  "PROJECTS_BUS_ENTERPRISE": "Projeto Pessoal"
 }
