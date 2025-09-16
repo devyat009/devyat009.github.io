@@ -137,7 +137,52 @@
 
     <div class="projects-middle mt-8">
       <h5 class="t-fourth">{{ 'PROJECTS_TITLE_PERSONAL' | translate }}</h5>
-    </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 justify-center items-center mt-6">
+        <!-- Project Card 01 -->
+        <div class="project-card flex rounded-sm shadow-lg overflow-hidden bg-main-light max-w-5xl min-h-[240px] max-h-[240px] min-w-[350px]">
+          <!-- Cover -->
+          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end">
+            <img src="https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/map.png"
+              alt="OnibusDf" class="w-full h-full object-cover">
+            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full">
+              <div class="text-white font-bold text-base leading-tight select-none">{{"PROJECTS_BUS_TITLE" | translate }}</div>
+              <div class="flex items-start gap-1">
+                <span class=" text-blue-400 text-sm">{{"PROJECTS_BUS_ENTERPRISE" | translate}}</span>
+                <a href="https://github.com/devyat009/onibus-df-app" rel="noopener noreferrer" target="_blank" class="text-sm text-blue-400">
+                  <i class="material-symbols-outlined align-middle">open_in_new</i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+          <!-- Data -->
+          <div class="data flex-1 flex flex-col p-2 bg-main-light">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <div class="text-xs text-gray-400">{{"PROJECTS_BUS_ENTERPRISE" | translate}}</div>
+              </div>
+              <!-- <div class="flex flex-col items-end gap-1">
+                <div class="flex items-center gap-1">
+                  <span class="material-symbols-outlined text-green-400 text-base">sentiment_very_satisfied</span>
+                  <span class="font-semibold text-green-300 text-sm">78%</span>
+                </div>
+              </div> -->
+            </div>
+            <div class="description my-2 t-fifth text-sm overflow-y-auto max-h-42 w-[175px] break-words pr-2">
+              {{"PROJECTS_BUS_DESCRIPTION" | translate}}
+            </div>
+            <div class="flex items-center justify-between mt-auto pt-2">
+              <div class="flex gap-1 flex-wrap">
+                <span class="bg-primary t-primary text-xs font-semibold px-3 py-1 rounded-full select-none">Mobile</span>
+                <span class="bg-primary t-primary text-xs font-semibold px-3 py-1 rounded-full select-none">Android/iOS</span>
+              </div>
+              <!-- <span class="material-symbols-outlined text-green-400 text-2xl">check_circle</span> -->
+            </div>
+          </div>
+        </div>
+
+      </div>
 
     <div class="projects-bottom">
 
@@ -145,3 +190,5 @@
 
   </div>
 </div>
+
+<app-footer></app-footer>

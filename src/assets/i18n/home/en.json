@@ -3,7 +3,7 @@
   "TITLE_01": "Hello",
   "TITLE_02": "World",
   "SUBTITLE": "Welcome, I'm",
-  "SUBTITLE_01": ", front-end/backend developer and PC enthusiast.",
+  "SUBTITLE_01": ", front-end/backend developer, student and PC enthusiast.",
 
 
   "PROJECTS": "Projects",
@@ -16,6 +16,20 @@
 
   "LATEST_PROJECTS": "Latest",
   "LATEST_PROJECTS_SUBTITLE": "projects",
+
+  "PROJECTS_01_TITLE": "Emprega Transporte",
+  "PROJECTS_01_DESCRIPTION": "Job platform for the road transport sector.",
+  "PROJECTS_01_ENTERPRISE": "SEST SENAT",
+
+  "PROJECTS_02_TITLE": "Portal SEST SENAT",
+  "PROJECTS_02_DESCRIPTION": "A platform designed to provide information and services related to the SEST SENAT, such as courses, sports, health, and much more.",
+  "PROJECTS_02_ENTERPRISE": "SEST SENAT",
+
+  "PROJECTS_BUS_TITLE": "ÔnibusDF",
+  "PROJECTS_BUS_DESCRIPTION": "App for checking schedules, routes, and real-time bus locations in Brasília/DF. Allows you to view nearby stops and plan routes.",
+  "PROJECTS_BUS_ENTERPRISE": "Personal Project",
+
+  "BUTTON_VISIT": "Visit site",
 
   "CURRENT_WORKING": "Current",
   "CURRENT_WORKING_SUBTITLE": "availability",

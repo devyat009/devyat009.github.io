@@ -16,6 +16,20 @@
   "LATEST_PROJECTS": "Últimos",
   "LATEST_PROJECTS_SUBTITLE": "projetos",
 
+  "PROJECTS_01_TITLE": "Emprega Transporte",
+  "PROJECTS_01_DESCRIPTION": "Projeto voltado para a integração de vagas de emprego do setor de transporte, com o objetivo de facilitar a busca por oportunidades de trabalho em todo o Brasil.",
+  "PROJECTS_01_ENTERPRISE": "SEST SENAT",
+
+  "PROJECTS_02_TITLE": "Portal SEST SENAT",
+  "PROJECTS_02_DESCRIPTION": "Uma plataforma desenvolvida para prover informações e serviços relacionados ao SEST SENAT, como cursos, esportes, saúde e muito mais.",
+  "PROJECTS_02_ENTERPRISE": "SEST SENAT",
+
+  "PROJECTS_BUS_TITLE": "ÔnibusDF",
+  "PROJECTS_BUS_DESCRIPTION": "Aplicativo para consulta de horários, itinerários e localização de ônibus em tempo real no Distrito Federal. Permite visualizar paradas próximas e planejar rotas.",
+  "PROJECTS_BUS_ENTERPRISE": "Projeto Pessoal",
+
+  "BUTTON_VISIT": "Visitar site",
+
   "CURRENT_WORKING": "Atual",
   "CURRENT_WORKING_SUBTITLE": "disponibilidade",
   "CURRENT_WORKING_MESSAGE": "Atualmente estou envolvido em projetos, mas estou sempre aberto a novas oportunidades empolgantes — vamos nos conectar!",
