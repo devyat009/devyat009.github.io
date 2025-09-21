@@ -17,5 +17,10 @@
 
   "PROJECTS_BUS_TITLE": "ÔnibusDF",
   "PROJECTS_BUS_DESCRIPTION": "Aplicativo para consulta de horários, itinerários e localização de ônibus em tempo real no Distrito Federal. Permite visualizar paradas próximas e planejar rotas.",
-  "PROJECTS_BUS_ENTERPRISE": "Projeto Pessoal"
+  "PROJECTS_BUS_ENTERPRISE": "Projeto Pessoal",
+
+  "PROJECTS_BEAUTYGLOW_TITLE": "BeautyGlow",
+  "PROJECTS_BEAUTYGLOW_DESCRIPTION": "Website estático desenvolvido exclusivamente em front-end para apresentação profissional do trabalho de uma turma do SENAC-DF. Publicação com integração simples via GitHub Pages, priorizando desempenho, responsividade e clareza na comunicação.",
+  "PROJECTS_BEAUTYGLOW_ENTERPRISE": "SENAC-DF"
+
 }

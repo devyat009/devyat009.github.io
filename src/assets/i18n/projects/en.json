@@ -18,5 +18,9 @@
 
   "PROJECTS_BUS_TITLE": "BusDF",
   "PROJECTS_BUS_DESCRIPTION": "App for checking schedules, routes, and real-time bus locations in Brasília/DF. Allows you to view nearby stops and plan routes.",
-  "PROJECTS_BUS_ENTERPRISE": "Personal Project"
+  "PROJECTS_BUS_ENTERPRISE": "Personal Project",
+
+  "PROJECTS_BEAUTYGLOW_TITLE": "BeautyGlow",
+  "PROJECTS_BEAUTYGLOW_DESCRIPTION": "Static website developed exclusively in front-end for the professional presentation of the work of a SENAC-DF class. Published with simple integration via GitHub Pages, prioritizing performance, responsiveness, and clarity in communication.",
+  "PROJECTS_BEAUTYGLOW_ENTERPRISE": "SENAC-DF"
 }
