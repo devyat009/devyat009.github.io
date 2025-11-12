@@ -29,6 +29,23 @@
           scale:1.06;
           border-bottom: none;
         }
+
+      .confidential-text {
+        position: absolute;
+        top: 43%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 2rem;
+        opacity: 0.3;
+        pointer-events: none;
+        user-select: none;
+        width: 130%;
+        height: 100%;
+      }
       }
     }
     .project-card:hover {
