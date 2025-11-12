@@ -1,5 +1,5 @@
-import { NgClass, NgFor, NgIf } from "@angular/common";
-import { Component, ElementRef, QueryList, ViewChildren, ViewChild, AfterViewInit } from "@angular/core";
+import { NgClass, NgFor, NgIf, NgStyle } from "@angular/common";
+import { Component, ElementRef, QueryList, ViewChildren, ViewChild, AfterViewInit, HostListener, OnInit } from "@angular/core";
 import { TranslateModule } from "@ngx-translate/core";
 import { FooterComponent } from "src/app/shared/components/footer/footer.component";
 import { UnderMaintenceComponent } from "src/app/shared/components/under-maintence/under-maintence.component";
@@ -33,12 +33,15 @@ interface TimelineItem {
     UnderMaintenceComponent,
     NgClass,
     NgIf,
-    NgFor
+    NgFor,
+    NgStyle,
 ]
 })
-export class AboutComponent implements AfterViewInit {
+export class AboutComponent implements AfterViewInit, OnInit {
   @ViewChildren('sectionsRef') sections!: QueryList<ElementRef<HTMLDivElement>>;
   @ViewChild('contentScroll') contentScroll!: ElementRef<HTMLDivElement>;
+
+  isMobile = false;
 
   timelineItems: TimelineItem[] = [
     {
@@ -117,7 +120,9 @@ export class AboutComponent implements AfterViewInit {
   progressPercent = 0;
   private readonly baseProgress = 6;
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.evaluateViewport();
+  }
 
   ngAfterViewInit() {
     // força primeiro ativo
@@ -130,13 +135,65 @@ export class AboutComponent implements AfterViewInit {
   }
 
   onContentScroll() {
+    if (this.isMobile) return;
     this.updateSections();
     this.updateProgress();
   }
 
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    if (!this.isMobile) return;
+    this.updateSections();
+    this.updateProgress();
+  }
+
+  @HostListener('window:resize')
+  onWindowResize() {
+    const wasMobile = this.isMobile;
+    this.evaluateViewport();
+    if (wasMobile !== this.isMobile) {
+      setTimeout(() => {
+        this.updateSections(true);
+        this.updateProgress();
+      }, 0);
+    }
+  }
+
+  private evaluateViewport() {
+    if (typeof window === 'undefined') {
+      this.isMobile = false;
+      return;
+    }
+    this.isMobile = window.matchMedia('(max-width: 980px)').matches;
+  }
+
   private updateProgress() {
+    if (this.isMobile) {
+      if (typeof window === 'undefined' || typeof document === 'undefined') {
+        this.progressPercent = this.baseProgress;
+        return;
+      }
+
+      const doc = document.documentElement;
+      const scrollTop = window.scrollY || doc.scrollTop || 0;
+      const scrollHeight = doc.scrollHeight - doc.clientHeight;
+
+      if (scrollHeight <= 0) {
+        this.progressPercent = this.baseProgress;
+        return;
+      }
+
+      const raw = scrollTop / scrollHeight * 100;
+      const shifted = raw * (100 - this.baseProgress) / 100 + this.baseProgress;
+      this.progressPercent = Math.min(100, Math.max(this.baseProgress, shifted));
+      return;
+    }
+
     const container = this.contentScroll?.nativeElement;
-    if (!container) return;
+    if (!container) {
+      this.progressPercent = this.baseProgress;
+      return;
+    }
     const scrollTop = container.scrollTop;
     const scrollHeight = container.scrollHeight - container.clientHeight;
 
@@ -153,8 +210,35 @@ export class AboutComponent implements AfterViewInit {
   }
 
   private updateSections(initial = false) {
-    if (!this.sections) return;
-    const container = this.contentScroll.nativeElement;
+    if (!this.sections?.length) return;
+
+    if (this.isMobile) {
+      if (typeof window === 'undefined') return;
+      const viewportHeight = window.innerHeight || 0;
+      let anyVisible = false;
+
+      this.sections.forEach((ref, idx) => {
+        const rect = ref.nativeElement.getBoundingClientRect();
+        const visible =
+          rect.top < viewportHeight * 0.65 &&
+          rect.bottom > viewportHeight * 0.15;
+
+        if (initial && idx === 0) {
+          this.timelineItems[idx].active = true;
+          anyVisible = true;
+          return;
+        }
+
+        this.timelineItems[idx].active = visible;
+        if (visible) anyVisible = true;
+      });
+
+      if (!anyVisible) this.timelineItems[0].active = true;
+      return;
+    }
+
+    const container = this.contentScroll?.nativeElement;
+    if (!container) return;
     const viewTop = container.scrollTop;
     const viewBottom = viewTop + container.clientHeight;
 

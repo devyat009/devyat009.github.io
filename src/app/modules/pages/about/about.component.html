@@ -8,14 +8,17 @@
     </div>
 
     <!-- Middle / Timeline -->
-    <div class="about-middle mt-8 flex flex-col gap-8 overflow-hidden">
+  <div class="about-middle mt-8 flex flex-col gap-8" [ngClass]="{ 'overflow-hidden': !isMobile }">
       <h5 class="t-fourth sticky-title sticky top-0 backdrop-blur-md py-4 z-10 m-0">{{ 'ABOUT_TITLE_PERSONAL' | translate }}</h5>
 
-      <div class="timeline-layout grid gap-10 items-start" style="grid-template-columns:70px 1fr;">
+      <div class="timeline-layout grid gap-10 items-start" [ngClass]="{ 'is-mobile': isMobile }">
         <!-- Barra fixa -->
         <div class="timeline-bar ml-4 sticky top-[72px] w-[70px] h-[calc(100vh-72px-40px)] flex flex-col flex-shrink-0 z-10 pointer-events-none items-center">
           <div class="timeline-track relative w-1 mx-auto my-8 rounded overflow-hidden flex-1">
-            <div class="timeline-progress absolute left-0 top-0 w-full transition-all" [style.height.%]="progressPercent"></div>
+            <div class="timeline-progress absolute left-0 top-0 transition-all"
+              [ngStyle]="isMobile
+                ? { width: progressPercent + '%', height: '100%' }
+                : { height: progressPercent + '%', width: '100%' }"></div>
           </div>
           <ul class="timeline-dates list-none p-0 m-0 absolute flex flex-col justify-between h-full">
             <li *ngFor="let item of timelineItems" [class.active]="item.active" class="relative pl-4 flex items-center text-[12px] text-[#617188]">
@@ -48,7 +51,7 @@
                 </div> -->
                 <div *ngIf="item.images?.length" class="media-grid grid gap-6 grid-cols-[repeat(auto-fit,minmax(180px,1fr))]">
                   <figure *ngFor="let img of item.images"
-                    class="m-0 bg-white/5 p-[14px] pb-[10px] rounded-[18px] shadow-[0_6px_16px_-6px_rgba(0,0,0,0.55)] transition-transform duration-300 hover:-translate-y-1.5 flex flex-col">
+                    class="m-0 bg-main-light/5 p-[14px] pb-[10px] rounded-[18px] shadow-[0_6px_16px_-6px_rgba(0,0,0,0.55)] transition-transform duration-300 hover:-translate-y-1.5 flex flex-col">
                     <img [src]="img.src" [alt]="img.alt" loading="lazy"
                       [ngClass]="img.type === 'mobile'
                         ? 'aspect-[9/16] w-full max-w-[720px]'
