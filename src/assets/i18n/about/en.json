@@ -1,3 +1,43 @@
 {
+  "ABOUT_TITLE": "About me",
+  "ABOUT_DESCRIPTION": "Hi! I'm Higor Stanley, a Systems Development student and junior developer. I'm bilingual (Brazilian Portuguese and English) and have experience with C#, Python, JavaScript, and TypeScript. I mainly focus on building web applications and keep creating projects to expand my learning and portfolio.",
+  "ABOUT_TITLE_PERSONAL": "A learning journey",
+  "ABOUT_SUBTITLE_PERSONAL_HOBBIES": "Hobbies",
+  "ABOUT_DESCRIPTION_TITLE_PERSONAL_HOBBIES": "Photography",
+  "ABOUT_TITLE_PROFESSIONAL": "Professional",
 
+  "ABOUT_TIMELINE_01_DATE": "Mar 2024",
+  "ABOUT_TIMELINE_01_TAG": "The Beginning",
+  "ABOUT_TIMELINE_01_TITLE": "Exploring interface design",
+  "ABOUT_TIMELINE_01_SUBTITLE": "Inventory system prototype",
+  "ABOUT_TIMELINE_01_DESCRIPTION": "Windows app to manage stock, sales, and statistics. First learning prototype built during the Systems Development course.",
+  "ABOUT_TIMELINE_01_FOOTER": "“First steps...”",
+
+  "ABOUT_TIMELINE_02_DATE": "Apr 2024",
+  "ABOUT_TIMELINE_02_TAG": "The First Step",
+  "ABOUT_TIMELINE_02_TITLE": "Exploring prototypes and design",
+  "ABOUT_TIMELINE_02_SUBTITLE": "Bakery app prototype",
+  "ABOUT_TIMELINE_02_DESCRIPTION": "Challenge to create an app aimed at the growth of a fictional bakery.",
+  "ABOUT_TIMELINE_02_FOOTER": "“Learning something new every day...”",
+
+  "ABOUT_TIMELINE_03_DATE": "Oct 2024",
+  "ABOUT_TIMELINE_03_TAG": "Desktop App",
+  "ABOUT_TIMELINE_03_TITLE": "Video downloader app",
+  "ABOUT_TIMELINE_03_SUBTITLE": "A learning project, YouTube Downloader",
+  "ABOUT_TIMELINE_03_DESCRIPTION": "A simple app to download YouTube videos using Python, HTML, and CSS.",
+  "ABOUT_TIMELINE_03_FOOTER": "",
+
+  "ABOUT_TIMELINE_04_DATE": "Jan 2025",
+  "ABOUT_TIMELINE_04_TAG": "Expansion",
+  "ABOUT_TIMELINE_04_TITLE": "My portfolio website",
+  "ABOUT_TIMELINE_04_SUBTITLE": "Expanding my portfolio to the web",
+  "ABOUT_TIMELINE_04_DESCRIPTION": "Building my personal portfolio website with Angular, Tailwind CSS, and TypeScript to showcase my projects and skills, aiming to reach more people and opportunities in tech.",
+  "ABOUT_TIMELINE_04_FOOTER": "“Seeking new opportunities...”",
+
+  "ABOUT_TIMELINE_05_DATE": "Jul 2025",
+  "ABOUT_TIMELINE_05_TAG": "Mobile App",
+  "ABOUT_TIMELINE_05_TITLE": "DF Bus App",
+  "ABOUT_TIMELINE_05_SUBTITLE": "Mobile app to check buses in the Federal District",
+  "ABOUT_TIMELINE_05_DESCRIPTION": "Creation of the DF Bus App using React Native to make it easier to check bus schedules and routes in Brazil’s Federal District. The project was born after a public system was discontinued.",
+  "ABOUT_TIMELINE_05_FOOTER": "“Never standing still...”"
 }

@@ -1,1 +1,85 @@
-<under-maintence></under-maintence>
+<!-- <under-maintence></under-maintence> -->
+<div class="wrapper">
+  <div class="about-page">
+    <!-- Top -->
+    <div class="about-top pt-[140px]">
+      <h5 class="t-fourth">{{ 'ABOUT_TITLE' | translate }}</h5>
+        <h3 class="t-fifth mt-2">{{ 'ABOUT_DESCRIPTION' | translate }}</h3>
+    </div>
+
+    <!-- Middle / Timeline -->
+    <div class="about-middle mt-8 flex flex-col gap-8 overflow-hidden">
+      <h5 class="t-fourth sticky-title sticky top-0 backdrop-blur-md py-4 z-10 m-0">{{ 'ABOUT_TITLE_PERSONAL' | translate }}</h5>
+
+      <div class="timeline-layout grid gap-10 items-start" style="grid-template-columns:70px 1fr;">
+        <!-- Barra fixa -->
+        <div class="timeline-bar ml-4 sticky top-[72px] w-[70px] h-[calc(100vh-72px-40px)] flex flex-col flex-shrink-0 z-10 pointer-events-none items-center">
+          <div class="timeline-track relative w-1 mx-auto my-8 rounded overflow-hidden flex-1">
+            <div class="timeline-progress absolute left-0 top-0 w-full transition-all" [style.height.%]="progressPercent"></div>
+          </div>
+          <ul class="timeline-dates list-none p-0 m-0 absolute flex flex-col justify-between h-full">
+            <li *ngFor="let item of timelineItems" [class.active]="item.active" class="relative pl-4 flex items-center text-[12px] text-[#617188]">
+              <span class="date-label">{{ item.date | translate }}</span>
+              <span class="dot"></span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Conteúdo rolável -->
+        <div class="timeline-content h-[calc(100vh-72px)] overflow-y-auto flex flex-col gap-20 pt-10 pr-0 pb-10 md:pr-16" #contentScroll (scroll)="onContentScroll()">
+          <section *ngFor="let item of timelineItems"
+              class="timeline-section"
+              [class.visible]="item.active"
+              [attr.data-date]="item.date"
+              #sectionsRef>
+            <div class="section-inner" [ngClass]="item.type">
+              <header class="section-header mb-7">
+                <small class="section-tag" *ngIf="item.type === 'personal' && item.tag">{{ item.tag | translate }}</small>
+                <h3 class="section-title">{{ item.title | translate }}</h3>
+                <p class="section-subtitle" *ngIf="item.subtitle">{{ item.subtitle | translate }}</p>
+              </header>
+              <div class="section-body">
+                <p class="section-description">{{ item.description | translate }}</p>
+                <!-- <div class="media-grid" *ngIf="item.images?.length">
+                  <figure *ngFor="let img of item.images">
+                    <img [src]="img.src" [alt]="img.alt" loading="lazy" />
+                    <figcaption *ngIf="img.caption">{{ img.caption }}</figcaption>
+                  </figure>
+                </div> -->
+                <div *ngIf="item.images?.length" class="media-grid grid gap-6 grid-cols-[repeat(auto-fit,minmax(180px,1fr))]">
+                  <figure *ngFor="let img of item.images"
+                    class="m-0 bg-white/5 p-[14px] pb-[10px] rounded-[18px] shadow-[0_6px_16px_-6px_rgba(0,0,0,0.55)] transition-transform duration-300 hover:-translate-y-1.5 flex flex-col">
+                    <img [src]="img.src" [alt]="img.alt" loading="lazy"
+                      [ngClass]="img.type === 'mobile'
+                        ? 'aspect-[9/16] w-full max-w-[720px]'
+                        : 'aspect-[16/9] w-full max-w-[720px] max-h-[720px]'"
+                      class="object-cover rounded-[12px] bg-[#1a2938] mx-auto" />
+                    <figcaption *ngIf="img.caption" class="mt-1.5 text-[11px] text-center opacity-75">
+                      {{ img.caption | translate }}
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <footer class="section-foot" *ngIf="item.footer">
+                <small>{{ item.footer | translate }}</small>
+              </footer>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hobbies extra block -->
+    <!-- <div class="grid grid-cols-1 md:grid-cols-4 gap-12 justify-center items-center mt-[140px]">
+      <h5 class="t-fourth">{{ 'ABOUT_SUBTITLE_PERSONAL_HOBBIES' | translate }}</h5>
+      <h4>{{ 'ABOUT_DESCRIPTION_TITLE_PERSONAL_HOBBIES' | translate }}</h4>
+    </div> -->
+
+    <!-- Bottom Professional -->
+    <!-- <div class="about-bottom mt-8">
+      <h5 class="t-fourth">{{ 'ABOUT_TITLE_PROFESSIONAL' | translate }}</h5>
+    </div> -->
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,3 +1,43 @@
 {
+  "ABOUT_TITLE": "Sobre mim",
+  "ABOUT_DESCRIPTION": "Olá! Sou Higor Stanley, estudante de Desenvolvimento de Sistemas e desenvolvedor júnior. Sou bilíngue (português brasileiro e inglês) e tenho experiência em C#, Python, JavaScript e TypeScript. Atuo principalmente no desenvolvimento de aplicações web e sigo construindo projetos para ampliar meu aprendizado e portfólio.",
+  "ABOUT_TITLE_PERSONAL": "Uma jornada de aprendizado",
+  "ABOUT_SUBTITLE_PERSONAL_HOBBIES": "Hobbies",
+  "ABOUT_DESCRIPTION_TITLE_PERSONAL_HOBBIES": "Fotografia",
+  "ABOUT_TITLE_PROFESSIONAL": "Profissional",
 
+  "ABOUT_TIMELINE_01_DATE": "Mar 2024",
+  "ABOUT_TIMELINE_01_TAG": "O Início",
+  "ABOUT_TIMELINE_01_TITLE": "Aventurando no design de interfaces",
+  "ABOUT_TIMELINE_01_SUBTITLE": "Protótipo de sistema de inventário",
+  "ABOUT_TIMELINE_01_DESCRIPTION": "Aplicativo Windows para gerenciar estoque, vendas e estatísticas. Primeiro protótipo para aprendizado realizado no curso de Desenvolvimento de Sistemas.",
+  "ABOUT_TIMELINE_01_FOOTER": "“Primeiros passos...”",
+
+  "ABOUT_TIMELINE_02_DATE": "Abr 2024",
+  "ABOUT_TIMELINE_02_TAG": "O Primeiro Passo",
+  "ABOUT_TIMELINE_02_TITLE": "Aventurando em protótipos e design",
+  "ABOUT_TIMELINE_02_SUBTITLE": "Protótipo de aplicativo para padaria",
+  "ABOUT_TIMELINE_02_DESCRIPTION": "Desafio proposto para criar um aplicativo visando crescimento de uma padaria fictícia.",
+  "ABOUT_TIMELINE_02_FOOTER": "“Um novo aprendizado a cada dia...”",
+
+  "ABOUT_TIMELINE_03_DATE": "Out 2024",
+  "ABOUT_TIMELINE_03_TAG": "Aplicativo Desktop",
+  "ABOUT_TIMELINE_03_TITLE": "Aplicativo de download de vídeos",
+  "ABOUT_TIMELINE_03_SUBTITLE": "Um projeto de aprendizado, Youtube Downloader",
+  "ABOUT_TIMELINE_03_DESCRIPTION": "Um simples aplicativo para baixar videos do Youtube utilizando Python, Html, e CSS.",
+  "ABOUT_TIMELINE_03_FOOTER": "",
+
+  "ABOUT_TIMELINE_04_DATE": "Jan 2025",
+  "ABOUT_TIMELINE_04_TAG": "Expansão",
+  "ABOUT_TIMELINE_04_TITLE": "Meu site portfolio",
+  "ABOUT_TIMELINE_04_SUBTITLE": "A expansão do meu portfólio para o mundo digital",
+  "ABOUT_TIMELINE_04_DESCRIPTION": "A criação do meu site portfolio pessoal utilizando Angular, Tailwind CSS e Typescript para mostrar meus projetos e habilidades. Com o objetivo de alcançar mais pessoas e oportunidades no mundo da tecnologia.",
+  "ABOUT_TIMELINE_04_FOOTER": "“Em busca de novas oportunidades...”",
+
+  "ABOUT_TIMELINE_05_DATE": "Jul 2025",
+  "ABOUT_TIMELINE_05_TAG": "Aplicativo Mobile",
+  "ABOUT_TIMELINE_05_TITLE": "Onibus DF App",
+  "ABOUT_TIMELINE_05_SUBTITLE": "Projeto de aplicativo mobile para consulta de ônibus no Distrito Federal",
+  "ABOUT_TIMELINE_05_DESCRIPTION": "A criação do Onibus DF App utilizando React Native para facilitar a consulta de horários e itinerários de ônibus no Distrito Federal, projeto nasce quando um sistema publico havia-se descontinuado.",
+  "ABOUT_TIMELINE_05_FOOTER": "“Não ficar parado nunca...”"
 }
