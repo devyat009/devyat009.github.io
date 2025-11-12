@@ -2,12 +2,18 @@
   "PROJECTS_TITLE": "Relevant Projects",
 
   "PROJECTS_01_TITLE": "Emprega Transporte",
-  "PROJECTS_01_DESCRIPTION": "A project focused on integrating job vacancies in the transportation sector, aiming to facilitate the search for employment opportunities in the Brazil.",
+  "PROJECTS_01_DESCRIPTION": "Project focused on integrating job vacancies in the transportation sector, aiming to facilitate the search for employment opportunities in the Brazil.",
   "PROJECTS_01_ENTERPRISE": "SEST SENAT",
 
   "PROJECTS_02_TITLE": "Portal SEST SENAT",
-  "PROJECTS_02_DESCRIPTION": "A platform designed to provide information and services related to the SEST SENAT, such as courses, sports, health, and much more.",
+  "PROJECTS_02_DESCRIPTION": "Platform designed to provide information and services related to the SEST SENAT, such as courses, sports, health, and much more.",
   "PROJECTS_02_ENTERPRISE": "SEST SENAT",
+
+  "PROJECTS_03_TITLE": "OBRASIM",
+  "PROJECTS_03_DESCRIPTION": "National platform █████ for managing and ██████ monitoring construction projects █████ across Brazil.",
+  "PROJECTS_03_ENTERPRISE": "SEST SENAT",
+
+  "CONFIDENTIAL": "Confidential",
 
   "PROJECTS_LOKING_TITLE": "Want to work with me?",
   "PROJECTS_LOKING_DESCRIPTION": "I am always looking for new opportunities to collaborate on exciting projects. If you have an idea or a project that you think I could contribute to, feel free to reach out!",
