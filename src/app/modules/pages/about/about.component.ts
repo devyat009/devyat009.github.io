@@ -79,7 +79,7 @@ export class AboutComponent implements AfterViewInit {
       footer: 'ABOUT_TIMELINE_03_FOOTER',
       type: 'personal',
       images: [
-        { src: 'https://private-user-images.githubusercontent.com/91706455/363386241-56505eb6-bda1-4159-a0b8-80da2a928d35.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjI5MTc2MzgsIm5iZiI6MTc2MjkxNzMzOCwicGF0aCI6Ii85MTcwNjQ1NS8zNjMzODYyNDEtNTY1MDVlYjYtYmRhMS00MTU5LWEwYjgtODBkYTJhOTI4ZDM1LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTExMTIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMTEyVDAzMTUzOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTljNDdkMzE2MzY4NWUxMGNjNDQ4NzRlMDIxMTFiOWQ2YzhkMjFjNDIyYmMzNmE5MzQxOWE1ZDBiOWU3MTExNTUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0._M0gBfrXngt54ya5B-ZwJKRJHIrNzA0aN_-_URyLeyY',
+        { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/devyat009.github.io/projects/ytdownloader.png',
           alt: 'Youtube Downloader', type: 'desktop' },
         // { src: 'assets/img/bradesco/bradesco2.png', alt: 'Bradesco' },
         // { src: 'assets/img/bradesco/bradesco3.png', alt: 'Bradesco' }
