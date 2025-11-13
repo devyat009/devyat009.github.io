@@ -1,0 +1,9 @@
+a {
+  color: var(--primary-color-text);
+  font-weight: 400;
+}
+a:hover {
+  border-bottom: 1px solid var(--secondary-color-text);
+  color: var(--secondary-color-text);
+  scale: 1.1;
+}
