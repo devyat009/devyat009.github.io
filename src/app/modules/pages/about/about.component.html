@@ -14,14 +14,14 @@
       <div class="timeline-layout grid gap-10 items-start" [ngClass]="{ 'is-mobile': isMobile }">
         <!-- Barra fixa -->
         <div class="timeline-bar ml-4 sticky top-[72px] w-[70px] h-[calc(100vh-72px-40px)] flex flex-col flex-shrink-0 z-10 pointer-events-none items-center">
-          <div class="timeline-track relative w-1 mx-auto my-8 rounded overflow-hidden flex-1">
-            <div class="timeline-progress absolute left-0 top-0 transition-all"
+          <div class="timeline-track relative w-1 mx-auto my-8 rounded overflow-hidden flex-1 bg-secondary">
+            <div class="timeline-progress absolute left-0 top-0 transition-all bg-primary"
               [ngStyle]="isMobile
                 ? { width: progressPercent + '%', height: '100%' }
                 : { height: progressPercent + '%', width: '100%' }"></div>
           </div>
           <ul class="timeline-dates list-none p-0 m-0 absolute flex flex-col justify-between h-full">
-            <li *ngFor="let item of timelineItems" [class.active]="item.active" class="relative pl-4 flex items-center text-[12px] text-[#617188]">
+            <li *ngFor="let item of timelineItems" [ngClass]="item.active ? ['active', 't-secondary'] : ['t-fourth']" class="relative pl-4 flex items-center text-[12px] t-primary">
               <span class="date-label">{{ item.date | translate }}</span>
               <span class="dot"></span>
             </li>
@@ -73,10 +73,41 @@
     </div>
 
     <!-- Hobbies extra block -->
-    <!-- <div class="grid grid-cols-1 md:grid-cols-4 gap-12 justify-center items-center mt-[140px]">
-      <h5 class="t-fourth">{{ 'ABOUT_SUBTITLE_PERSONAL_HOBBIES' | translate }}</h5>
-      <h4>{{ 'ABOUT_DESCRIPTION_TITLE_PERSONAL_HOBBIES' | translate }}</h4>
-    </div> -->
+    <div class="about-hobbies mt-[90px] flex flex-col gap-7 md:gap-10 lg:mt-[120px]">
+      <div class="hobby-header grid w-full max-w-[980px] grid-cols-1 items-start gap-6 md:grid-cols-[minmax(220px,320px),1fr] md:gap-12">
+        <div class="flex flex-col gap-2">
+          <h5 class="t-fourth m-0">{{ 'ABOUT_SUBTITLE_PERSONAL_HOBBIES' | translate }}</h5>
+          <!-- <h4 class="t-third m-0">{{ 'ABOUT_DESCRIPTION_TITLE_PERSONAL_HOBBIES' | translate }}</h4> -->
+        </div>
+        <p class="m-0 text-[15px] leading-7 t-primary">
+          {{ 'ABOUT_HOBBIES_PHOTOGRAPHY_INTRO' | translate }}
+        </p>
+      </div>
+
+      <div class="hobby-gallery grid w-full justify-items-center gap-7 sm:grid-cols-2 xl:grid-cols-3">
+        <article
+          *ngFor="let photo of hobbyPhotos"
+          class="hobby-card group flex h-full w-full max-w-[520px] flex-col overflow-hidden rounded-3xl border border-white/5 bg-[rgba(17,28,43,0.92)] shadow-[0_16px_36px_-18px_rgba(0,0,0,0.6)] transition-transform duration-300 ease-out hover:-translate-y-1.5 hover:border-white/15 hover:shadow-[0_20px_38px_-18px_rgba(0,0,0,0.75)]"
+          [ngClass]="{ 'is-featured': photo.highlight }">
+          <figure class="hobby-card-media m-0 block w-full overflow-hidden">
+            <img
+              [src]="photo.image"
+              [attr.alt]="photo.alt | translate"
+              loading="lazy"
+              class="w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.02]"
+              [ngClass]="getHobbyImageClasses(photo)"
+              [ngStyle]="photo.customStyle || null" />
+          </figure>
+          <div class="hobby-card-body flex flex-1 flex-col gap-3 px-[30px] pb-8 pt-7">
+            <!-- <span *ngIf="photo.highlight" class="hobby-card-badge self-start rounded-full bg-white/15 px-3 py-1 text-[11px] uppercase tracking-[0.08em]">
+              {{ 'ABOUT_HOBBY_PHOTO_FEATURED' | translate }}
+            </span> -->
+            <h3 class="hobby-card-title m-0 text-[clamp(1.2rem,2vw,1.5rem)] font-semibold text-white">{{ photo.title | translate }}</h3>
+            <p class="hobby-card-text m-0 text-[0.95rem] leading-relaxed text-white/80">{{ photo.description | translate }}</p>
+          </div>
+        </article>
+      </div>
+    </div>
 
     <!-- Bottom Professional -->
     <!-- <div class="about-bottom mt-8">
