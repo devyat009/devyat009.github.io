@@ -21,7 +21,7 @@
                 : { height: progressPercent + '%', width: '100%' }"></div>
           </div>
           <ul class="timeline-dates list-none p-0 m-0 absolute flex flex-col justify-between h-full">
-            <li *ngFor="let item of timelineItems" [class.active]="item.active" class="relative pl-4 flex items-center text-[12px] t-sixth">
+            <li *ngFor="let item of timelineItems" [ngClass]="item.active ? ['active', 't-secondary'] : ['t-fourth']" class="relative pl-4 flex items-center text-[12px] t-primary">
               <span class="date-label">{{ item.date | translate }}</span>
               <span class="dot"></span>
             </li>
