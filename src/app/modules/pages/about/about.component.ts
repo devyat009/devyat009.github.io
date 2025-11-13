@@ -2,7 +2,6 @@ import { NgClass, NgFor, NgIf, NgStyle } from "@angular/common";
 import { Component, ElementRef, QueryList, ViewChildren, ViewChild, AfterViewInit, HostListener, OnInit } from "@angular/core";
 import { TranslateModule } from "@ngx-translate/core";
 import { FooterComponent } from "src/app/shared/components/footer/footer.component";
-import { UnderMaintenceComponent } from "src/app/shared/components/under-maintence/under-maintence.component";
 
 interface TimelineImage {
   src: string;
@@ -23,6 +22,16 @@ interface TimelineItem {
   active?: boolean;
 }
 
+interface HobbyPhoto {
+  title: string;
+  description: string;
+  image: string;
+  alt: string;
+  highlight?: boolean;
+  customCss?: string;
+  customStyle?: Record<string, string>;
+}
+
 @Component({
   selector: 'about-page',
   templateUrl: './about.component.html',
@@ -30,7 +39,6 @@ interface TimelineItem {
   imports: [
     TranslateModule,
     FooterComponent,
-    UnderMaintenceComponent,
     NgClass,
     NgIf,
     NgFor,
@@ -68,9 +76,10 @@ export class AboutComponent implements AfterViewInit, OnInit {
       footer: 'ABOUT_TIMELINE_02_FOOTER',
       type: 'personal',
       images: [
-        // { src: 'assets/img/padaria/home.png', alt: 'Tela Home' },
-        // { src: 'assets/img/padaria/login.png', alt: 'Tela Login' },
-        // { src: 'assets/img/padaria/produtos.png', alt: 'Lista de Produtos' }
+        { src: 'https://github.com/devyat009/image-repo-for-my-repo/blob/main/devyat009.github.io/about-me/bakery/bakery-login.png?raw=true', alt: 'PrototypeLogin', type: 'mobile' },
+        { src: 'https://github.com/devyat009/image-repo-for-my-repo/blob/main/devyat009.github.io/about-me/bakery/bakery-home.png?raw=true', alt: 'PrototypeHome', type: 'mobile' },
+        { src: 'https://github.com/devyat009/image-repo-for-my-repo/blob/main/devyat009.github.io/about-me/bakery/bakery-item.png?raw=true', alt: 'PrototypeItem', type: 'mobile' },
+        { src: 'https://github.com/devyat009/image-repo-for-my-repo/blob/main/devyat009.github.io/about-me/bakery/bakery-user.png?raw=true', alt: 'PrototypeUser', type: 'mobile' }
       ]
     },
     {
@@ -84,8 +93,6 @@ export class AboutComponent implements AfterViewInit, OnInit {
       images: [
         { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/devyat009.github.io/projects/ytdownloader.png',
           alt: 'Youtube Downloader', type: 'desktop' },
-        // { src: 'assets/img/bradesco/bradesco2.png', alt: 'Bradesco' },
-        // { src: 'assets/img/bradesco/bradesco3.png', alt: 'Bradesco' }
       ]
     },
     {
@@ -97,9 +104,6 @@ export class AboutComponent implements AfterViewInit, OnInit {
       footer: 'ABOUT_TIMELINE_04_FOOTER',
       type: 'professional',
       images: [
-        // { src: 'assets/img/bradesco/bradesco.png', alt: 'Bradesco' },
-        // { src: 'assets/img/bradesco/bradesco2.png', alt: 'Bradesco' },
-        // { src: 'assets/img/bradesco/bradesco3.png', alt: 'Bradesco' }
       ]
     },
     {
@@ -117,8 +121,32 @@ export class AboutComponent implements AfterViewInit, OnInit {
       ]
     }
   ];
+  hobbyPhotos: HobbyPhoto[] = [
+    {
+      title: 'ABOUT_HOBBY_PHOTO_CLOUDS_TITLE',
+      description: 'ABOUT_HOBBY_PHOTO_CLOUDS_DESC',
+      image: 'https://github.com/devyat009/image-repo-for-my-repo/blob/main/devyat009.github.io/about-me/clouds.png?raw=true',
+      alt: 'ABOUT_HOBBY_PHOTO_CLOUDS_ALT',
+      highlight: true,
+    },
+    {
+      title: 'ABOUT_HOBBY_PHOTO_ARARA_TITLE',
+      description: 'ABOUT_HOBBY_PHOTO_ARARA_DESC',
+      image: 'https://github.com/devyat009/image-repo-for-my-repo/blob/main/devyat009.github.io/about-me/arara.png?raw=true',
+      alt: 'ABOUT_HOBBY_PHOTO_ARARA_ALT',
+      customCss: 'scale-[1.08] group-hover:!scale-[1.12]',
+      customStyle: { objectPosition: 'center 18%' }
+    }
+  ];
   progressPercent = 0;
   private readonly baseProgress = 6;
+
+  getHobbyImageClasses(photo: HobbyPhoto): string {
+    const baseHeights = photo.highlight
+      ? 'h-[260px] sm:h-[320px] lg:h-[360px]'
+      : 'h-[220px] sm:h-[260px]';
+    return photo.customCss ? `${baseHeights} ${photo.customCss}` : baseHeights;
+  }
 
   ngOnInit() {
     this.evaluateViewport();

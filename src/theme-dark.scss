@@ -16,6 +16,7 @@ body.theme-dark {
   --tertiary-color-text: #314e4b;
   --fourth-color-text: #878a8f; //#878a8f
   --fifth-color-text: #b0b0b0; //#b0b0b0
+  --sixth-color-text: #c6cfda; //#c6cfda
 
   // Main background color
   --background-color: #101010; //#161616
@@ -40,6 +41,9 @@ body.theme-dark {
   }
   .t-fifth {
     color: var(--fifth-color-text);
+  }
+  .t-sixth {
+    color: var(--sixth-color-text);
   }
 
   // Global background Variables
