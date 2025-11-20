@@ -2,13 +2,13 @@
 <div class="wrapper">
   <div class="about-page">
     <!-- Top -->
-    <div class="about-top pt-[140px]">
+    <div class="about-top pt-[140px] animate-fade-in">
       <h5 class="t-fourth">{{ 'ABOUT_TITLE' | translate }}</h5>
         <h3 class="t-fifth mt-2">{{ 'ABOUT_DESCRIPTION' | translate }}</h3>
     </div>
 
     <!-- Middle / Timeline -->
-  <div class="about-middle mt-8 flex flex-col gap-8" [ngClass]="{ 'overflow-hidden': !isMobile }">
+  <div class="about-middle mt-8 flex flex-col gap-8 animate-fade-in-delay" [ngClass]="{ 'overflow-hidden': !isMobile }">
       <h5 class="t-fourth sticky-title sticky top-0 backdrop-blur-md py-4 z-10 m-0">{{ 'ABOUT_TITLE_PERSONAL' | translate }}</h5>
 
       <div class="timeline-layout grid gap-10 items-start" [ngClass]="{ 'is-mobile': isMobile }">
@@ -73,7 +73,7 @@
     </div>
 
     <!-- Hobbies extra block -->
-    <div class="about-hobbies mt-[90px] flex flex-col gap-7 md:gap-10 lg:mt-[120px]">
+    <div class="about-hobbies mt-[90px] flex flex-col gap-7 md:gap-10 lg:mt-[120px] animate-fade-in-delay-2">
       <div class="hobby-header grid w-full max-w-[980px] grid-cols-1 items-start gap-6 md:grid-cols-[minmax(220px,320px),1fr] md:gap-12">
         <div class="flex flex-col gap-2">
           <h5 class="t-fourth m-0">{{ 'ABOUT_SUBTITLE_PERSONAL_HOBBIES' | translate }}</h5>

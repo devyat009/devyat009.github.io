@@ -2,6 +2,27 @@
 @use 'src/theme-light.scss';
 @use 'src/theme-dark.scss';
 
+// Fade-in animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.3s forwards;
+}
+
 // Home Page
 .home-page {
   .home-top {
