@@ -2,6 +2,7 @@ import { Component, Renderer2 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from "src/app/shared/components/footer/footer.component";
+import { StarsComponent } from "src/app/shared/components/stars/stars.component";
 
 @Component({
   selector: 'home-page',
@@ -10,7 +11,8 @@ import { FooterComponent } from "src/app/shared/components/footer/footer.compone
   imports: [
     TranslateModule,
     RouterLink,
-    FooterComponent
+    FooterComponent,
+    StarsComponent
 ]
 })
 export class HomeComponent {

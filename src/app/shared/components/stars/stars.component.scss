@@ -1,0 +1,33 @@
+.stars-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--star-color, #bbb);
+  opacity: 0.8;
+  animation: star-blink 2.5s infinite alternate;
+}
+
+body.theme-dark .star {
+  --star-color: #fff;
+}
+body.theme-light .star {
+  --star-color: #bbb;
+}
+
+@keyframes star-blink {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.2; }
+}

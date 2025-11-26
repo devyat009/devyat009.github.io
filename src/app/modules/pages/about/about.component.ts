@@ -2,6 +2,7 @@ import { NgClass, NgFor, NgIf, NgStyle } from "@angular/common";
 import { Component, ElementRef, QueryList, ViewChildren, ViewChild, AfterViewInit, HostListener, OnInit } from "@angular/core";
 import { TranslateModule } from "@ngx-translate/core";
 import { FooterComponent } from "src/app/shared/components/footer/footer.component";
+import { StarsComponent } from "src/app/shared/components/stars/stars.component";
 
 interface TimelineImage {
   src: string;
@@ -43,6 +44,7 @@ interface HobbyPhoto {
     NgIf,
     NgFor,
     NgStyle,
+    StarsComponent
 ]
 })
 export class AboutComponent implements AfterViewInit, OnInit {
