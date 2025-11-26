@@ -28,5 +28,9 @@
 
   "PROJECTS_BEAUTYGLOW_TITLE": "BeautyGlow",
   "PROJECTS_BEAUTYGLOW_DESCRIPTION": "Static website developed exclusively in front-end for the professional presentation of the work of a SENAC-DF class. Published with simple integration via GitHub Pages, prioritizing performance, responsiveness, and clarity in communication.",
-  "PROJECTS_BEAUTYGLOW_ENTERPRISE": "SENAC-DF"
+  "PROJECTS_BEAUTYGLOW_ENTERPRISE": "Access Link",
+
+  "PROJECTS_SMARTHOME_TITLE": "SmartHome",
+  "PROJECTS_SMARTHOME_DESCRIPTION": "Responsive website developed focused on integrated use with an Arduino capable of remotely controlling residential electronic devices via the internet. Published with simple integration via GitHub Pages, prioritizing accessibility for people with total blindness.",
+  "PROJECTS_SMARTHOME_ENTERPRISE": "Access Link"
 }
