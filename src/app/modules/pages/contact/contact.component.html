@@ -1,1 +1,147 @@
-<under-maintence></under-maintence>
+<stars-component></stars-component>
+<div class="flex flex-col min-h-screen">
+  <div class="flex-1">
+    <div class="wrapper">
+      <div class="contact-page">
+        <!-- Top Header & Grid -->
+        <div class="contact-top pt-[140px] animate-fade-in">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <!-- Left Column: Title & Info -->
+            <div class="lg:col-span-5 flex flex-col justify-between h-full">
+              <div>
+                <h5 class="t-fourth mb-4">{{ 'CONTACT_LABEL' | translate }}</h5>
+                <h1 class="t-primary text-4xl md:text-5xl font-bold leading-tight">
+                  {{ 'CONTACT_TITLE_01' | translate }}
+                  <span class="t-secondary block mt-1">{{ 'CONTACT_TITLE_02' | translate }}</span>
+                </h1>
+              </div>
+
+              <!-- Address / Contact Details -->
+              <div class="mt-12 md:mt-20">
+                <h5 class="t-fourth uppercase tracking-wider text-xs font-semibold mb-3">{{ 'CONTACT_ADDRESS_LABEL' | translate }}</h5>
+                <div class="space-y-1 text-base t-primary font-medium">
+                  <p class="font-bold">{{ 'CONTACT_NAME' | translate }}</p>
+                  <p class="t-fifth text-sm">{{ 'CONTACT_LOCATION' | translate }}</p>
+                  <div class="flex items-center gap-2 t-secondary text-sm mt-3">
+                    <span class="material-symbols-outlined text-base">mail</span>
+                    <a href="mailto:stanleyhigor1@gmail.com" class="hover:underline">
+                      {{ 'CONTACT_EMAIL' | translate }}
+                    </a>
+                  </div>
+                  <div class="flex items-center gap-2 t-secondary text-sm mt-2">
+                    <span class="material-symbols-outlined text-base">link</span>
+                    <a href="https://www.linkedin.com/in/higorstanley/" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                      {{ 'CONTACT_LINKEDIN' | translate }}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Subtitle & Form -->
+            <div class="lg:col-span-7 animate-fade-in-delay">
+              <p class="t-fifth text-lg md:text-xl leading-relaxed mb-8">
+                {{ 'CONTACT_SUBTITLE' | translate }}
+              </p>
+
+              <!-- Form -->
+              <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="space-y-6">
+                <!-- Name & Email Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <!-- Name Field -->
+                  <div class="form-group flex flex-col">
+                    <label class="t-fourth text-xs font-semibold uppercase tracking-wider mb-2">
+                      {{ 'FORM_NAME_LABEL' | translate }}
+                    </label>
+                    <input 
+                      type="text" 
+                      name="name" 
+                      [(ngModel)]="formData.name" 
+                      required
+                      placeholder="{{ 'FORM_NAME_PLACEHOLDER' | translate }}"
+                      class="custom-input"
+                    />
+                  </div>
+
+                  <!-- Email Field -->
+                  <div class="form-group flex flex-col">
+                    <label class="t-fourth text-xs font-semibold uppercase tracking-wider mb-2">
+                      {{ 'FORM_EMAIL_LABEL' | translate }}
+                    </label>
+                    <input 
+                      type="email" 
+                      name="email" 
+                      [(ngModel)]="formData.email" 
+                      required
+                      placeholder="{{ 'FORM_EMAIL_PLACEHOLDER' | translate }}"
+                      class="custom-input"
+                    />
+                  </div>
+                </div>
+
+                <!-- Service Field (Budget field excluded) -->
+                <div class="form-group flex flex-col">
+                  <label class="t-fourth text-xs font-semibold uppercase tracking-wider mb-2">
+                    {{ 'FORM_SERVICE_LABEL' | translate }}
+                  </label>
+                  <div class="relative">
+                    <select 
+                      name="service" 
+                      [(ngModel)]="formData.service"
+                      class="custom-select appearance-none cursor-pointer"
+                    >
+                      <option value="" disabled selected>{{ 'FORM_SERVICE_PLACEHOLDER' | translate }}</option>
+                      <option value="frontend">{{ 'FORM_SERVICE_OPTION_1' | translate }}</option>
+                      <option value="backend">{{ 'FORM_SERVICE_OPTION_2' | translate }}</option>
+                      <option value="fullstack">{{ 'FORM_SERVICE_OPTION_3' | translate }}</option>
+                      <option value="mobile">{{ 'FORM_SERVICE_OPTION_4' | translate }}</option>
+                      <option value="other">{{ 'FORM_SERVICE_OPTION_5' | translate }}</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 t-fourth">
+                      <span class="material-symbols-outlined text-sm">expand_more</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group flex flex-col">
+                  <label class="t-fourth text-xs font-semibold uppercase tracking-wider mb-2">
+                    {{ 'FORM_MESSAGE_LABEL' | translate }}
+                  </label>
+                  <textarea 
+                    name="message" 
+                    [(ngModel)]="formData.message" 
+                    required 
+                    rows="4"
+                    placeholder="{{ 'FORM_MESSAGE_PLACEHOLDER' | translate }}"
+                    class="custom-input resize-none"
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button & Feedback -->
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <button 
+                    type="submit" 
+                    [disabled]="!contactForm.form.valid || isSubmitting"
+                    class="px-8 py-3.5 bg-primary text-white font-semibold rounded-sm hover:opacity-90 disabled:opacity-50 transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
+                  >
+                    <span>{{ 'FORM_SUBMIT_BUTTON' | translate }}</span>
+                    <span class="material-symbols-outlined text-lg">send</span>
+                  </button>
+
+                  <div *ngIf="submitted" class="text-green-500 dark:text-green-400 text-sm font-medium flex items-center gap-1.5 animate-fade-in">
+                    <span class="material-symbols-outlined text-base">check_circle</span>
+                    <span>{{ 'FORM_SUCCESS_MESSAGE' | translate }}</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

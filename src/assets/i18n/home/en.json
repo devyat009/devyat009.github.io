@@ -25,6 +25,10 @@
   "PROJECTS_02_DESCRIPTION": "A platform designed to provide information and services related to the SEST SENAT, such as courses, sports, health, and much more.",
   "PROJECTS_02_ENTERPRISE": "SEST SENAT",
 
+  "PROJECTS_MAISMOTORISTAS_TITLE": "Mais Motoristas",
+  "PROJECTS_MAISMOTORISTAS_DESCRIPTION": "System for enrollment, management, and tracking of the Mais Motoristas Program by SEST SENAT.",
+  "PROJECTS_MAISMOTORISTAS_ENTERPRISE": "SEST SENAT",
+
   "PROJECTS_BUS_TITLE": "ÔnibusDF",
   "PROJECTS_BUS_DESCRIPTION": "App for checking schedules, routes, and real-time bus locations in Brasília/DF. Allows you to view nearby stops and plan routes.",
   "PROJECTS_BUS_ENTERPRISE": "GitHub",
