@@ -1,3 +1,27 @@
 {
-  "null": "null"
+  "CONTACT_LABEL": "CONTACT",
+  "CONTACT_TITLE_01": "Get in touch —",
+  "CONTACT_TITLE_02": "let's work together.",
+  "CONTACT_ADDRESS_LABEL": "LOCATION & CONTACT",
+  "CONTACT_NAME": "Higor Stanley",
+  "CONTACT_LOCATION": "Brasília, DF - Brazil",
+  "CONTACT_EMAIL": "stanleyhigor1@gmail.com",
+  "CONTACT_LINKEDIN": "LinkedIn",
+
+  "CONTACT_SUBTITLE": "Got a project? Drop me a line if you want to work together on something exciting. Big or small.",
+  "FORM_NAME_LABEL": "Your Name",
+  "FORM_NAME_PLACEHOLDER": "What's your name?",
+  "FORM_EMAIL_LABEL": "Your Email",
+  "FORM_EMAIL_PLACEHOLDER": "What's your email address?",
+  "FORM_SERVICE_LABEL": "Service",
+  "FORM_SERVICE_PLACEHOLDER": "What are you interested in?",
+  "FORM_SERVICE_OPTION_1": "Front-End Development",
+  "FORM_SERVICE_OPTION_2": "Back-End Development",
+  "FORM_SERVICE_OPTION_3": "Full Stack Project",
+  "FORM_SERVICE_OPTION_4": "Mobile Application",
+  "FORM_SERVICE_OPTION_5": "Other / Consultancy",
+  "FORM_MESSAGE_LABEL": "Message",
+  "FORM_MESSAGE_PLACEHOLDER": "What's your message?",
+  "FORM_SUBMIT_BUTTON": "Send Message",
+  "FORM_SUCCESS_MESSAGE": "Thank you! Your message has been sent successfully."
 }
