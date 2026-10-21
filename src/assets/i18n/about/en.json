@@ -47,5 +47,16 @@
   "ABOUT_TIMELINE_05_TITLE": "DF Bus App",
   "ABOUT_TIMELINE_05_SUBTITLE": "Mobile app to check buses in the Federal District",
   "ABOUT_TIMELINE_05_DESCRIPTION": "Creation of the DF Bus App using React Native to make it easier to check bus schedules and routes in Brazil’s Federal District. The project was born after a public system was discontinued.",
-  "ABOUT_TIMELINE_05_FOOTER": "“Never standing still...”"
+  "ABOUT_TIMELINE_05_FOOTER": "“Never standing still...”",
+
+  "ABOUT_TIMELINE_06_DATE": "Feb 2026",
+  "ABOUT_TIMELINE_06_TAG": "Reverse Engineering & Rust",
+  "ABOUT_TIMELINE_06_TITLE": "Redragon M719 PRO Suite",
+  "ABOUT_TIMELINE_06_SUBTITLE": "Cross-platform open-source driver and control suite (macOS, Linux & Windows)",
+  "ABOUT_TIMELINE_06_DESCRIPTION": "A project born out of an in-depth reverse engineering process on proprietary OEM drivers and USB HID hardware feature reports. Built from scratch in Rust with a modern GUI in egui/eframe for the Redragon INVADER PRO (M719RGB-PRO) mouse, decoding checksums, directly manipulating onboard EEPROM, and providing custom button mapping, 5-stage DPI calibration, and RGB lighting. The project ports full support to platforms like macOS and Linux, which were not originally supported by Redragon's proprietary software.",
+  "ABOUT_TIMELINE_06_FOOTER": "“Venturing into low-level programming and hardware control...”",
+  "ABOUT_TIMELINE_06_IMG1_CAPTION": "Interactive button mapping, USB polling rate and live battery status",
+  "ABOUT_TIMELINE_06_IMG2_CAPTION": "5-stage DPI calibration with independent X/Y axis sensitivity",
+  "ABOUT_TIMELINE_06_IMG4_CAPTION": "Full RGB lighting engine with multiple modes and custom palette",
+  "ABOUT_TIMELINE_06_IMG5_CAPTION": "Hardware specifications, wireless link status and real-time USB HID diagnostic console"
 }

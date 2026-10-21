@@ -23,8 +23,11 @@
   "PROJECTS_LOKING_DESCRIPTION": "I am always looking for new opportunities to collaborate on exciting projects. If you have an idea or a project that you think I could contribute to, feel free to reach out!",
   "PROJECTS_LOKING_ENTERPRISE": "Contact Me",
 
-
   "PROJECTS_TITLE_PERSONAL": "Personal Projects",
+
+  "PROJECTS_REDRAGON_TITLE": "Redragon M719 PRO Suite",
+  "PROJECTS_REDRAGON_DESCRIPTION": "Born out of reverse engineering of OEM drivers and proprietary USB HID protocols of the Redragon M719RGB-PRO MCU. Built from scratch in Rust to replace legacy software, enabling direct EEPROM manipulation, custom mapping, and porting support to macOS and Linux, platforms originally unsupported by Redragon's proprietary software.",
+  "PROJECTS_REDRAGON_ENTERPRISE": "Personal Project",
 
   "PROJECTS_BUS_TITLE": "BusDF",
   "PROJECTS_BUS_DESCRIPTION": "App for checking schedules, routes, and real-time bus locations in Brasília/DF. Allows you to view nearby stops and plan routes.",

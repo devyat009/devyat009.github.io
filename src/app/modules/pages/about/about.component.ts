@@ -121,6 +121,41 @@ export class AboutComponent implements AfterViewInit, OnInit {
         { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/paradas-proximas.png', alt: 'Projeto Onibus DF', type: 'mobile' },
         { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/configuracoes.png', alt: 'Projeto Confidencial', type: 'mobile' }
       ]
+    },
+    {
+      date: 'ABOUT_TIMELINE_06_DATE',
+      tag: 'ABOUT_TIMELINE_06_TAG',
+      title: 'ABOUT_TIMELINE_06_TITLE',
+      subtitle: 'ABOUT_TIMELINE_06_SUBTITLE',
+      description: 'ABOUT_TIMELINE_06_DESCRIPTION',
+      footer: 'ABOUT_TIMELINE_06_FOOTER',
+      type: 'personal',
+      images: [
+        {
+          src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/redragon_m719_pro/img1.png',
+          alt: 'Redragon Suite - Mapeamento e Bateria',
+          type: 'desktop',
+          caption: 'ABOUT_TIMELINE_06_IMG1_CAPTION'
+        },
+        {
+          src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/redragon_m719_pro/img2.png',
+          alt: 'Redragon Suite - Configuração de DPI',
+          type: 'desktop',
+          caption: 'ABOUT_TIMELINE_06_IMG2_CAPTION'
+        },
+        {
+          src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/redragon_m719_pro/img4.png',
+          alt: 'Redragon Suite - Iluminação RGB',
+          type: 'desktop',
+          caption: 'ABOUT_TIMELINE_06_IMG4_CAPTION'
+        },
+        {
+          src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/redragon_m719_pro/img5.png',
+          alt: 'Redragon Suite - Diagnóstico USB HID',
+          type: 'desktop',
+          caption: 'ABOUT_TIMELINE_06_IMG5_CAPTION'
+        }
+      ]
     }
   ];
   hobbyPhotos: HobbyPhoto[] = [

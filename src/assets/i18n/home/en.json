@@ -5,7 +5,6 @@
   "SUBTITLE": "Welcome, I'm",
   "SUBTITLE_01": ", front-end/backend developer, student and PC enthusiast.",
 
-
   "PROJECTS": "Projects",
   "OR": "or",
   "ABOUT": "About Me",
@@ -16,6 +15,10 @@
 
   "LATEST_PROJECTS": "Latest",
   "LATEST_PROJECTS_SUBTITLE": "projects",
+
+  "PROJECTS_REDRAGON_TITLE": "Redragon M719 PRO Suite",
+  "PROJECTS_REDRAGON_DESCRIPTION": "Developed as a result of hardware and proprietary USB HID protocol reverse engineering, creating an open-source driver and control suite in Rust for the Redragon M719RGB-PRO mouse, porting support to platforms like macOS and Linux which were not originally supported by Redragon's proprietary software.",
+  "PROJECTS_REDRAGON_ENTERPRISE": "GitHub",
 
   "PROJECTS_01_TITLE": "Emprega Transporte",
   "PROJECTS_01_DESCRIPTION": "Job platform for the road transport sector.",

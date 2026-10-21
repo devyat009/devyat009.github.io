@@ -16,6 +16,10 @@
   "LATEST_PROJECTS": "Últimos",
   "LATEST_PROJECTS_SUBTITLE": "projetos",
 
+  "PROJECTS_REDRAGON_TITLE": "Redragon M719 PRO Suite",
+  "PROJECTS_REDRAGON_DESCRIPTION": "Projeto fruto de engenharia reversa de hardware e protocolos USB HID proprietários, criando um driver e suíte de controle em Rust para o mouse Redragon M719RGB-PRO e portando suporte para plataformas como macOS e Linux, que originalmente não eram suportadas pelo software proprietário da Redragon.",
+  "PROJECTS_REDRAGON_ENTERPRISE": "GitHub",
+
   "PROJECTS_01_TITLE": "Emprega Transporte",
   "PROJECTS_01_DESCRIPTION": "Projeto voltado para a integração de vagas de emprego do setor de transporte, com o objetivo de facilitar a busca por oportunidades de trabalho em todo o Brasil.",
   "PROJECTS_01_ENTERPRISE": "SEST SENAT",
@@ -45,7 +49,4 @@
   "IN": "em",
   "COUNTRY": "Brasil",
   "CITY": "Brasília"
-
-
-
 }
