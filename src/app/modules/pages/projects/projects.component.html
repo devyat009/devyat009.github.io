@@ -9,18 +9,28 @@
         <!-- Project Card 01 -->
         <div class="project-card flex rounded-sm shadow-lg overflow-hidden bg-main-light max-w-5xl min-h-[240px] min-w-[350px]">
           <!-- Cover -->
-          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end">
+          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end cursor-pointer group/cover"
+            (click)="openImage('https://publicador.sestsenat.org.br/arquivos/4cb790ab-38d5-43f3-96b8-0f9db1b8fa51_CorteRetangular.png', 'PROJECTS_01_TITLE', 'PROJECTS_01_DESCRIPTION', 'PROJECTS_01_TITLE')">
             <img src="https://publicador.sestsenat.org.br/arquivos/4cb790ab-38d5-43f3-96b8-0f9db1b8fa51_CorteRetangular.png"
-              alt="Emprega Transporte" class="w-full h-full object-cover">
-            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full">
+              alt="Emprega Transporte" class="w-full h-full object-cover transition-transform duration-300 group-hover/cover:scale-105">
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover/cover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+              <span class="p-2 bg-black/60 rounded-full text-white backdrop-blur-sm shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </span>
+            </div>
+            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full z-10">
               <div class="text-white font-bold text-base leading-tight select-none">{{"PROJECTS_01_TITLE" | translate }}</div>
               <div class="flex items-start gap-1">
                 <span class=" text-blue-400 text-sm">{{"PROJECTS_01_ENTERPRISE" | translate}}</span>
-                <a href="https://empregatransporte.sestsenat.org.br" rel="noopener noreferrer" target="_blank" class="text-sm text-blue-400">
+                <a href="https://empregatransporte.sestsenat.org.br" rel="noopener noreferrer" target="_blank" (click)="$event.stopPropagation()" class="text-sm text-blue-400">
                   <i class="material-symbols-outlined align-middle">open_in_new</i>
                 </a>
               </div>
-
             </div>
           </div>
           <!-- Data -->
@@ -29,12 +39,6 @@
               <div>
                 <div class="text-xs text-gray-400">WEBSIS</div>
               </div>
-              <!-- <div class="flex flex-col items-end gap-1">
-                <div class="flex items-center gap-1">
-                  <span class="material-symbols-outlined text-green-400 text-base">sentiment_very_satisfied</span>
-                  <span class="font-semibold text-green-300 text-sm">78%</span>
-                </div>
-              </div> -->
             </div>
             <div class="description my-2 t-fifth text-sm overflow-y-auto max-h-42 w-[175px] break-words pr-2">
               {{"PROJECTS_01_DESCRIPTION" | translate}}
@@ -44,7 +48,6 @@
                 <span class="bg-primary t-primary text-xs font-semibold px-3 py-1 rounded-full select-none">Front End</span>
                 <span class="bg-primary t-primary text-xs font-semibold px-3 py-1 rounded-full select-none">Backend</span>
               </div>
-              <!-- <span class="material-symbols-outlined text-green-400 text-2xl">check_circle</span> -->
             </div>
           </div>
         </div>
@@ -52,14 +55,25 @@
         <!-- Project Card 02 -->
         <div class="project-card flex rounded-sm shadow-lg overflow-hidden bg-main-light max-w-5xl min-h-[240px] min-w-[350px]">
           <!-- Cover -->
-          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end">
+          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end cursor-pointer group/cover"
+            (click)="openImage('assets/img/projects/portalsestsenat.png', 'PROJECTS_02_TITLE', 'PROJECTS_02_DESCRIPTION', 'PROJECTS_02_TITLE')">
             <img src="assets/img/projects/portalsestsenat.png"
-              alt="Portal SEST SENAT" class="w-full h-full object-cover">
-            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full">
+              alt="Portal SEST SENAT" class="w-full h-full object-cover transition-transform duration-300 group-hover/cover:scale-105">
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover/cover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+              <span class="p-2 bg-black/60 rounded-full text-white backdrop-blur-sm shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </span>
+            </div>
+            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full z-10">
               <div class="text-white font-bold text-base leading-tight select-none">{{"PROJECTS_02_TITLE" | translate }}</div>
               <div class="flex items-start gap-1">
                 <span class=" text-blue-400 text-sm">{{"PROJECTS_02_ENTERPRISE" | translate}}</span>
-                <a href="https://www.sestsenat.org.br/" rel="noopener noreferrer" target="_blank" class="text-sm text-blue-400">
+                <a href="https://www.sestsenat.org.br/" rel="noopener noreferrer" target="_blank" (click)="$event.stopPropagation()" class="text-sm text-blue-400">
                   <i class="material-symbols-outlined align-middle">open_in_new</i>
                 </a>
               </div>
@@ -71,12 +85,6 @@
               <div>
                 <div class="text-xs text-gray-400">WEBSIS</div>
               </div>
-              <!-- <div class="flex flex-col items-end gap-1">
-                <div class="flex items-center gap-1">
-                  <span class="material-symbols-outlined text-green-400 text-base">sentiment_very_satisfied</span>
-                  <span class="font-semibold text-green-300 text-sm">78%</span>
-                </div>
-              </div> -->
             </div>
             <div class="description my-2 t-fifth text-sm overflow-y-auto max-h-42 w-[175px] break-words pr-2">
               {{"PROJECTS_02_DESCRIPTION" | translate}}
@@ -86,7 +94,6 @@
                 <span class="bg-primary t-primary text-xs font-semibold px-3 py-1 rounded-full select-none">Front End</span>
                 <span class="bg-primary t-primary text-xs font-semibold px-3 py-1 rounded-full select-none">Backend</span>
               </div>
-              <!-- <span class="material-symbols-outlined text-green-400 text-2xl">check_circle</span> -->
             </div>
           </div>
         </div>
@@ -94,14 +101,25 @@
         <!-- Project Card Mais Motoristas -->
         <div class="project-card flex rounded-sm shadow-lg overflow-hidden bg-main-light max-w-5xl min-h-[240px] min-w-[350px]">
           <!-- Cover -->
-          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end">
+          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end cursor-pointer group/cover"
+            (click)="openImage('assets/img/projects/mais-motoristas.png', 'PROJECTS_MAISMOTORISTAS_TITLE', 'PROJECTS_MAISMOTORISTAS_DESCRIPTION', 'PROJECTS_MAISMOTORISTAS_TITLE')">
             <img src="assets/img/projects/mais-motoristas.png"
-              alt="Mais Motoristas" class="w-full h-full object-cover">
-            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full">
+              alt="Mais Motoristas" class="w-full h-full object-cover transition-transform duration-300 group-hover/cover:scale-105">
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover/cover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+              <span class="p-2 bg-black/60 rounded-full text-white backdrop-blur-sm shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </span>
+            </div>
+            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full z-10">
               <div class="text-white font-bold text-base leading-tight select-none">{{"PROJECTS_MAISMOTORISTAS_TITLE" | translate }}</div>
               <div class="flex items-start gap-1">
                 <span class=" text-blue-400 text-sm">{{"PROJECTS_MAISMOTORISTAS_ENTERPRISE" | translate}}</span>
-                <a href="https://sispac.sestsenat.org.br" rel="noopener noreferrer" target="_blank" class="text-sm text-blue-400">
+                <a href="https://sispac.sestsenat.org.br" rel="noopener noreferrer" target="_blank" (click)="$event.stopPropagation()" class="text-sm text-blue-400">
                   <i class="material-symbols-outlined align-middle">open_in_new</i>
                 </a>
               </div>
@@ -149,12 +167,6 @@
               <div>
                 <div class="text-xs text-gray-400">WEBSIS</div>
               </div>
-              <!-- <div class="flex flex-col items-end gap-1">
-                <div class="flex items-center gap-1">
-                  <span class="material-symbols-outlined text-green-400 text-base">sentiment_very_satisfied</span>
-                  <span class="font-semibold text-green-300 text-sm">78%</span>
-                </div>
-              </div> -->
             </div>
             <div class="description my-2 t-fifth text-sm overflow-y-auto max-h-42 w-[175px] break-words pr-2">
               {{"PROJECTS_03_DESCRIPTION" | translate}}
@@ -164,7 +176,6 @@
                 <span class="bg-primary t-primary text-xs font-semibold px-3 py-1 rounded-full select-none">Front End</span>
                 <span class="bg-primary t-primary text-xs font-semibold px-3 py-1 rounded-full select-none">Backend</span>
               </div>
-              <!-- <span class="material-symbols-outlined text-green-400 text-2xl">check_circle</span> -->
             </div>
           </div>
         </div>
@@ -189,24 +200,14 @@
           <div class="data flex-1 flex flex-col p-2 bg-main-light">
             <div class="flex items-start justify-between gap-2">
               <div>
-                <!-- <div class="text-xs text-gray-400">WEBSIS</div> -->
               </div>
-              <!-- <div class="flex flex-col items-end gap-1">
-                <div class="flex items-center gap-1">
-                  <span class="material-symbols-outlined text-green-400 text-base">sentiment_very_satisfied</span>
-                  <span class="font-semibold text-green-300 text-sm">78%</span>
-                </div>
-              </div> -->
             </div>
             <div class="description my-2 t-fifth text-sm overflow-y-auto max-h-42 w-[175px] break-words pr-2">
               {{"PROJECTS_LOKING_DESCRIPTION" | translate}}
             </div>
             <div class="flex items-center justify-between mt-auto pt-2">
               <div class="flex gap-1 flex-wrap">
-                <!-- <span class="bg-primary t-primary text-xs font-semibold px-3 py-1 rounded-full select-none">Front End</span>
-                <span class="bg-primary t-primary text-xs font-semibold px-3 py-1 rounded-full select-none">Backend</span> -->
               </div>
-              <!-- <span class="material-symbols-outlined text-green-400 text-2xl">check_circle</span> -->
             </div>
           </div>
         </div>
@@ -221,14 +222,25 @@
         <!-- Project Card Redragon INVADER PRO Suite -->
         <div class="project-card flex rounded-sm shadow-lg overflow-hidden bg-main-light max-w-5xl min-h-[240px] max-h-[240px] min-w-[350px]">
           <!-- Cover -->
-          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end">
+          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end cursor-pointer group/cover"
+            (click)="openImage('https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/redragon_m719_pro/img1.png', 'PROJECTS_REDRAGON_TITLE', 'PROJECTS_REDRAGON_DESCRIPTION', 'PROJECTS_REDRAGON_TITLE')">
             <img src="https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/redragon_m719_pro/img1.png"
-              alt="Redragon INVADER PRO Suite" class="w-full h-full object-cover">
-            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full">
+              alt="Redragon INVADER PRO Suite" class="w-full h-full object-cover transition-transform duration-300 group-hover/cover:scale-105">
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover/cover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+              <span class="p-2 bg-black/60 rounded-full text-white backdrop-blur-sm shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </span>
+            </div>
+            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full z-10">
               <div class="text-white font-bold text-base leading-tight select-none">{{"PROJECTS_REDRAGON_TITLE" | translate }}</div>
               <div class="flex items-start gap-1">
                 <span class=" text-blue-400 text-sm">{{"PROJECTS_REDRAGON_ENTERPRISE" | translate}}</span>
-                <a href="https://github.com/devyat009/redragon_m719_pro" rel="noopener noreferrer" target="_blank" class="text-sm text-blue-400">
+                <a href="https://github.com/devyat009/redragon_m719_pro" rel="noopener noreferrer" target="_blank" (click)="$event.stopPropagation()" class="text-sm text-blue-400">
                   <i class="material-symbols-outlined align-middle">open_in_new</i>
                 </a>
               </div>
@@ -256,18 +268,28 @@
         <!-- Project Card 01 -->
         <div class="project-card flex rounded-sm shadow-lg overflow-hidden bg-main-light max-w-5xl min-h-[240px] max-h-[240px] min-w-[350px]">
           <!-- Cover -->
-          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end">
+          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end cursor-pointer group/cover"
+            (click)="openImage('https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/map.png', 'PROJECTS_BUS_TITLE', 'PROJECTS_BUS_DESCRIPTION', 'PROJECTS_BUS_TITLE')">
             <img src="https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/map.png"
-              alt="OnibusDf" class="w-full h-full object-cover">
-            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full">
+              alt="OnibusDf" class="w-full h-full object-cover transition-transform duration-300 group-hover/cover:scale-105">
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover/cover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+              <span class="p-2 bg-black/60 rounded-full text-white backdrop-blur-sm shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </span>
+            </div>
+            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full z-10">
               <div class="text-white font-bold text-base leading-tight select-none">{{"PROJECTS_BUS_TITLE" | translate }}</div>
               <div class="flex items-start gap-1">
                 <span class=" text-blue-400 text-sm">{{"PROJECTS_BUS_ENTERPRISE" | translate}}</span>
-                <a href="https://github.com/devyat009/onibus-df-app" rel="noopener noreferrer" target="_blank" class="text-sm text-blue-400">
+                <a href="https://github.com/devyat009/onibus-df-app" rel="noopener noreferrer" target="_blank" (click)="$event.stopPropagation()" class="text-sm text-blue-400">
                   <i class="material-symbols-outlined align-middle">open_in_new</i>
                 </a>
               </div>
-
             </div>
           </div>
           <!-- Data -->
@@ -276,12 +298,6 @@
               <div>
                 <div class="text-xs text-gray-400">{{"PROJECTS_BUS_ENTERPRISE" | translate}}</div>
               </div>
-              <!-- <div class="flex flex-col items-end gap-1">
-                <div class="flex items-center gap-1">
-                  <span class="material-symbols-outlined text-green-400 text-base">sentiment_very_satisfied</span>
-                  <span class="font-semibold text-green-300 text-sm">78%</span>
-                </div>
-              </div> -->
             </div>
             <div class="description my-2 t-fifth text-sm overflow-y-auto max-h-42 w-[175px] break-words pr-2">
               {{"PROJECTS_BUS_DESCRIPTION" | translate}}
@@ -291,7 +307,6 @@
                 <span class="bg-primary t-primary text-xs font-semibold px-3 py-1 rounded-full select-none">Mobile</span>
                 <span class="bg-primary t-primary text-xs font-semibold px-3 py-1 rounded-full select-none">Android/iOS</span>
               </div>
-              <!-- <span class="material-symbols-outlined text-green-400 text-2xl">check_circle</span> -->
             </div>
           </div>
         </div>
@@ -299,18 +314,28 @@
         <!-- Project Card 02 -->
         <div class="project-card flex rounded-sm shadow-lg overflow-hidden bg-main-light max-w-5xl min-h-[240px] max-h-[240px] min-w-[350px]">
           <!-- Cover -->
-          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end">
+          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end cursor-pointer group/cover"
+            (click)="openImage('assets/img/projects/personal/beautyGlow.png', 'PROJECTS_BEAUTYGLOW_TITLE', 'PROJECTS_BEAUTYGLOW_DESCRIPTION', 'PROJECTS_BEAUTYGLOW_TITLE')">
             <img src="assets/img/projects/personal/beautyGlow.png"
-              alt="BeautyGlow - SENAC-DF" class="w-full h-full object-cover">
-            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full">
+              alt="BeautyGlow - SENAC-DF" class="w-full h-full object-cover transition-transform duration-300 group-hover/cover:scale-105">
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover/cover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+              <span class="p-2 bg-black/60 rounded-full text-white backdrop-blur-sm shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </span>
+            </div>
+            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full z-10">
               <div class="text-white font-bold text-base leading-tight select-none">{{"PROJECTS_BEAUTYGLOW_TITLE" | translate}}</div>
               <div class="flex items-start gap-1">
                 <span class=" text-blue-400 text-sm">{{"PROJECTS_BEAUTYGLOW_ENTERPRISE" | translate}}</span>
-                <a href="https://senac-df-ceps.github.io/b-beautyglow-HigorS009/" rel="noopener noreferrer" target="_blank" class="text-sm text-blue-400">
+                <a href="https://senac-df-ceps.github.io/b-beautyglow-HigorS009/" rel="noopener noreferrer" target="_blank" (click)="$event.stopPropagation()" class="text-sm text-blue-400">
                   <i class="material-symbols-outlined align-middle">open_in_new</i>
                 </a>
               </div>
-
             </div>
           </div>
           <!-- Data -->
@@ -335,18 +360,28 @@
         <!-- Project Card 03 -->
         <div class="project-card flex rounded-sm shadow-lg overflow-hidden bg-main-light max-w-5xl min-h-[240px] max-h-[240px] min-w-[350px]">
           <!-- Cover -->
-          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end">
+          <div class="cover relative w-1/2 min-w-[140px] flex flex-col justify-end cursor-pointer group/cover"
+            (click)="openImage('https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/devyat009.github.io/smartHome/version01/painelInicial.jpeg', 'PROJECTS_SMARTHOME_TITLE', 'PROJECTS_SMARTHOME_DESCRIPTION', 'PROJECTS_SMARTHOME_TITLE')">
             <img src="https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/devyat009.github.io/smartHome/version01/painelInicial.jpeg"
-              alt="SmartHome - SENAC-DF" class="w-full h-full object-cover">
-            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full">
+              alt="SmartHome - SENAC-DF" class="w-full h-full object-cover transition-transform duration-300 group-hover/cover:scale-105">
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover/cover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+              <span class="p-2 bg-black/60 rounded-full text-white backdrop-blur-sm shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  <line x1="11" y1="8" x2="11" y2="14"></line>
+                  <line x1="8" y1="11" x2="14" y2="11"></line>
+                </svg>
+              </span>
+            </div>
+            <div class="p-3 bg-gradient-to-t from-black/90 to-transparent absolute bottom-0 left-0 w-full z-10">
               <div class="text-white font-bold text-base leading-tight select-none">{{"PROJECTS_SMARTHOME_TITLE" | translate}}</div>
               <div class="flex items-start gap-1">
                 <span class=" text-blue-400 text-sm">{{"PROJECTS_SMARTHOME_ENTERPRISE" | translate}}</span>
-                <a href="https://devyat009.github.io/smartHome/" rel="noopener noreferrer" target="_blank" class="text-sm text-blue-400">
+                <a href="https://devyat009.github.io/smartHome/" rel="noopener noreferrer" target="_blank" (click)="$event.stopPropagation()" class="text-sm text-blue-400">
                   <i class="material-symbols-outlined align-middle">open_in_new</i>
                 </a>
               </div>
-
             </div>
           </div>
           <!-- Data -->

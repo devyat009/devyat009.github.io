@@ -3,6 +3,7 @@ import { Component, ElementRef, QueryList, ViewChildren, ViewChild, AfterViewIni
 import { TranslateModule } from "@ngx-translate/core";
 import { FooterComponent } from "src/app/shared/components/footer/footer.component";
 import { StarsComponent } from "src/app/shared/components/stars/stars.component";
+import { ImageModalService } from "src/app/shared/services/image-modal.service";
 
 interface TimelineImage {
   src: string;
@@ -183,6 +184,12 @@ export class AboutComponent implements AfterViewInit, OnInit {
       ? 'h-[260px] sm:h-[320px] lg:h-[360px]'
       : 'h-[220px] sm:h-[260px]';
     return photo.customCss ? `${baseHeights} ${photo.customCss}` : baseHeights;
+  }
+
+  constructor(private imageModalService: ImageModalService) {}
+
+  openImage(src: string, alt?: string, caption?: string, title?: string) {
+    this.imageModalService.open({ src, alt, caption, title });
   }
 
   ngOnInit() {
