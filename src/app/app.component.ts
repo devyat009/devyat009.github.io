@@ -1,4 +1,4 @@
-import { Component, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError, RouterModule } from '@angular/router';
 import { ThemeService } from './shared/services/theming.service';
 import { NavBarComponent } from "./shared/components/nav-bar/nav-bar.component";
@@ -31,20 +31,15 @@ export class AppComponent {
   ) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) this.loading = true;
-      if (event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError)
-        {
-          this.loading = false;
-          const lang = this.storageService.get('language') || 'pt-br';
-          this.translationService.loadPageTranslations(lang, this.translationService.getCurrentPage());
-        }
+      if (event instanceof NavigationEnd || event instanceof NavigationCancel || event instanceof NavigationError) {
+        this.loading = false;
+      }
     });
   }
 
   ngOnInit() {
-    this.loading = true;
     this.themeService.initializeTheme();
     this.translationService.initializeTranslations();
-    this.loading = false;
     if (isPlatformBrowser(this.platformId)) {
       const redirect = sessionStorage.getItem('redirect');
       if (redirect) {
@@ -53,13 +48,12 @@ export class AppComponent {
       }
     }
   }
+
   setTheme(theme: 'theme-light' | 'theme-dark', saveToStorage: boolean = true) {
     this.themeService.setTheme(theme, false);
   }
 
   switchLanguage(language: string): void {
-    this.translationService.changeLanguageByUrl(language);
-    this.translationService.changeLanguage(language, 'nav-bar');
-    this.translationService.changeLanguage(language, 'not-found');
+    this.translationService.changeLanguage(language);
   }
 }
