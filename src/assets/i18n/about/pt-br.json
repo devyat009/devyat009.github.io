@@ -47,5 +47,16 @@
   "ABOUT_TIMELINE_05_TITLE": "Onibus DF App",
   "ABOUT_TIMELINE_05_SUBTITLE": "Projeto de aplicativo mobile para consulta de ônibus no Distrito Federal",
   "ABOUT_TIMELINE_05_DESCRIPTION": "A criação do Onibus DF App utilizando React Native para facilitar a consulta de horários e itinerários de ônibus no Distrito Federal, projeto nasce quando um sistema publico havia-se descontinuado.",
-  "ABOUT_TIMELINE_05_FOOTER": "“Não ficar parado nunca...”"
+  "ABOUT_TIMELINE_05_FOOTER": "“Não ficar parado nunca...”",
+
+  "ABOUT_TIMELINE_06_DATE": "Fev 2026",
+  "ABOUT_TIMELINE_06_TAG": "Engenharia Reversa & Rust",
+  "ABOUT_TIMELINE_06_TITLE": "Redragon M719 PRO Suite",
+  "ABOUT_TIMELINE_06_SUBTITLE": "Driver open-source e suíte de controle multiplataforma (macOS, Linux e Windows)",
+  "ABOUT_TIMELINE_06_DESCRIPTION": "Projeto fruto de um processo aprofundado de engenharia reversa sobre os drivers proprietários OEM e relatórios de hardware USB HID. Desenvolvido do zero em Rust com interface gráfica moderna em egui/eframe para o mouse Redragon INVADER PRO (M719RGB-PRO), decodificando checksums, manipulando a EEPROM onboard e permitindo remapeamento de botões, calibração de DPI e iluminação RGB. O projeto portou o suporte para plataformas como macOS e Linux, que originalmente não eram suportadas pelo software proprietário da Redragon.",
+  "ABOUT_TIMELINE_06_FOOTER": "“Desbravando o baixo nível e controle de hardware...”",
+  "ABOUT_TIMELINE_06_IMG1_CAPTION": "Mapeamento interativo de botões, taxa de polling e telemetria de bateria",
+  "ABOUT_TIMELINE_06_IMG2_CAPTION": "Calibração de 5 estágios de DPI e sensibilidade independente dos eixos X/Y",
+  "ABOUT_TIMELINE_06_IMG4_CAPTION": "Engine completa de iluminação RGB com múltiplos modos e paleta customizada",
+  "ABOUT_TIMELINE_06_IMG5_CAPTION": "Informações de hardware, status do link sem fio e console de diagnóstico USB HID"
 }

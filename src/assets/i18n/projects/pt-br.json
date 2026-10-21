@@ -25,6 +25,10 @@
 
   "PROJECTS_TITLE_PERSONAL": "Projetos Pessoais",
 
+  "PROJECTS_REDRAGON_TITLE": "Redragon M719 PRO Suite",
+  "PROJECTS_REDRAGON_DESCRIPTION": "Fruto de engenharia reversa dos drivers OEM e protocolos USB HID da MCU do mouse Redragon M719RGB-PRO. Construído em Rust para substituir o software legado, permitindo controle de EEPROM e mapeamento de perfis, além de portar suporte nativo a plataformas como macOS e Linux, que originalmente não eram suportadas pelo software proprietário da Redragon.",
+  "PROJECTS_REDRAGON_ENTERPRISE": "Projeto Pessoal",
+
   "PROJECTS_BUS_TITLE": "ÔnibusDF",
   "PROJECTS_BUS_DESCRIPTION": "Aplicativo para consulta de horários, itinerários e localização de ônibus em tempo real no Distrito Federal. Permite visualizar paradas próximas e planejar rotas.",
   "PROJECTS_BUS_ENTERPRISE": "Projeto Pessoal",
