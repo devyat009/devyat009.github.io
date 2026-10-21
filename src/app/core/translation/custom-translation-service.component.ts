@@ -7,8 +7,9 @@ const fs = require('fs');
 
 export class CustomTranslateLoader implements TranslateLoader {
   constructor(
-    // Point to the 'i18n' folder inside the final build output directory ('docs')
-    private i18n_folder: string = join(process.cwd(), 'docs', 'assets', 'i18n')
+    private i18n_folder: string = fs.existsSync(join(process.cwd(), 'src', 'assets', 'i18n'))
+      ? join(process.cwd(), 'src', 'assets', 'i18n')
+      : join(process.cwd(), 'docs', 'browser', 'assets', 'i18n')
   ) {}
 
   public getTranslation(lang: string): Observable<any> {

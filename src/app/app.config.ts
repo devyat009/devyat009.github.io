@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, inject, provideAppInitializer, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -6,11 +6,11 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { SharedTranslationService } from './core/translation/shared-translation-service.component';
 import { TranslateModule, TranslateService, TranslateLoader, TranslateStore } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { importProvidersFrom } from '@angular/core';
+import { MultiFileTranslateLoader } from './core/translation/multi-file-translate-loader';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new MultiFileTranslateLoader(http);
 }
 
 export const appConfig: ApplicationConfig = {
@@ -20,12 +20,17 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     importProvidersFrom(HttpClientModule),
     importProvidersFrom(TranslateModule.forRoot({
+      defaultLanguage: 'pt-br',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient],
       },
     })),
+    provideAppInitializer(() => {
+      const translationService = inject(SharedTranslationService);
+      return translationService.initializeTranslations();
+    }),
     TranslateService,
     TranslateStore,
     SharedTranslationService,
