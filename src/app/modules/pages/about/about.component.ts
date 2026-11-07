@@ -53,9 +53,11 @@ interface HobbyPhoto {
 export class AboutComponent implements AfterViewInit, OnInit {
   @ViewChildren('sectionsRef') sections!: QueryList<ElementRef<HTMLDivElement>>;
   @ViewChildren('dateItem') dateItems!: QueryList<ElementRef<HTMLLIElement>>;
+  @ViewChild('datesContainer') datesContainer?: ElementRef<HTMLUListElement>;
   @ViewChild('contentScroll') contentScroll!: ElementRef<HTMLDivElement>;
 
   isMobile = false;
+  private lastActiveMobileIdx = -1;
 
   timelineItems: TimelineItem[] = [
     {
@@ -232,10 +234,9 @@ export class AboutComponent implements AfterViewInit, OnInit {
 
     if (this.isMobile) {
       targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      const activeDateEl = this.dateItems?.toArray()[index]?.nativeElement;
-      if (activeDateEl) {
-        activeDateEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-      }
+      this.timelineItems.forEach((item, i) => (item.active = i === index));
+      this.lastActiveMobileIdx = index;
+      this.centerActiveDate(index, true);
     } else {
       const container = this.contentScroll?.nativeElement;
       if (container) {
@@ -243,6 +244,28 @@ export class AboutComponent implements AfterViewInit, OnInit {
         container.scrollTo({ top: topPos, behavior: 'smooth' });
       }
     }
+  }
+
+  private centerActiveDate(index: number, smooth = true) {
+    const container = this.datesContainer?.nativeElement;
+    const items = this.dateItems?.toArray();
+    if (!container || !items || !items[index]) return;
+
+    const dateEl = items[index].nativeElement;
+    const containerRect = container.getBoundingClientRect();
+    const dateRect = dateEl.getBoundingClientRect();
+
+    const targetLeft =
+      dateRect.left -
+      containerRect.left +
+      container.scrollLeft -
+      container.clientWidth / 2 +
+      dateRect.width / 2;
+
+    container.scrollTo({
+      left: Math.max(0, targetLeft),
+      behavior: smooth ? 'smooth' : 'auto',
+    });
   }
 
   ngOnInit() {
@@ -292,6 +315,7 @@ export class AboutComponent implements AfterViewInit, OnInit {
     const wasMobile = this.isMobile;
     this.evaluateViewport();
     if (wasMobile !== this.isMobile) {
+      this.lastActiveMobileIdx = -1;
       setTimeout(() => {
         this.updateSections(true);
         this.updateProgress();
@@ -355,32 +379,55 @@ export class AboutComponent implements AfterViewInit, OnInit {
     if (this.isMobile) {
       if (typeof window === 'undefined') return;
       const viewportHeight = window.innerHeight || 0;
-      let anyVisible = false;
+      const sectionsArray = this.sections.toArray();
+      const firstRect = sectionsArray[0].nativeElement.getBoundingClientRect();
+      const lastRect = sectionsArray[sectionsArray.length - 1].nativeElement.getBoundingClientRect();
 
-      this.sections.forEach((ref, idx) => {
-        const rect = ref.nativeElement.getBoundingClientRect();
-        const visible =
-          rect.top < viewportHeight * 0.65 &&
-          rect.bottom > viewportHeight * 0.15;
+      let activeIndex = -1;
 
-        if (initial && idx === 0) {
-          this.timelineItems[idx].active = true;
-          anyVisible = true;
-          return;
+      // When scrolled past the entire timeline (e.g. into Hobbies or Footer)
+      if (lastRect.bottom <= viewportHeight * 0.2) {
+        activeIndex = this.timelineItems.length - 1;
+      } else if (firstRect.top >= viewportHeight * 0.65) {
+        // Timeline hasn't been scrolled into view yet
+        activeIndex = 0;
+      } else {
+        // Choose the section closest to reading focus (~35% from viewport top, below sticky timeline bar)
+        const focusY = viewportHeight * 0.35;
+        let closestDist = Infinity;
+
+        sectionsArray.forEach((ref, idx) => {
+          const rect = ref.nativeElement.getBoundingClientRect();
+          const visible =
+            rect.top < viewportHeight * 0.7 &&
+            rect.bottom > viewportHeight * 0.15;
+
+          if (visible) {
+            const sectionCenter = (rect.top + rect.bottom) / 2;
+            const dist = Math.abs(sectionCenter - focusY);
+            if (dist < closestDist) {
+              closestDist = dist;
+              activeIndex = idx;
+            }
+          }
+        });
+
+        if (activeIndex === -1) {
+          activeIndex = this.lastActiveMobileIdx >= 0 ? this.lastActiveMobileIdx : 0;
         }
+      }
 
-        this.timelineItems[idx].active = visible;
-        if (visible) anyVisible = true;
+      if (initial) {
+        activeIndex = 0;
+      }
+
+      this.timelineItems.forEach((item, idx) => {
+        item.active = idx === activeIndex;
       });
 
-      if (!anyVisible) this.timelineItems[0].active = true;
-
-      const activeIdx = this.timelineItems.findIndex((item) => item.active);
-      if (activeIdx >= 0 && this.dateItems?.length) {
-        const activeDateEl = this.dateItems.toArray()[activeIdx]?.nativeElement;
-        if (activeDateEl) {
-          activeDateEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
+      if (activeIndex !== this.lastActiveMobileIdx) {
+        this.lastActiveMobileIdx = activeIndex;
+        this.centerActiveDate(activeIndex, !initial);
       }
       return;
     }
@@ -413,24 +460,4 @@ export class AboutComponent implements AfterViewInit, OnInit {
 
     if (!anyVisible) this.timelineItems[0].active = true;
   }
-
-  // private updateProgress() {
-  //   const doc = document.documentElement;
-  //   const scrollTop = window.scrollY || doc.scrollTop;
-  //   console.log('scrollTop', scrollTop);
-  //   const scrollHeight = doc.scrollHeight - doc.clientHeight;
-  //   console.log('scrollHeight', scrollHeight);
-  //   this.progressPercent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-  //   console.log('progressPercent', this.progressPercent);
-  // }
-
-  // private updateSections() {
-  //   if (!this.sections) return;
-  //   const viewportHeight = window.innerHeight;
-  //   this.sections.forEach((ref, idx) => {
-  //     const rect = ref.nativeElement.getBoundingClientRect();
-  //     const visible = rect.top < viewportHeight * 0.65 && rect.bottom > viewportHeight * 0.2;
-  //     this.timelineItems[idx].active = visible;
-  //   });
-  // }
 }
