@@ -1,28 +1,20 @@
-import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Output, Renderer2 } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
-import { ThemeService } from '../../services/theming.service';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenubarModule } from 'primeng/menubar';
-import { ToolbarModule } from 'primeng/toolbar';
-import { ToggleButtonModule } from 'primeng/togglebutton';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { ThemeService } from '../../services/theming.service';
 import { StorageService } from '../../services/storageService.service';
-import { Router, RouterLink } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { SharedTranslationService } from 'src/app/core/translation/shared-translation-service.component';
-import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'nav-bar-component',
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
   imports: [
-    ButtonModule,
     CommonModule,
-    MenubarModule,
-    ToolbarModule,
-    ToggleButtonModule,
     TranslateModule,
     RouterLink,
+    RouterLinkActive
   ],
 })
 export class NavBarComponent {
@@ -51,7 +43,7 @@ export class NavBarComponent {
 
   changeTheme(theme: boolean) {
     this.theme = theme;
-    this._themeService.setTheme(theme? 'theme-dark' : 'theme-light');
+    this._themeService.setTheme(theme ? 'theme-dark' : 'theme-light');
   }
 
   onSwitchLanguage(language: string) {
@@ -69,5 +61,4 @@ export class NavBarComponent {
       this.showMobileMenu = false;
     }
   }
-
 }

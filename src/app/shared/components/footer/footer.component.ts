@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -10,9 +9,10 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [TranslateModule],
 })
 export class FooterComponent {
-  constructor() {
+  readonly currentYear: number = new Date().getFullYear();
 
-  }
+  constructor() {}
+
   ngOnInit() {
     // Any initialization logic can go here
   }

@@ -1,45 +1,55 @@
-<div class="bg-main-light grid grid-cols-12 gap-4 py-4 shadow-md rounded-bl-sm rounded-br-sm">
-  <div class="col-span-12">
-    <div class="flex justify-between items-center w-full">
-      <div class="ml-2 flex flex-col">
-          <!-- <h1 class="text-2xl font-bold t-secondary ml-2 mr-6 inline-block select-none ">Higor Stanley</h1> -->
-          <a routerLink="/" class="text-2xl font-bold t-secondary ml-2 mr-6 inline-block select-none hover:underline">
-            <img src="assets/img/logo/logo.png" alt="Logo Higor Stanley" class="h-10 inline-block mr-2 relative top-[2px]"/>
-          </a>
+<header class="nav-bar-container w-full py-2.5 px-4 md:px-8 shadow-sm">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+
+    <!-- Left: Brand Logo -->
+    <div class="flex items-center flex-shrink-0">
+      <a routerLink="/" class="nav-brand group flex items-center gap-2 select-none" aria-label="Devyat">
+        <img src="assets/img/logo/logo3.webp" alt="Logo Higor Stanley" class="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"/>
+      </a>
+    </div>
+
+    <!-- Center: Modern Centered Navigation Dock -->
+    <nav class="hidden md:flex items-center justify-center flex-1">
+      <div class="nav-dock flex items-center gap-1 p-1 rounded-full">
+
+        <a routerLink="/"
+           routerLinkActive="active"
+           [routerLinkActiveOptions]="{ exact: true }"
+           class="nav-link group relative flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium">
+          <i class="material-symbols-outlined nav-icon text-xl">dashboard</i>
+          <span class="nav-label">{{ 'HOME' | translate }}</span>
+        </a>
+
+        <a routerLink="/projects"
+           routerLinkActive="active"
+           class="nav-link group relative flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium">
+          <i class="material-symbols-outlined nav-icon text-xl">work</i>
+          <span class="nav-label">{{ 'PROJECTS' | translate }}</span>
+        </a>
+
+        <a routerLink="/about"
+           routerLinkActive="active"
+           class="nav-link group relative flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium">
+          <i class="material-symbols-outlined nav-icon text-xl">person</i>
+          <span class="nav-label">{{ 'ABOUT' | translate }}</span>
+        </a>
+
+        <a routerLink="/contact"
+           routerLinkActive="active"
+           class="nav-link group relative flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium">
+          <i class="material-symbols-outlined nav-icon text-xl">contact_mail</i>
+          <span class="nav-label">{{ 'CONTACT' | translate }}</span>
+        </a>
+
       </div>
-      <!-- Menu Desktop -->
-      <div class="flex items-center w-full hidden md:flex">
-        <div class="mr-2 ml-2">
-          <p-button label="{{ 'HOME' | translate }}" routerLink="/" styleClass="bt-primary text-xl flex flex-col items-center justify-center">
-            <ng-template pTemplate="icon">
-              <i class="material-symbols-outlined text-3xl">dashboard</i>
-            </ng-template>
-          </p-button>
-        </div>
-        <div class="mr-2 ml-2">
-          <p-button label="{{ 'PROJECTS' | translate }}" routerLink="/projects" styleClass="bt-primary text-xl flex flex-col items-center justify-center">
-            <ng-template pTemplate="icon" class="ml-3">
-              <i class="material-symbols-outlined text-3xl align-middle">work</i>
-            </ng-template>
-          </p-button>
-        </div>
-        <div class="mr-2 ml-2">
-          <p-button label="{{ 'ABOUT' | translate }}" routerLink="/about" styleClass="bt-primary text-xl flex flex-col items-center justify-center">
-            <ng-template pTemplate="icon">
-              <i class="material-symbols-outlined text-3xl align-middle">person</i>
-            </ng-template>
-          </p-button>
-        </div>
-        <div class="mr-2 ml-2">
-          <p-button label="{{ 'CONTACT' | translate }}" routerLink="/contact" styleClass="bt-primary text-xl flex flex-col items-center justify-center group">
-            <ng-template pTemplate="icon">
-              <i class="material-symbols-outlined text-3xl align-middle group-hover:hidden">contact_mail</i>
-            </ng-template>
-          </p-button>
-        </div>
-      </div>
-      <div class="mr-6 hidden md:flex">
-        <div class="language-switcher" (click)="onSwitchLanguage(currentLang === 'pt-br' ? 'en' : 'pt-br')">
+    </nav>
+
+    <!-- Right: Controls (Language Switcher, Theme Toggle & Mobile Trigger) -->
+    <div class="flex items-center gap-2 md:gap-3 flex-shrink-0">
+
+      <!-- Language Switcher (Desktop) -->
+      <div class="hidden md:flex items-center">
+        <div class="language-switcher" (click)="onSwitchLanguage(currentLang === 'pt-br' ? 'en' : 'pt-br')" role="button" tabindex="0">
           <span class="flip-text">
             <span class="front">{{ currentLang === 'pt-br' ? 'PT-BR' : 'EN' }}</span>
             <span class="back">{{ currentLang === 'pt-br' ? 'EN' : 'PT-BR' }}</span>
@@ -47,51 +57,88 @@
           <i class="material-symbols-outlined switch-icon">swap_horiz</i>
         </div>
       </div>
-      <div class="mr-6 hidden md:flex">
-        <p-button label="{{theme ? '' : ''}}" (onClick)="changeTheme(!theme); animateIcon = true" styleClass="p-button-rounded px-24 py-24 text-xl flex items-center justify-center">
-          <ng-template pTemplate="icon">
-            <i *ngIf="theme === false" [ngClass]="{'icon-animate': animateIcon}" (animationend)="animateIcon = false"
-              class="material-symbols-outlined text-3xl align-middle relative top-[0px]">bedtime</i>
-            <i *ngIf="theme === true" [ngClass]="{'icon-animate': animateIcon}" (animationend)="animateIcon = false"
-              class="material-symbols-outlined text-3xl align-middle relative top-[0px]">bedtime_off</i>
-          </ng-template>
-        </p-button>
+
+      <!-- Theme Toggle (Desktop) -->
+      <div class="hidden md:flex items-center">
+        <button type="button"
+                (click)="changeTheme(!theme); animateIcon = true"
+                class="action-btn theme-toggle-btn group"
+                [attr.title]="theme ? ('THEME_LIGHT' | translate) : ('THEME_DARK' | translate)"
+                [attr.aria-label]="theme ? ('THEME_LIGHT' | translate) : ('THEME_DARK' | translate)">
+          <i *ngIf="!theme"
+             [ngClass]="{'icon-spin': animateIcon}"
+             (animationend)="animateIcon = false"
+             class="material-symbols-outlined text-2xl transition-transform duration-300">bedtime</i>
+          <i *ngIf="theme"
+             [ngClass]="{'icon-spin': animateIcon}"
+             (animationend)="animateIcon = false"
+             class="material-symbols-outlined text-2xl transition-transform duration-300">bedtime_off</i>
+        </button>
       </div>
 
-      <!--Menu mobile -->
+      <!-- Mobile Menu Hamburger Button -->
       <div class="md:hidden flex items-center">
-        <p-button (click)="showMobileMenu = !showMobileMenu" class="p-2 rounded bg-transparent hover:bg-gray-200 transition">
-          <span class="mr-2">Menu</span>
-          <ng-template pTemplate="icon">
-            <i class="material-symbols-outlined text-3xl">menu</i>
-          </ng-template>
-        </p-button>
+        <button type="button"
+                (click)="showMobileMenu = !showMobileMenu"
+                class="action-btn mobile-menu-btn group"
+                aria-label="Menu">
+          <i class="material-symbols-outlined text-2xl transition-transform duration-300"
+             [ngClass]="{'rotate-90': showMobileMenu}">
+            {{ showMobileMenu ? 'close' : 'menu' }}
+          </i>
+        </button>
       </div>
-      <!-- Menu mobile dropdown -->
-      <div *ngIf="showMobileMenu"
-        class="md:hidden mt-2 bg-main-light rounded shadow-lg p-4 z-50 absolute top-12 right-0 w-64">
-        <p-button class="block w-full text-left py-2" (click)="navigateTo('/'); showMobileMenu = false">{{ 'HOME' | translate }}</p-button>
-        <p-button class="block w-full text-left py-2" (click)="navigateTo('/projects'); showMobileMenu = false">{{ 'PROJECTS' | translate }}</p-button>
-        <p-button class="block w-full text-left py-2" (click)="navigateTo('/about'); showMobileMenu = false">{{ 'ABOUT' | translate }}</p-button>
-        <p-button class="block w-full text-left py-2" (click)="navigateTo('/contact'); showMobileMenu = false">{{ 'CONTACT' | translate }}</p-button>
-        <div class="language-switcher" (click)="onSwitchLanguage(currentLang === 'pt-br' ? 'en' : 'pt-br')">
-          <span class="flip-text flex justify-start">
-            <span class="front">{{ currentLang === 'pt-br' ? 'PT-BR' : 'EN' }}</span>
-            <span class="back">{{ currentLang === 'pt-br' ? 'EN' : 'PT-BR' }}</span>
-          </span>
-          <i class="material-symbols-outlined switch-icon">swap_horiz</i>
-        </div>
-        <p-button
-          (onClick)="changeTheme(!theme); animateIcon = true"
-          styleClass="p-button-rounded text-xl whitespace-nowrap max-w-full">
-          <span class="ml-21 mr-2">{{theme ? ('THEME_LIGHT' | translate) : ('THEME_DARK' | translate)}}</span>
-          <ng-template pTemplate="icon">
-            <i *ngIf="theme === false" [ngClass]="{'icon-animate': animateIcon}" (animationend)="animateIcon = false"
-              class="material-symbols-outlined text-3xl align-middle relative top-[0px]">bedtime</i>
-            <i *ngIf="theme === true" [ngClass]="{'icon-animate': animateIcon}" (animationend)="animateIcon = false"
-              class="material-symbols-outlined text-3xl align-middle relative top-[0px]">bedtime_off</i>
-          </ng-template>
-        </p-button>
+
+    </div>
+
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div *ngIf="showMobileMenu"
+       class="md:hidden mt-3 mx-2 mobile-menu-dropdown rounded-2xl shadow-xl p-4 flex flex-col gap-2">
+    <a (click)="navigateTo('/'); showMobileMenu = false"
+       class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-base font-medium">
+      <i class="material-symbols-outlined text-xl">dashboard</i>
+      <span>{{ 'HOME' | translate }}</span>
+    </a>
+    <a (click)="navigateTo('/projects'); showMobileMenu = false"
+       class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-base font-medium">
+      <i class="material-symbols-outlined text-xl">work</i>
+      <span>{{ 'PROJECTS' | translate }}</span>
+    </a>
+    <a (click)="navigateTo('/about'); showMobileMenu = false"
+       class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-base font-medium">
+      <i class="material-symbols-outlined text-xl">person</i>
+      <span>{{ 'ABOUT' | translate }}</span>
+    </a>
+    <a (click)="navigateTo('/contact'); showMobileMenu = false"
+       class="mobile-nav-link flex items-center gap-3 px-3 py-2.5 rounded-xl text-base font-medium">
+      <i class="material-symbols-outlined text-xl">contact_mail</i>
+      <span>{{ 'CONTACT' | translate }}</span>
+    </a>
+
+    <div class="border-t border-[var(--glass-border)] my-1 pt-3 flex items-center justify-between px-2">
+      <div class="language-switcher" (click)="onSwitchLanguage(currentLang === 'pt-br' ? 'en' : 'pt-br')">
+        <span class="flip-text">
+          <span class="front">{{ currentLang === 'pt-br' ? 'PT-BR' : 'EN' }}</span>
+          <span class="back">{{ currentLang === 'pt-br' ? 'EN' : 'PT-BR' }}</span>
+        </span>
+        <i class="material-symbols-outlined switch-icon">swap_horiz</i>
+      </div>
+
+      <button type="button"
+              (click)="changeTheme(!theme); animateIcon = true"
+              class="action-btn theme-toggle-btn"
+              [attr.aria-label]="theme ? ('THEME_LIGHT' | translate) : ('THEME_DARK' | translate)">
+        <i *ngIf="!theme"
+           [ngClass]="{'icon-spin': animateIcon}"
+           (animationend)="animateIcon = false"
+           class="material-symbols-outlined text-xl">bedtime</i>
+        <i *ngIf="theme"
+           [ngClass]="{'icon-spin': animateIcon}"
+           (animationend)="animateIcon = false"
+           class="material-symbols-outlined text-xl">bedtime_off</i>
+      </button>
     </div>
   </div>
-</div>
+</header>

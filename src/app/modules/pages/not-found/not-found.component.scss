@@ -1,91 +1,143 @@
 .notfound-bg {
   position: relative;
   min-height: 100vh;
-  background: var(--background-color);
+  background: transparent;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.stars {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.star {
-  position: absolute;
-  border-radius: 50%;
-  background: var(--star-color, #bbb);
-  opacity: 0.8;
-  animation: star-blink 2.5s infinite alternate;
-}
-
-body.theme-dark .star {
-  --star-color: #fff;
-}
-body.theme-light .star {
-  --star-color: #bbb;
-}
-
-@keyframes star-blink {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 0.2; }
-}
-
 .notfound-content {
   position: relative;
   z-index: 2;
-  //background: rgba(255,255,255,0.85);
-  background: rgba(var(--background-color-light), 0.85);
-  border-radius: 18px;
-  padding: 2.5rem 2rem 2rem 2rem;
-  box-shadow: 0 8px 40px 0 rgba(0,0,0,0.10);
+  background: rgba(22, 23, 53, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(89, 109, 199, 0.35);
+  border-radius: 20px;
+  padding: 2.5rem 2.2rem 2.2rem 2.2rem;
+  box-shadow:
+    0 12px 40px 0 rgba(0, 0, 0, 0.35),
+    0 0 28px rgba(89, 109, 199, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
   text-align: center;
-  max-width: 350px;
+  max-width: 380px;
   margin: 2rem;
-  @media (prefers-color-scheme: dark) {
-    background: rgba(22,23,53,0.85);
-    color: #fff;
+  color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    border-color: rgba(89, 109, 199, 0.55);
+    box-shadow:
+      0 16px 48px 0 rgba(0, 0, 0, 0.45),
+      0 0 36px rgba(89, 109, 199, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
   }
+}
+
+:host-context(body.theme-light) .notfound-content {
+  background: rgba(22, 23, 53, 0.72);
+  color: #ffffff;
 }
 
 .alien-ship {
   position: absolute;
-  top: 40px;
-  left: -140px;
-  width: 120px;
-  height: 48px;
+  top: 55px;
+  left: -180px;
+  width: 170px;
+  height: 114px;
   z-index: 3;
   pointer-events: none;
-  animation: alien-fly 8s linear infinite;
+  filter: drop-shadow(0 8px 20px rgba(89, 109, 199, 0.45));
+  animation: alien-fly 11s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.ufo-light {
+  animation: ufo-light-pulse 1.2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 4px currentColor);
+
+  &.l1 { animation-delay: 0s; }
+  &.l2 { animation-delay: 0.25s; }
+  &.l3 { animation-delay: 0.5s; }
+  &.l4 { animation-delay: 0.75s; }
+  &.l5 { animation-delay: 1s; }
+}
+
+.tractor-beam {
+  animation: beam-pulse 2.2s ease-in-out infinite alternate;
+  transform-origin: center top;
+}
+
+.thruster-core {
+  animation: thruster-glow 1.5s ease-in-out infinite alternate;
+}
+
+.antenna-tip {
+  animation: ufo-light-pulse 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes ufo-light-pulse {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes beam-pulse {
+  0% {
+    opacity: 0.35;
+    transform: scaleX(0.92);
+  }
+  100% {
+    opacity: 0.85;
+    transform: scaleX(1.06);
+  }
+}
+
+@keyframes thruster-glow {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes alien-fly {
   0% {
-    left: -140px;
-    top: 40px;
-    transform: scale(1) rotate(-8deg);
+    left: -180px;
+    top: 75px;
+    transform: scale(0.85) rotate(-10deg);
     opacity: 0;
   }
   10% {
     opacity: 1;
   }
-  50% {
-    left: 60vw;
-    top: 30px;
-    transform: scale(1.05) rotate(2deg);
-    opacity: 1;
+  30% {
+    left: 28vw;
+    top: 35px;
+    transform: scale(1) rotate(5deg);
   }
-  90% {
+  55% {
+    left: 55vw;
+    top: 65px;
+    transform: scale(1.06) rotate(-4deg);
+  }
+  80% {
+    left: 82vw;
+    top: 30px;
+    transform: scale(0.98) rotate(6deg);
     opacity: 1;
   }
   100% {
-    left: 110vw;
-    top: 60px;
-    transform: scale(0.95) rotate(-8deg);
+    left: 112vw;
+    top: 70px;
+    transform: scale(0.85) rotate(-8deg);
     opacity: 0;
   }
 }
@@ -97,24 +149,27 @@ body.theme-light .star {
   color: var(--primary-color, #596dc7);
   margin-bottom: 1rem;
   margin-top: 0;
-  transition: transform 0.2s cubic-bezier(0.39,0.575,0.28,0.995);
+  transition: transform 0.2s cubic-bezier(0.39, 0.575, 0.28, 0.995);
   user-select: none;
-  text-shadow: 0 2px 24px rgba(0,0,0,0.10);
+  text-shadow: 0 4px 28px rgba(89, 109, 199, 0.45);
 }
 
 .notfound-btn {
   margin-top: 2rem;
-  padding: 0.7rem 1.5rem;
+  padding: 0.75rem 1.6rem;
   border: 2px solid var(--primary-color);
-  background: transparent;
-  color: var(--primary-color);
+  background: rgba(89, 109, 199, 0.12);
+  color: #ffffff;
   font-weight: bold;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-.notfound-btn:hover {
-  background: var(--primary-color);
-  color: var(--primary-color-text);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    background: var(--primary-color);
+    color: var(--primary-color-text);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(89, 109, 199, 0.4);
+  }
 }

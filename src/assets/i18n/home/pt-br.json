@@ -3,48 +3,36 @@
   "TITLE_01": "Olá",
   "TITLE_02": "Mundo",
   "SUBTITLE": "Bem vindo, Eu sou o",
-  "SUBTITLE_01": ", desenvolvedor front-end/backend e entusiasta de PC.",
-
+  "SUBTITLE_01": ", desenvolvedor front-end/backend, na qual já estou desenvolvendo sites e aplicações há mais de 2 anos, e entusiasta de PC.",
   "PROJECTS": "Projetos",
   "OR": "ou",
   "ABOUT": "Sobre Mim",
-
   "CONTACT_INFO": "Informações",
   "CONTACT_INFO_SUBTITLE": "de contato",
   "CONTACT_INFO_MESSAGE": "Fique a vontade de entrar em contato comigo a hora que quiser. Eu prefiro falar por e-mail.",
-
   "LATEST_PROJECTS": "Últimos",
   "LATEST_PROJECTS_SUBTITLE": "projetos",
-
   "PROJECTS_REDRAGON_TITLE": "Redragon M719 PRO Suite",
   "PROJECTS_REDRAGON_DESCRIPTION": "Projeto fruto de engenharia reversa de hardware e protocolos USB HID proprietários, criando um driver e suíte de controle em Rust para o mouse Redragon M719RGB-PRO e portando suporte para plataformas como macOS e Linux, que originalmente não eram suportadas pelo software proprietário da Redragon.",
   "PROJECTS_REDRAGON_ENTERPRISE": "GitHub",
-
   "PROJECTS_01_TITLE": "Emprega Transporte",
   "PROJECTS_01_DESCRIPTION": "Projeto voltado para a integração de vagas de emprego do setor de transporte, com o objetivo de facilitar a busca por oportunidades de trabalho em todo o Brasil.",
   "PROJECTS_01_ENTERPRISE": "SEST SENAT",
-
   "PROJECTS_02_TITLE": "Portal SEST SENAT",
   "PROJECTS_02_DESCRIPTION": "Uma plataforma desenvolvida para prover informações e serviços relacionados ao SEST SENAT, como cursos, esportes, saúde e muito mais.",
   "PROJECTS_02_ENTERPRISE": "SEST SENAT",
-
   "PROJECTS_MAISMOTORISTAS_TITLE": "Mais Motoristas",
   "PROJECTS_MAISMOTORISTAS_DESCRIPTION": "Sistema para gestão, inscrição e acompanhamento do Programa Mais Motoristas do SEST SENAT, oferecendo habilitação e capacitação profissional.",
   "PROJECTS_MAISMOTORISTAS_ENTERPRISE": "SEST SENAT",
-
   "PROJECTS_BUS_TITLE": "ÔnibusDF",
   "PROJECTS_BUS_DESCRIPTION": "Aplicativo para consulta de horários, itinerários e localização de ônibus em tempo real no Distrito Federal. Permite visualizar paradas próximas e planejar rotas.",
   "PROJECTS_BUS_ENTERPRISE": "GitHub",
-
   "BUTTON_VISIT": "Visitar site",
-
   "CURRENT_WORKING": "Atual",
   "CURRENT_WORKING_SUBTITLE": "disponibilidade",
   "CURRENT_WORKING_MESSAGE": "Atualmente estou envolvido em projetos, mas estou sempre aberto a novas oportunidades empolgantes — vamos nos conectar!",
-
   "FOLLOW_ME": "Me siga",
   "FOLLOW_ME_SUBTITLE": "em",
-
   "MADE_WITH": "Feito com",
   "IN": "em",
   "COUNTRY": "Brasil",

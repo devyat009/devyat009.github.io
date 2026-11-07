@@ -1,32 +1,103 @@
+<stars-component></stars-component>
+
 <div class="notfound-bg">
-  <div class="stars">
-    <span *ngFor="let star of stars" class="star"
-      [style.top.%]="star.top"
-      [style.left.%]="star.left"
-      [style.animationDelay.s]="star.delay"
-      [style.width.px]="star.size"
-      [style.height.px]="star.size"
-    ></span>
-  </div>
   <div class="alien-ship">
-    <svg viewBox="0 0 120 48" width="120" height="48">
-      <!-- Nave -->
-      <ellipse cx="60" cy="36" rx="50" ry="10" fill="#b3e0ff" opacity="0.7" />
-      <ellipse cx="60" cy="32" rx="35" ry="8" fill="#4fd1c5" />
-      <!-- Cúpula -->
-      <ellipse cx="60" cy="24" rx="18" ry="10" fill="#fff" opacity="0.8" />
-      <!-- Alienígena -->
-      <ellipse cx="60" cy="24" rx="5" ry="7" fill="#7fffd4" />
-      <circle cx="58" cy="22" r="1.2" fill="#222" />
-      <circle cx="62" cy="22" r="1.2" fill="#222" />
-      <ellipse cx="60" cy="27" rx="2" ry="1" fill="#222" />
-      <!-- Luzes da nave -->
-      <circle cx="35" cy="36" r="2" fill="#ffe066" />
-      <circle cx="50" cy="40" r="2" fill="#ffe066" />
-      <circle cx="70" cy="40" r="2" fill="#ffe066" />
-      <circle cx="85" cy="36" r="2" fill="#ffe066" />
+    <svg viewBox="0 0 180 120" width="170" height="114" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Feixe de luz / Abdução -->
+        <linearGradient id="tractorBeam" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#596dc7" stop-opacity="0.55" />
+          <stop offset="50%" stop-color="#4fd1c5" stop-opacity="0.25" />
+          <stop offset="100%" stop-color="#4fd1c5" stop-opacity="0" />
+        </linearGradient>
+
+        <!-- Cúpula de vidro -->
+        <radialGradient id="domeGlass" cx="40%" cy="35%" r="65%">
+          <stop offset="0%" stop-color="#e6fffa" stop-opacity="0.85" />
+          <stop offset="55%" stop-color="#81e6d9" stop-opacity="0.45" />
+          <stop offset="100%" stop-color="#596dc7" stop-opacity="0.65" />
+        </radialGradient>
+
+        <!-- Casco metálico principal -->
+        <linearGradient id="hullTop" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#a3bffa" />
+          <stop offset="45%" stop-color="#596dc7" />
+          <stop offset="100%" stop-color="#1e2246" />
+        </linearGradient>
+
+        <!-- Base inferior da nave -->
+        <linearGradient id="hullBottom" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#2d3748" />
+          <stop offset="100%" stop-color="#161735" />
+        </linearGradient>
+
+        <!-- Anel energético central -->
+        <linearGradient id="HullRim" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#4fd1c5" stop-opacity="0.6" />
+          <stop offset="50%" stop-color="#90cdf4" stop-opacity="0.95" />
+          <stop offset="100%" stop-color="#4fd1c5" stop-opacity="0.6" />
+        </linearGradient>
+
+        <!-- Pele do Alien -->
+        <radialGradient id="alienSkin" cx="45%" cy="35%" r="65%">
+          <stop offset="0%" stop-color="#9ae6b4" />
+          <stop offset="70%" stop-color="#48bb78" />
+          <stop offset="100%" stop-color="#276749" />
+        </radialGradient>
+      </defs>
+
+      <!-- Feixe Trator Luminoso -->
+      <polygon class="tractor-beam" points="65,58 115,58 145,118 35,118" fill="url(#tractorBeam)" />
+
+      <!-- Propulsor inferior brilhante -->
+      <ellipse class="thruster-core" cx="90" cy="59" rx="22" ry="5" fill="#4fd1c5" opacity="0.85" />
+      <ellipse cx="90" cy="57" rx="34" ry="8" fill="url(#hullBottom)" />
+
+      <!-- Cúpula e Alienígena -->
+      <g class="alien-pilot">
+        <!-- Antena do alien -->
+        <line x1="90" y1="22" x2="90" y2="14" stroke="#48bb78" stroke-width="2" stroke-linecap="round" />
+        <circle class="antenna-tip" cx="90" cy="13" r="2.8" fill="#68d391" />
+
+        <!-- Cabeça do alien -->
+        <path d="M 80 30 C 80 20, 100 20, 100 30 C 100 36, 94 42, 90 42 C 86 42, 80 36, 80 30 Z" fill="url(#alienSkin)" />
+
+        <!-- Olhos grandes cósmicos -->
+        <ellipse cx="85.5" cy="31" rx="3.2" ry="4.5" transform="rotate(-14 85.5 31)" fill="#101010" />
+        <ellipse cx="94.5" cy="31" rx="3.2" ry="4.5" transform="rotate(14 94.5 31)" fill="#101010" />
+        <!-- Brilho nos olhos -->
+        <circle cx="84.5" cy="29.5" r="1.1" fill="#ffffff" />
+        <circle cx="93.5" cy="29.5" r="1.1" fill="#ffffff" />
+        <circle cx="86.5" cy="32.5" r="0.5" fill="#ffffff" opacity="0.8" />
+        <circle cx="95.5" cy="32.5" r="0.5" fill="#ffffff" opacity="0.8" />
+
+        <!-- Sorriso sutil -->
+        <path d="M 88 37 Q 90 38.5 92 37" stroke="#1a202c" stroke-width="1" fill="none" stroke-linecap="round" />
+
+        <!-- Ombros / Traje espacial -->
+        <path d="M 79 44 Q 90 39 101 44" fill="#596dc7" />
+      </g>
+
+      <!-- Cúpula translúcida com reflexo -->
+      <path d="M 58 43 C 58 12, 122 12, 122 43 Z" fill="url(#domeGlass)" stroke="rgba(255,255,255,0.45)" stroke-width="1" />
+      <path d="M 66 37 C 68 21, 86 18, 95 19" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.65" />
+
+      <!-- Corpo principal do disco voador -->
+      <ellipse cx="90" cy="48" rx="68" ry="13" fill="url(#hullTop)" />
+      <!-- Friso luminoso da borda -->
+      <ellipse cx="90" cy="49" rx="72" ry="5" fill="url(#HullRim)" />
+      <!-- Anel superior de acabamento -->
+      <ellipse cx="90" cy="43" rx="36" ry="5.5" fill="#161735" opacity="0.55" />
+
+      <!-- Luzes de navegação da nave (pulsantes) -->
+      <circle class="ufo-light l1" cx="34" cy="49" r="3" fill="#ffe066" />
+      <circle class="ufo-light l2" cx="58" cy="53" r="3.4" fill="#4fd1c5" />
+      <circle class="ufo-light l3" cx="90" cy="54.5" r="3.8" fill="#ffe066" />
+      <circle class="ufo-light l4" cx="122" cy="53" r="3.4" fill="#4fd1c5" />
+      <circle class="ufo-light l5" cx="146" cy="49" r="3" fill="#ffe066" />
     </svg>
   </div>
+
   <div class="notfound-content">
     <h1
       class="notfound-404"

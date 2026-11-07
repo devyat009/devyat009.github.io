@@ -1,98 +1,257 @@
-// Theme import
-@use 'src/theme-light.scss' as themeLight;
-@use 'src/theme-dark.scss' as themeDark;
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
 
-// Rounded Button
-::ng-deep .p-button-rounded {
-  border-radius: 50% !important;
-  height: 32px !important;
-  width: 32px !important;
-  //border-color: var(--fourth-color) !important;
-  padding: 0;
-  display: flex;
+.nav-bar-container {
+  background-color: var(--navbar-bg, rgba(16, 16, 16, 0.85));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--navbar-border, rgba(255, 255, 255, 0.08));
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+// ----------------------------------------------------
+// Centered Nav Dock (Modern Floating Pill)
+// ----------------------------------------------------
+.nav-dock {
+  background-color: var(--dock-bg, rgba(26, 26, 26, 0.85));
+  border: 1px solid var(--dock-border, rgba(255, 255, 255, 0.10));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  &:hover {
+    border-color: var(--dock-border-hover, var(--primary-color));
+    box-shadow: 0 4px 24px -2px rgba(255, 255, 255, 0.10);
+  }
+}
+
+// ----------------------------------------------------
+// Navigation Links & Animated Icons
+// ----------------------------------------------------
+.nav-link {
+  color: var(--primary-color-text);
+  text-decoration: none;
+  cursor: pointer;
+  isolation: isolate;
+  transition: color 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  .nav-icon {
+    font-size: 1.3rem;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease;
+  }
+
+  .nav-label {
+    letter-spacing: 0.01em;
+    transition: color 0.25s ease;
+  }
+
+  // Smooth expanding background pill
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: var(--primary-color);
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: -1;
+  }
+
+  // Hover states & micro-interactions
+  &:hover {
+    color: var(--secondary-color-text);
+    transform: translateY(-1.5px);
+
+    &::before {
+      opacity: 0.18;
+      transform: scale(1);
+    }
+
+    .nav-icon {
+      color: var(--secondary-color-text);
+      transform: scale(1.18) rotate(5deg);
+    }
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  // Active Route State
+  &.active {
+    color: var(--secondary-color-text);
+    font-weight: 600;
+
+    &::before {
+      opacity: 0.22;
+      transform: scale(1);
+    }
+
+    .nav-icon {
+      color: var(--secondary-color-text);
+      transform: scale(1.12);
+    }
+  }
+}
+
+// ----------------------------------------------------
+// Action Buttons (Theme Toggle & Mobile Trigger)
+// ----------------------------------------------------
+.action-btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-
-
-// Dark theme button Animation
-@keyframes bounce-up-down {
-  0% { transform: translateY(0); }
-  30% { transform: translateY(-16px); }
-  60% { transform: translateY(0); }
-  100% { transform: translateY(0); }
-}
-::ng-deep .p-button-rounded:hover {
-  //background-color: var(--fourth-color) !important;
-  scale: 1.1;
-  color: var(--secondary-color-text) !important;
-}
-
-::ng-deep .p-button-rounded .material-symbols-outlined.icon-animate {
-  animation: bounce-up-down 0.5s;
-}
-::ng-deep .p-button-rounded,
-::ng-deep .p-button-rounded .p-button,
-::ng-deep .p-button-rounded .p-button-label,
-::ng-deep .p-button-rounded .p-button-icon,
-::ng-deep .p-button-rounded .material-symbols-outlined {
-  overflow: visible !important;
-}
-
-// Primary Button Navigation
-::ng-deep .bt-primary {
-  //background-color: var(--primary-color);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--action-btn-bg, rgba(26, 26, 26, 0.85));
+  border: 1px solid var(--action-btn-border, rgba(255, 255, 255, 0.10));
   color: var(--primary-color-text);
-  border-radius: 5px;
-}
-::ng-deep .bt-primary:hover {
-  //background-color: var(--fourth-color) !important;
-  scale: 1.1;
-  color: var(--secondary-color-text) !important;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &:hover {
+    color: var(--secondary-color-text);
+    transform: scale(1.1);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 14px rgba(89, 109, 199, 0.35);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
+// Spin animation for Theme Toggle
+@keyframes theme-spin {
+  0% { transform: rotate(0deg) scale(0.85); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
 
+.icon-spin {
+  animation: theme-spin 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+// ----------------------------------------------------
+// Language Switcher (3D Flip)
+// ----------------------------------------------------
 .language-switcher {
   display: flex;
   align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background-color: var(--action-btn-bg, rgba(26, 26, 26, 0.85));
+  border: 1px solid var(--action-btn-border, rgba(255, 255, 255, 0.10));
   cursor: pointer;
   user-select: none;
+  color: var(--primary-color-text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &:hover {
+    color: var(--secondary-color-text);
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 0 12px rgba(89, 109, 199, 0.3);
+  }
+
   .flip-text {
     display: inline-block;
     perspective: 400px;
-    width: 56px;
-    height: 32px;
+    width: 44px;
+    height: 22px;
     position: relative;
+
     span {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
       position: absolute;
-      top: 0; left: 0;
-      line-height: 32px;
-      transition: transform 0.5s;
+      top: 0;
+      left: 0;
+      transition: transform 0.45s ease;
     }
+
     .front {
       transform: rotateY(0deg);
     }
+
     .back {
       transform: rotateY(180deg);
     }
   }
+
   &:hover .flip-text .front {
     transform: rotateY(180deg);
   }
+
   &:hover .flip-text .back {
     transform: rotateY(0deg);
   }
+
   .switch-icon {
-    font-size: 1.5rem;
-    transition: transform 0.5s;
-    margin-left: 2px;
+    font-size: 1.15rem;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
+
   &:hover .switch-icon {
     transform: rotate(180deg);
     color: var(--secondary-color-text);
+  }
+}
+
+// ----------------------------------------------------
+// Mobile Dropdown Menu
+// ----------------------------------------------------
+.mobile-menu-dropdown {
+  background-color: var(--dock-bg, rgba(26, 26, 26, 0.95));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--dock-border, rgba(255, 255, 255, 0.10));
+  animation: dropdownSlide 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.mobile-nav-link {
+  color: var(--primary-color-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  i {
+    transition: transform 0.25s ease, color 0.25s ease;
+  }
+
+  &:hover {
+    background: rgba(89, 109, 199, 0.16);
+    color: var(--secondary-color-text);
+    transform: translateX(4px);
+
+    i {
+      color: var(--secondary-color-text);
+      transform: scale(1.15);
+    }
   }
 }
