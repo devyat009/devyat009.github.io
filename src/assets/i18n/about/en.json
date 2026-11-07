@@ -43,7 +43,7 @@
   "ABOUT_TIMELINE_05_SUBTITLE": "Mobile app for urban mobility in the Federal District",
   "ABOUT_TIMELINE_05_DESCRIPTION": "The creation of Brasília Mob (formerly DF Bus App) using React Native to make it easier to check bus schedules and routes in Brazil’s Federal District. The project was born after a public system was discontinued.",
   "ABOUT_TIMELINE_05_FOOTER": "“Never standing still...”",
-  "ABOUT_TIMELINE_06_DATE": "Feb 2026",
+  "ABOUT_TIMELINE_06_DATE": "Oct 2026",
   "ABOUT_TIMELINE_06_TAG": "Reverse Engineering & Rust",
   "ABOUT_TIMELINE_06_TITLE": "Redragon M719 PRO Suite",
   "ABOUT_TIMELINE_06_SUBTITLE": "Cross-platform open-source driver and control suite (macOS, Linux & Windows)",
@@ -53,6 +53,15 @@
   "ABOUT_TIMELINE_06_IMG2_CAPTION": "5-stage DPI calibration with independent X/Y axis sensitivity",
   "ABOUT_TIMELINE_06_IMG4_CAPTION": "Full RGB lighting engine with multiple modes and custom palette",
   "ABOUT_TIMELINE_06_IMG5_CAPTION": "Hardware specifications, wireless link status and real-time USB HID diagnostic console",
+  "ABOUT_TIMELINE_07_DATE": "Nov 2026",
+  "ABOUT_TIMELINE_07_TAG": "Web App & MapLibre GL",
+  "ABOUT_TIMELINE_07_TITLE": "RDR2 Interactive Map",
+  "ABOUT_TIMELINE_07_SUBTITLE": "Interactive cartography with Angular 22, MapLibre GL, and Tailwind CSS v4",
+  "ABOUT_TIMELINE_07_DESCRIPTION": "Development of a comprehensive cartographic web application inspired by Red Dead Redemption 2. A closed-source project with a live online version available, built with Angular 22, MapLibre GL JS, and Tailwind CSS v4. Features local raster tile pyramids with smooth overzooming, 21 high-res interior and cave floorplans, 6,160 tracked locations across Madam Nazar cycles, 68 WebGL wildlife spawn heatmaps, unlimited progress tracking with multi-profile JSON save/import, and a standalone C#/.NET Windows System Tray host.",
+  "ABOUT_TIMELINE_07_FOOTER": "“Digital cartography and high-performance craft...”",
+  "ABOUT_TIMELINE_07_IMG1_CAPTION": "High-resolution map exploration with local raster tiles and smooth overzooming",
+  "ABOUT_TIMELINE_07_IMG2_CAPTION": "Collectibles drawer, Madam Nazar cycle filtering, and wildlife spawn heatmaps",
   "ABOUT_LEARNING_JOURNEY_SUBTITLE": "A retrospective of my personal projects and hands-on studies. Each milestone reflects exploring new technologies, building solutions through personal initiative, and the ongoing pursuit of technical craft.",
-  "BUTTON_VISIT": "View on GitHub"
+  "BUTTON_VISIT": "View on GitHub",
+  "BUTTON_VISIT_SITE": "Visit site"
 }

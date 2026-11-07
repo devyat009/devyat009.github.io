@@ -23,6 +23,7 @@ interface TimelineItem {
   images?: TimelineImage[];
   active?: boolean;
   link?: string;
+  linkIcon?: 'github' | 'globe';
 }
 
 interface HobbyPhoto {
@@ -120,6 +121,7 @@ export class AboutComponent implements AfterViewInit, OnInit {
       footer: 'ABOUT_TIMELINE_05_FOOTER',
       type: 'personal',
       link: 'https://github.com/devyat009/onibus-df-app',
+      linkIcon: 'github',
       images: [
         { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/v2/map.png', alt: 'Brasília Mob', type: 'mobile' },
         { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/v2/paradas-proximas.png', alt: 'Brasília Mob', type: 'mobile' },
@@ -135,6 +137,7 @@ export class AboutComponent implements AfterViewInit, OnInit {
       footer: 'ABOUT_TIMELINE_06_FOOTER',
       type: 'personal',
       link: 'https://github.com/devyat009/redragon_m719_pro',
+      linkIcon: 'github',
       images: [
         {
           src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/redragon_m719_pro/img1.png',
@@ -159,6 +162,31 @@ export class AboutComponent implements AfterViewInit, OnInit {
           alt: 'Redragon Suite - Diagnóstico USB HID',
           type: 'desktop',
           caption: 'ABOUT_TIMELINE_06_IMG5_CAPTION'
+        }
+      ]
+    },
+    {
+      date: 'ABOUT_TIMELINE_07_DATE',
+      tag: 'ABOUT_TIMELINE_07_TAG',
+      title: 'ABOUT_TIMELINE_07_TITLE',
+      subtitle: 'ABOUT_TIMELINE_07_SUBTITLE',
+      description: 'ABOUT_TIMELINE_07_DESCRIPTION',
+      footer: 'ABOUT_TIMELINE_07_FOOTER',
+      type: 'personal',
+      link: 'https://devyat009.github.io/rdr2-map-site/',
+      linkIcon: 'globe',
+      images: [
+        {
+          src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/devyat009.github.io/projects/rdr-2-map/rdr-2-map.png',
+          alt: 'RDR2 Map - Visão Geral do Mapa Interativo',
+          type: 'desktop',
+          caption: 'ABOUT_TIMELINE_07_IMG1_CAPTION'
+        },
+        {
+          src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/devyat009.github.io/projects/rdr-2-map/rdr-2-map-collectables.png',
+          alt: 'RDR2 Map - Colecionáveis, Filtros e Heatmaps',
+          type: 'desktop',
+          caption: 'ABOUT_TIMELINE_07_IMG2_CAPTION'
         }
       ]
     }
