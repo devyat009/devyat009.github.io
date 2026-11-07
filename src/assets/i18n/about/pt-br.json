@@ -13,42 +13,36 @@
   "ABOUT_HOBBY_PHOTO_ARARA_DESC": "Um clique rapido resultou em uma foto favorita de vida selvagem.",
   "ABOUT_HOBBY_PHOTO_ARARA_ALT": "Arara",
   "ABOUT_TITLE_PROFESSIONAL": "Profissional",
-
   "ABOUT_TIMELINE_01_DATE": "Mar 2024",
   "ABOUT_TIMELINE_01_TAG": "O Início",
   "ABOUT_TIMELINE_01_TITLE": "Aventurando no design de interfaces",
   "ABOUT_TIMELINE_01_SUBTITLE": "Protótipo de sistema de inventário",
   "ABOUT_TIMELINE_01_DESCRIPTION": "Aplicativo Windows para gerenciar estoque, vendas e estatísticas. Primeiro protótipo para aprendizado realizado no curso de Desenvolvimento de Sistemas.",
   "ABOUT_TIMELINE_01_FOOTER": "“Primeiros passos...”",
-
   "ABOUT_TIMELINE_02_DATE": "Abr 2024",
   "ABOUT_TIMELINE_02_TAG": "O Primeiro Passo",
   "ABOUT_TIMELINE_02_TITLE": "Aventurando em protótipos e design",
   "ABOUT_TIMELINE_02_SUBTITLE": "Protótipo de aplicativo para padaria",
   "ABOUT_TIMELINE_02_DESCRIPTION": "Desafio proposto para criar um aplicativo visando crescimento de uma padaria fictícia.",
   "ABOUT_TIMELINE_02_FOOTER": "“Um novo aprendizado a cada dia...”",
-
   "ABOUT_TIMELINE_03_DATE": "Out 2024",
   "ABOUT_TIMELINE_03_TAG": "Aplicativo Desktop",
   "ABOUT_TIMELINE_03_TITLE": "Aplicativo de download de vídeos",
   "ABOUT_TIMELINE_03_SUBTITLE": "Um projeto de aprendizado, Youtube Downloader",
   "ABOUT_TIMELINE_03_DESCRIPTION": "Um simples aplicativo para baixar videos do Youtube utilizando Python, Html, e CSS.",
   "ABOUT_TIMELINE_03_FOOTER": "",
-
   "ABOUT_TIMELINE_04_DATE": "Jan 2025",
   "ABOUT_TIMELINE_04_TAG": "Expansão",
   "ABOUT_TIMELINE_04_TITLE": "Meu site portfolio",
   "ABOUT_TIMELINE_04_SUBTITLE": "A expansão do meu portfólio para o mundo digital",
   "ABOUT_TIMELINE_04_DESCRIPTION": "A criação do meu site portfolio pessoal utilizando Angular, Tailwind CSS e Typescript para mostrar meus projetos e habilidades. Com o objetivo de alcançar mais pessoas e oportunidades no mundo da tecnologia.",
   "ABOUT_TIMELINE_04_FOOTER": "“Em busca de novas oportunidades...”",
-
   "ABOUT_TIMELINE_05_DATE": "Jul 2025",
   "ABOUT_TIMELINE_05_TAG": "Aplicativo Mobile",
   "ABOUT_TIMELINE_05_TITLE": "Onibus DF App",
   "ABOUT_TIMELINE_05_SUBTITLE": "Projeto de aplicativo mobile para consulta de ônibus no Distrito Federal",
   "ABOUT_TIMELINE_05_DESCRIPTION": "A criação do Onibus DF App utilizando React Native para facilitar a consulta de horários e itinerários de ônibus no Distrito Federal, projeto nasce quando um sistema publico havia-se descontinuado.",
   "ABOUT_TIMELINE_05_FOOTER": "“Não ficar parado nunca...”",
-
   "ABOUT_TIMELINE_06_DATE": "Fev 2026",
   "ABOUT_TIMELINE_06_TAG": "Engenharia Reversa & Rust",
   "ABOUT_TIMELINE_06_TITLE": "Redragon M719 PRO Suite",
@@ -58,5 +52,7 @@
   "ABOUT_TIMELINE_06_IMG1_CAPTION": "Mapeamento interativo de botões, taxa de polling e telemetria de bateria",
   "ABOUT_TIMELINE_06_IMG2_CAPTION": "Calibração de 5 estágios de DPI e sensibilidade independente dos eixos X/Y",
   "ABOUT_TIMELINE_06_IMG4_CAPTION": "Engine completa de iluminação RGB com múltiplos modos e paleta customizada",
-  "ABOUT_TIMELINE_06_IMG5_CAPTION": "Informações de hardware, status do link sem fio e console de diagnóstico USB HID"
+  "ABOUT_TIMELINE_06_IMG5_CAPTION": "Informações de hardware, status do link sem fio e console de diagnóstico USB HID",
+  "ABOUT_LEARNING_JOURNEY_SUBTITLE": "Uma retrospectiva dos meus projetos autorais e estudos práticos. Cada marco reflete a exploração de novas tecnologias, a criação de soluções por iniciativa própria e a busca contínua por aprimoramento técnico.",
+  "BUTTON_VISIT": "Ver no GitHub"
 }
