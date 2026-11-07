@@ -121,9 +121,9 @@ export class AboutComponent implements AfterViewInit, OnInit {
       type: 'personal',
       link: 'https://github.com/devyat009/onibus-df-app',
       images: [
-        { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/v2/map.png', alt: 'Projeto Onibus DF', type: 'mobile' },
-        { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/v2/paradas-proximas.png', alt: 'Projeto Onibus DF', type: 'mobile' },
-        { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/v2/configuracoes.png', alt: 'Projeto Confidencial', type: 'mobile' }
+        { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/v2/map.png', alt: 'Brasília Mob', type: 'mobile' },
+        { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/v2/paradas-proximas.png', alt: 'Brasília Mob', type: 'mobile' },
+        { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/v2/configuracoes.png', alt: 'Brasília Mob - Configurações', type: 'mobile' }
       ]
     },
     {

@@ -125,7 +125,7 @@
 
       .timeline-bar {
         position: sticky !important;
-        top: calc(env(safe-area-inset-top, 0px) + 16px);
+        top: calc(env(safe-area-inset-top, 0px) + 76px);
         left: 0;
         width: 100%;
         height: auto;
@@ -135,11 +135,11 @@
         align-items: stretch;
         flex-direction: column;
         gap: 16px;
-        background: rgba(13, 28, 45, 0.92);
-        border: 1px solid rgba(89, 109, 199, 0.25);
+        background: var(--tl-card-bg, rgba(13, 28, 45, 0.95));
+        border: 1px solid var(--tl-card-border, rgba(89, 109, 199, 0.25));
         border-radius: 18px;
         box-shadow: 0 12px 28px -14px rgba(0, 0, 0, 0.75);
-        z-index: 12;
+        z-index: 30;
         backdrop-filter: blur(12px);
       }
 
@@ -201,8 +201,12 @@
         gap: 40px;
       }
 
-      .timeline-section .section-inner {
-        padding: 28px 22px 32px;
+      .timeline-section {
+        scroll-margin-top: 170px;
+
+        .section-inner {
+          padding: 28px 22px 32px;
+        }
       }
     }
   }
