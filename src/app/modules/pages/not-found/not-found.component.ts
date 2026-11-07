@@ -5,6 +5,7 @@ import { ButtonModule } from 'primeng/button';
 import { RouterLink } from '@angular/router';
 import { SharedTranslationService } from 'src/app/core/translation/shared-translation-service.component';
 import { StorageService } from 'src/app/shared/services/storageService.service';
+import { StarsComponent } from 'src/app/shared/components/stars/stars.component';
 
 @Component({
   selector: 'app-not-found',
@@ -15,17 +16,11 @@ import { StorageService } from 'src/app/shared/services/storageService.service';
     TranslateModule,
     CommonModule,
     ButtonModule,
-    RouterLink
+    RouterLink,
+    StarsComponent
   ],
 })
 export class NotFoundComponent {
-    stars = Array.from({ length: 60 }).map(() => ({
-    top: Math.random() * 100,
-    left: Math.random() * 100,
-    delay: Math.random() * 3,
-    size: Math.random() * 2 + 1.5,
-  }));
-
   constructor(
     private translate: SharedTranslationService,
     private readonly _storageService: StorageService

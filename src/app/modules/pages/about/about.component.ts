@@ -22,6 +22,7 @@ interface TimelineItem {
   type: 'personal' | 'professional';
   images?: TimelineImage[];
   active?: boolean;
+  link?: string;
 }
 
 interface HobbyPhoto {
@@ -93,6 +94,7 @@ export class AboutComponent implements AfterViewInit, OnInit {
       description: 'ABOUT_TIMELINE_03_DESCRIPTION',
       footer: 'ABOUT_TIMELINE_03_FOOTER',
       type: 'personal',
+      link: 'https://github.com/devyat009/youtube-downloader',
       images: [
         { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/devyat009.github.io/projects/ytdownloader.png',
           alt: 'Youtube Downloader', type: 'desktop' },
@@ -117,6 +119,7 @@ export class AboutComponent implements AfterViewInit, OnInit {
       description: 'ABOUT_TIMELINE_05_DESCRIPTION',
       footer: 'ABOUT_TIMELINE_05_FOOTER',
       type: 'personal',
+      link: 'https://github.com/devyat009/onibus-df-app',
       images: [
         { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/map.png', alt: 'Projeto Onibus DF', type: 'mobile' },
         { src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/paradas-proximas.png', alt: 'Projeto Onibus DF', type: 'mobile' },
@@ -131,6 +134,7 @@ export class AboutComponent implements AfterViewInit, OnInit {
       description: 'ABOUT_TIMELINE_06_DESCRIPTION',
       footer: 'ABOUT_TIMELINE_06_FOOTER',
       type: 'personal',
+      link: 'https://github.com/devyat009/redragon_m719_pro',
       images: [
         {
           src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/redragon_m719_pro/img1.png',
@@ -192,6 +196,22 @@ export class AboutComponent implements AfterViewInit, OnInit {
     this.imageModalService.open({ src, alt, caption, title });
   }
 
+  scrollToItem(index: number) {
+    const sectionsArray = this.sections?.toArray();
+    if (!sectionsArray || !sectionsArray[index]) return;
+    const targetEl = sectionsArray[index].nativeElement;
+
+    if (this.isMobile) {
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      const container = this.contentScroll?.nativeElement;
+      if (container) {
+        const topPos = targetEl.offsetTop - 16;
+        container.scrollTo({ top: topPos, behavior: 'smooth' });
+      }
+    }
+  }
+
   ngOnInit() {
     this.evaluateViewport();
   }
@@ -204,6 +224,21 @@ export class AboutComponent implements AfterViewInit, OnInit {
       this.updateSections(true);
       this.updateProgress();
     }, 0);
+  }
+
+  onContentWheel(event: WheelEvent) {
+    if (this.isMobile) return;
+    const el = this.contentScroll?.nativeElement;
+    if (!el) return;
+
+    const isAtBottom = el.scrollHeight - el.scrollTop - el.clientHeight <= 3;
+    const isAtTop = el.scrollTop <= 3;
+
+    if (isAtBottom && event.deltaY > 0) {
+      window.scrollBy({ top: event.deltaY, behavior: 'auto' });
+    } else if (isAtTop && event.deltaY < 0) {
+      window.scrollBy({ top: event.deltaY, behavior: 'auto' });
+    }
   }
 
   onContentScroll() {
