@@ -52,6 +52,7 @@ interface HobbyPhoto {
 })
 export class AboutComponent implements AfterViewInit, OnInit {
   @ViewChildren('sectionsRef') sections!: QueryList<ElementRef<HTMLDivElement>>;
+  @ViewChildren('dateItem') dateItems!: QueryList<ElementRef<HTMLLIElement>>;
   @ViewChild('contentScroll') contentScroll!: ElementRef<HTMLDivElement>;
 
   isMobile = false;
@@ -231,6 +232,10 @@ export class AboutComponent implements AfterViewInit, OnInit {
 
     if (this.isMobile) {
       targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const activeDateEl = this.dateItems?.toArray()[index]?.nativeElement;
+      if (activeDateEl) {
+        activeDateEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
     } else {
       const container = this.contentScroll?.nativeElement;
       if (container) {
@@ -369,6 +374,14 @@ export class AboutComponent implements AfterViewInit, OnInit {
       });
 
       if (!anyVisible) this.timelineItems[0].active = true;
+
+      const activeIdx = this.timelineItems.findIndex((item) => item.active);
+      if (activeIdx >= 0 && this.dateItems?.length) {
+        const activeDateEl = this.dateItems.toArray()[activeIdx]?.nativeElement;
+        if (activeDateEl) {
+          activeDateEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      }
       return;
     }
 

@@ -16,21 +16,22 @@
         </p>
       </div>
 
-      <div class="timeline-layout grid gap-10 items-start" [ngClass]="{ 'is-mobile': isMobile }">
+      <div class="timeline-layout grid gap-8 md:gap-10 items-start" [ngClass]="{ 'is-mobile': isMobile }">
         <!-- Barra fixa -->
-        <div class="timeline-bar ml-4 sticky top-[72px] w-[70px] h-[calc(100vh-72px-40px)] flex flex-col flex-shrink-0 z-10 items-center">
+        <div class="timeline-bar sticky flex flex-col items-center z-10">
           <div class="timeline-track relative w-1 mx-auto my-8 rounded overflow-hidden flex-1 bg-secondary">
             <div class="timeline-progress absolute left-0 top-0 transition-all bg-primary"
               [ngStyle]="isMobile
                 ? { width: progressPercent + '%', height: '100%' }
                 : { height: progressPercent + '%', width: '100%' }"></div>
           </div>
-          <ul class="timeline-dates list-none p-0 m-0 absolute flex flex-col justify-between h-full pointer-events-auto">
+          <ul class="timeline-dates list-none p-0 m-0 flex pointer-events-auto" #datesContainer>
             <li *ngFor="let item of timelineItems; let i = index"
               (click)="scrollToItem(i)"
-              [ngClass]="item.active ? ['active', 't-secondary'] : ['t-fourth']"
-              class="relative pl-4 flex items-center text-[12px] t-primary cursor-pointer transition-all duration-200"
-              [attr.title]="item.title | translate">
+              [class.active]="item.active"
+              class="relative flex items-center text-[12px] cursor-pointer transition-all duration-200"
+              [attr.title]="item.title | translate"
+              #dateItem>
               <span class="date-label">{{ item.date | translate }}</span>
               <span class="dot"></span>
             </li>
@@ -38,7 +39,7 @@
         </div>
 
         <!-- Conteúdo rolável -->
-        <div class="timeline-content h-[calc(100vh-72px)] overflow-y-auto flex flex-col gap-12 pt-6 pr-0 pb-16 md:pr-12" #contentScroll (scroll)="onContentScroll()" (wheel)="onContentWheel($event)">
+        <div class="timeline-content flex flex-col" #contentScroll (scroll)="onContentScroll()" (wheel)="onContentWheel($event)">
           <section *ngFor="let item of timelineItems"
               class="timeline-section"
               [class.visible]="item.active"
