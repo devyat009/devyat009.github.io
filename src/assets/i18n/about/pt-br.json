@@ -43,7 +43,7 @@
   "ABOUT_TIMELINE_05_SUBTITLE": "Projeto de aplicativo mobile para mobilidade urbana no Distrito Federal",
   "ABOUT_TIMELINE_05_DESCRIPTION": "A criação do Brasília Mob (antigo Onibus DF App) utilizando React Native para facilitar a consulta de horários e itinerários de ônibus no Distrito Federal, projeto que nasce quando um sistema público havia sido descontinuado.",
   "ABOUT_TIMELINE_05_FOOTER": "“Não ficar parado nunca...”",
-  "ABOUT_TIMELINE_06_DATE": "Fev 2026",
+  "ABOUT_TIMELINE_06_DATE": "Out 2026",
   "ABOUT_TIMELINE_06_TAG": "Engenharia Reversa & Rust",
   "ABOUT_TIMELINE_06_TITLE": "Redragon M719 PRO Suite",
   "ABOUT_TIMELINE_06_SUBTITLE": "Driver open-source e suíte de controle multiplataforma (macOS, Linux e Windows)",
@@ -53,6 +53,15 @@
   "ABOUT_TIMELINE_06_IMG2_CAPTION": "Calibração de 5 estágios de DPI e sensibilidade independente dos eixos X/Y",
   "ABOUT_TIMELINE_06_IMG4_CAPTION": "Engine completa de iluminação RGB com múltiplos modos e paleta customizada",
   "ABOUT_TIMELINE_06_IMG5_CAPTION": "Informações de hardware, status do link sem fio e console de diagnóstico USB HID",
+  "ABOUT_TIMELINE_07_DATE": "Nov 2026",
+  "ABOUT_TIMELINE_07_TAG": "Web App & MapLibre GL",
+  "ABOUT_TIMELINE_07_TITLE": "RDR2 Interactive Map",
+  "ABOUT_TIMELINE_07_SUBTITLE": "Mapa interativo com Angular 22, MapLibre GL e Tailwind CSS v4",
+  "ABOUT_TIMELINE_07_DESCRIPTION": "Desenvolvimento de uma aplicação web cartográfica completa inspirada em Red Dead Redemption 2. Projeto closed source com versão online disponível para navegação, construído com Angular 22, MapLibre GL JS e Tailwind CSS v4. Integra pirâmides locais de raster tiles com overzoom contínuo, 21 plantas de interiores e cavernas, 6.160 pontos de interesse e colecionáveis, 68 heatmaps WebGL com coordenadas de spawn da fauna, rastreamento de progresso ilimitado com exportação/importação em JSON e executável Windows System Tray em C#/.NET.",
+  "ABOUT_TIMELINE_07_FOOTER": "“Cartografia digital e performance de alto nível...”",
+  "ABOUT_TIMELINE_07_IMG1_CAPTION": "Navegação cartográfica de alta resolução com tiles locais e overzoom contínuo",
+  "ABOUT_TIMELINE_07_IMG2_CAPTION": "Painel de colecionáveis, ciclos de Madam Nazar e heatmaps de fauna",
   "ABOUT_LEARNING_JOURNEY_SUBTITLE": "Uma retrospectiva dos meus projetos autorais e estudos práticos. Cada marco reflete a exploração de novas tecnologias, a criação de soluções por iniciativa própria e a busca contínua por aprimoramento técnico.",
-  "BUTTON_VISIT": "Ver no GitHub"
+  "BUTTON_VISIT": "Ver no GitHub",
+  "BUTTON_VISIT_SITE": "Visitar site"
 }

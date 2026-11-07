@@ -36,6 +36,9 @@
   --proj-pill-bg: rgba(255, 255, 255, 0.06);
   --proj-pill-border: rgba(255, 255, 255, 0.11);
   --proj-pill-text: #e2e8f0;
+  --proj-pill-bg-hover: rgba(255, 255, 255, 0.14);
+  --proj-pill-border-hover: rgba(255, 255, 255, 0.24);
+  --proj-pill-text-hover: #ffffff;
   --proj-scroll-thumb: rgba(255, 255, 255, 0.25);
   --proj-scroll-thumb-hover: rgba(255, 255, 255, 0.5);
 }
@@ -52,6 +55,9 @@
   --proj-pill-bg: rgba(0, 0, 0, 0.05);
   --proj-pill-border: rgba(0, 0, 0, 0.10);
   --proj-pill-text: #2d3748;
+  --proj-pill-bg-hover: rgba(0, 0, 0, 0.10);
+  --proj-pill-border-hover: rgba(0, 0, 0, 0.22);
+  --proj-pill-text-hover: #1a202c;
   --proj-scroll-thumb: rgba(0, 0, 0, 0.25);
   --proj-scroll-thumb-hover: rgba(0, 0, 0, 0.45);
 }
@@ -207,7 +213,7 @@
       gap: 5px;
       margin-top: 8px;
       padding-top: 8px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid var(--proj-card-border, rgba(255, 255, 255, 0.06));
 
       .tech-pill {
         display: inline-flex;
@@ -222,11 +228,12 @@
         letter-spacing: 0.2px;
         white-space: nowrap;
         user-select: none;
-        transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+        transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
 
         &:hover {
-          background: rgba(255, 255, 255, 0.14);
-          border-color: rgba(255, 255, 255, 0.24);
+          background: var(--proj-pill-bg-hover);
+          border-color: var(--proj-pill-border-hover);
+          color: var(--proj-pill-text-hover);
           transform: translateY(-1px);
         }
       }
