@@ -1,5 +1,5 @@
 import { NgClass, NgStyle } from "@angular/common";
-import { Component, ElementRef, QueryList, ViewChildren, ViewChild, AfterViewInit, HostListener, OnInit } from "@angular/core";
+import { Component, ElementRef, QueryList, ViewChildren, ViewChild, AfterViewInit, HostListener, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { TranslateModule } from "@ngx-translate/core";
 import { FooterComponent } from "src/app/shared/components/footer/footer.component";
 import { StarsComponent } from "src/app/shared/components/stars/stars.component";
@@ -40,6 +40,7 @@ interface HobbyPhoto {
   selector: 'about-page',
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     TranslateModule,
     FooterComponent,

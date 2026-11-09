@@ -1,4 +1,4 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError, RouterModule } from '@angular/router';
 import { ThemeService } from './shared/services/theming.service';
 import { NavBarComponent } from "./shared/components/nav-bar/nav-bar.component";
@@ -12,6 +12,7 @@ import { isPlatformBrowser } from '@angular/common';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     RouterModule,
     NavBarComponent,

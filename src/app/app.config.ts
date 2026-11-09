@@ -2,7 +2,7 @@ import { ApplicationConfig, inject, provideAppInitializer, provideZoneChangeDete
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideClientHydration, withEventReplay, withNoIncrementalHydration } from '@angular/platform-browser';
 import { SharedTranslationService } from './core/translation/shared-translation-service.component';
 import { TranslateModule, TranslateService, TranslateLoader, TranslateStore } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -17,7 +17,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideClientHydration(withEventReplay()),
+    provideClientHydration(withEventReplay(), withNoIncrementalHydration()),
     importProvidersFrom(HttpClientModule),
     importProvidersFrom(TranslateModule.forRoot({
       defaultLanguage: 'pt-br',

@@ -1,5 +1,5 @@
 import { TranslateModule } from "@ngx-translate/core";
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 
 
@@ -8,6 +8,7 @@ import { Component } from "@angular/core";
   standalone: true,
   imports: [TranslateModule],
   templateUrl: './app-loading.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./app-loading.component.scss']
 })
 export class AppLoadingComponent {}

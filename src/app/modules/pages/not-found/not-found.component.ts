@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { RouterLink } from '@angular/router';
@@ -11,6 +11,7 @@ import { StarsComponent } from 'src/app/shared/components/stars/stars.component'
   standalone: true,
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     TranslateModule,
     RouterLink,

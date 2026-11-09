@@ -7,7 +7,8 @@ import {
   ViewChild,
   ChangeDetectorRef,
   Inject,
-  PLATFORM_ID
+  PLATFORM_ID,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -19,6 +20,7 @@ import { ImageModalData, ImageModalService } from '../../services/image-modal.se
   standalone: true,
   imports: [TranslateModule],
   templateUrl: './image-modal.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './image-modal.component.scss'
 })
 export class ImageModalComponent implements OnInit, OnDestroy {

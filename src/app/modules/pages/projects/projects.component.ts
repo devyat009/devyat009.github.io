@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { TranslateModule } from "@ngx-translate/core";
 import { FooterComponent } from "src/app/shared/components/footer/footer.component";
 import { StarsComponent } from "src/app/shared/components/stars/stars.component";
@@ -8,6 +8,7 @@ import { ImageModalService } from "src/app/shared/services/image-modal.service";
   selector: 'projects-page',
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     TranslateModule,
     FooterComponent,

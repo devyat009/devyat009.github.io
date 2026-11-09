@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from "src/app/shared/components/footer/footer.component";
@@ -9,6 +9,7 @@ import { ImageModalService } from "src/app/shared/services/image-modal.service";
   selector: 'home-page',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     TranslateModule,
     RouterLink,

@@ -86,7 +86,7 @@
         [style.transform]="'translate3d(' + translateX + 'px, ' + translateY + 'px, 0px) scale(' + scale + ')'"
         [style.cursor]="scale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'zoom-in'">
         <img #imageRef
-          [src]="currentData?.src"
+          [src]="$safeNavigationMigration(currentData?.src)"
           [alt]="currentData?.alt || ''"
           (load)="onImageLoad()"
           (dragstart)="$event.preventDefault()"

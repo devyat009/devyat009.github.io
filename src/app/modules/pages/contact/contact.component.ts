@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { FormsModule } from "@angular/forms";
 import { TranslateModule } from "@ngx-translate/core";
@@ -9,6 +9,7 @@ import { StarsComponent } from "src/app/shared/components/stars/stars.component"
   selector: 'contact-page',
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     FormsModule,
     TranslateModule,
