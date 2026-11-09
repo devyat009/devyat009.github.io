@@ -30,7 +30,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Use the Node.js version required by your project
+          node-version: '22' # Node 22 or 24 required for Angular 22
           cache: 'npm'
       - name: Install Dependencies
         run: npm ci
