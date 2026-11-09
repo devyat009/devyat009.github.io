@@ -1,4 +1,6 @@
-<app-loading *ngIf="loading"></app-loading>
+@if (loading) {
+  <app-loading></app-loading>
+}
 <router-outlet>
   <nav-bar-component (switchLang)="switchLanguage($event)"></nav-bar-component>
 </router-outlet>

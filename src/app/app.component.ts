@@ -6,7 +6,7 @@ import { StorageService } from './shared/services/storageService.service';
 import { SharedTranslationService } from './core/translation/shared-translation-service.component';
 import { AppLoadingComponent } from './shared/components/app-loading/app-loading.component';
 import { ImageModalComponent } from './shared/components/image-modal/image-modal.component';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -16,9 +16,8 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
     RouterModule,
     NavBarComponent,
     AppLoadingComponent,
-    ImageModalComponent,
-    CommonModule
-  ],
+    ImageModalComponent
+],
 })
 export class AppComponent {
   title = 'my-page';

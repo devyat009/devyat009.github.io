@@ -1,4 +1,4 @@
-import { NgClass, NgFor, NgIf, NgStyle } from "@angular/common";
+import { NgClass, NgStyle } from "@angular/common";
 import { Component, ElementRef, QueryList, ViewChildren, ViewChild, AfterViewInit, HostListener, OnInit } from "@angular/core";
 import { TranslateModule } from "@ngx-translate/core";
 import { FooterComponent } from "src/app/shared/components/footer/footer.component";
@@ -44,8 +44,6 @@ interface HobbyPhoto {
     TranslateModule,
     FooterComponent,
     NgClass,
-    NgIf,
-    NgFor,
     NgStyle,
     StarsComponent
 ]

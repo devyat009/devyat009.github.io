@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterLink } from '@angular/router';
 import { SharedTranslationService } from 'src/app/core/translation/shared-translation-service.component';
 import { StorageService } from 'src/app/shared/services/storageService.service';
@@ -13,10 +13,9 @@ import { StarsComponent } from 'src/app/shared/components/stars/stars.component'
   styleUrls: ['./not-found.component.scss'],
   imports: [
     TranslateModule,
-    CommonModule,
     RouterLink,
     StarsComponent
-  ],
+],
 })
 export class NotFoundComponent {
   constructor(

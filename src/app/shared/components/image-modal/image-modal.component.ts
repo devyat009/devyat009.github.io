@@ -9,7 +9,7 @@ import {
   Inject,
   PLATFORM_ID
 } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { ImageModalData, ImageModalService } from '../../services/image-modal.service';
@@ -17,7 +17,7 @@ import { ImageModalData, ImageModalService } from '../../services/image-modal.se
 @Component({
   selector: 'app-image-modal',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [TranslateModule],
   templateUrl: './image-modal.component.html',
   styleUrl: './image-modal.component.scss'
 })
