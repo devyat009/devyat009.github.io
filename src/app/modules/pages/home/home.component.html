@@ -9,9 +9,13 @@
           <h1 class="t-primary text-4xl font-bold">
             {{"TITLE_01" | translate }} <span class="t-secondary">{{"TITLE_02" | translate }}</span>
           </h1>
-          <div class="pt-6">
-            <H3>{{"SUBTITLE" | translate }} <span class="t-secondary">{{ 'NAME' | translate }}</span>{{"SUBTITLE_01" |
-              translate }}</H3>
+          <div class="pt-6 max-w-4xl">
+            <h3 class="text-xl font-medium leading-relaxed">
+              {{"SUBTITLE" | translate }} <span class="t-secondary font-semibold">{{ 'NAME' | translate }}</span>{{"SUBTITLE_01" | translate }}
+            </h3>
+            <p class="t-fifth text-sm sm:text-base leading-relaxed mt-3">
+              {{"SUBTITLE_BIO" | translate }}
+            </p>
           </div>
 
           <div class="pt-6">
@@ -197,6 +201,34 @@
                 </div>
               </div>
             </div>
+
+            <!-- Card 06 - Ver Mais Projetos -->
+            <a routerLink="/projects"
+              class="more-projects-card group flex flex-col justify-center items-center rounded-sm shadow-lg min-h-[400px] max-h-[500px] relative p-8 text-center cursor-pointer">
+              <div class="flex flex-col items-center justify-center gap-5 transition-transform duration-300 group-hover:scale-105">
+                <div class="more-projects-icon w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="transition-transform duration-300 group-hover:translate-x-1.5">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                  <h2 class="text-2xl font-bold t-primary flex items-center gap-2">
+                    {{ 'VIEW_MORE_PROJECTS' | translate }}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                      class="transition-transform duration-300 group-hover:translate-x-1">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </h2>
+                  <p class="text-sm t-fifth max-w-xs leading-relaxed">
+                    {{ 'VIEW_MORE_PROJECTS_DESC' | translate }}
+                  </p>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
 

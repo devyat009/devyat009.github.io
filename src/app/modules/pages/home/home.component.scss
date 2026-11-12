@@ -61,3 +61,44 @@
   opacity: 1;
   transform: translateX(0);
 }
+
+// "Ver mais projetos" card
+.more-projects-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5);
+  }
+
+  .more-projects-icon {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--primary-color-text, #ffffff);
+  }
+}
+
+:host-context(body.theme-light) {
+  .more-projects-card {
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    background: rgba(0, 0, 0, 0.02);
+
+    &:hover {
+      border-color: rgba(0, 0, 0, 0.22);
+      background: rgba(0, 0, 0, 0.04);
+      box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.08);
+    }
+
+    .more-projects-icon {
+      background: rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      color: var(--primary-color-text, #1a202c);
+    }
+  }
+}
