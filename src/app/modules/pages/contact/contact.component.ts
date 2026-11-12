@@ -32,7 +32,7 @@ export class ContactComponent {
     const labels: Record<string, string> = {
       frontend: 'Desenvolvimento Front-End',
       backend: 'Desenvolvimento Back-End',
-      fullstack: 'Projeto Full Stack',
+      fullstack: 'Desenvolvimento Full Stack',
       mobile: 'Aplicativo Mobile',
       other: 'Outro / Consultoria'
     };
