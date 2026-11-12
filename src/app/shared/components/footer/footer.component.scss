@@ -17,20 +17,6 @@ a:not([class*="bg-"]) {
 
   &:hover {
     font-weight: 700;
-    color: var(--primary-color-text);
-  }
-}
-
-:host-context(body.theme-dark) {
-  a:not([class*="bg-"]):hover {
-    color: #ffffff !important;
-    font-weight: 700;
-  }
-}
-
-:host-context(body.theme-light) {
-  a:not([class*="bg-"]):hover {
-    color: #000000 !important;
-    font-weight: 700;
+    color: var(--primary-color, #596dc7) !important;
   }
 }
