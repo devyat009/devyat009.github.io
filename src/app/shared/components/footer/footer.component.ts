@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-footer',
@@ -11,10 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class FooterComponent {
   readonly currentYear: number = new Date().getFullYear();
+  readonly isOpenToWork: boolean = Boolean(environment.openToWork);
 
   constructor() {}
-
-  ngOnInit() {
-    // Any initialization logic can go here
-  }
 }
