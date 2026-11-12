@@ -1,6 +1,6 @@
   <footer class="home-footer mt-12 px-2 py-10 rounded-t-lg">
     <hr class="t-fourth mx-6 my-4">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 justify-center items-center">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 justify-center items-start">
       <!-- Contact -->
       <div class="ml-3">
         <h3 class="font-bold text-lg mb-2">{{"CONTACT_INFO" | translate }} <span class="block">{{"CONTACT_INFO_SUBTITLE"
@@ -11,7 +11,7 @@
         </p>
         <ul class="text-sm">
           <li>
-            E-mail: <a class="text-primary underline"
+            E-mail: <a class="t-primary underline"
               href="mailto:stanleyhigor1&#64;gmail.com" target="_blank" rel="noopener noreferrer">stanleyhigor1&#64;gmail.com</a>
           </li>
           <!-- <li>
@@ -26,26 +26,59 @@
         <ul class="text-sm space-y-1">
           <li><a href="https://empregatransporte.sestsenat.org.br/" target="_blank" rel="noopener noreferrer" class="t-primary underline">Emprega Transporte
               SEST</a></li>
-          <li><a href="https://sestsenat.org.br/home" target="_blank" rel="noopener noreferrer" class="t-primary underline">Sest Senat</a></li>
+          <li><a href="https://sestsenat.org.br/home" target="_blank" rel="noopener noreferrer" class="t-primary underline">Portal <span class="sest-senat-brand">SEST SENAT</span></a></li>
           <li><a href="https://sispac.sestsenat.org.br" target="_blank" rel="noopener noreferrer" class="t-primary underline">Mais Motoristas</a></li>
           <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="t-primary underline hidden">Youtube</a></li>
         </ul>
       </div>
       <!-- Availability -->
       <div class="ml-3">
-        <h3 class="font-bold text-lg mb-2">{{"CURRENT_WORKING" | translate }} <span
-            class="block">{{"CURRENT_WORKING_SUBTITLE" | translate }}&nbsp;—</span></h3>
-        <p class="text-sm t-fifth">
-          {{"CURRENT_WORKING_MESSAGE" | translate }}
+        <h3 class="font-bold text-lg mb-2 flex flex-col gap-1.5 items-start">
+          <span>
+            {{"CURRENT_WORKING" | translate }}
+            <span class="inline">{{"CURRENT_WORKING_SUBTITLE" | translate }}&nbsp;—</span>
+          </span>
+          @if (isOpenToWork) {
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              {{"OPEN_TO_WORK_BADGE_AVAILABLE" | translate}}
+            </span>
+          } @else {
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+              {{"OPEN_TO_WORK_BADGE_UNAVAILABLE" | translate}}
+            </span>
+          }
+        </h3>
+        <p class="text-sm font-medium transition-colors duration-300"
+           [class.text-emerald-600]="isOpenToWork"
+           [class.dark:text-emerald-400]="isOpenToWork"
+           [class.text-amber-600]="!isOpenToWork"
+           [class.dark:text-amber-400]="!isOpenToWork">
+          @if (isOpenToWork) {
+            {{"CURRENT_WORKING_MESSAGE_AVAILABLE" | translate}}
+          } @else {
+            {{"CURRENT_WORKING_MESSAGE_UNAVAILABLE" | translate}}
+          }
         </p>
+        @if (isOpenToWork) {
+          <a routerLink="/contact"
+             class="inline-flex items-center gap-1.5 mt-2.5 px-3 py-1 rounded-md text-xs font-semibold bg-emerald-500 hover:bg-emerald-600 text-white transition-all duration-200 shadow-sm hover:scale-105 cursor-pointer">
+            <i class="material-symbols-outlined text-sm">mail</i>
+            {{"CURRENT_WORKING_ACTION_AVAILABLE" | translate}}
+          </a>
+        }
       </div>
       <!-- Social -->
       <div class="ml-3">
         <h3 class="font-bold text-lg mb-2">{{"FOLLOW_ME" | translate }} <span class="block">{{"FOLLOW_ME_SUBTITLE" |
             translate}}&nbsp;—</span></h3>
         <ul class="text-sm space-y-1">
-          <li><a href="https://github.com/devyat009" class="text-primary underline" target="_blank" rel="noopener noreferrer">Github</a></li>
-          <li><a href="https://www.linkedin.com/in/higorstanley/" class="text-primary underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/devyat009" class="t-primary underline" target="_blank" rel="noopener noreferrer">Github</a></li>
+          <li><a href="https://www.linkedin.com/in/higorstanley/" class="t-primary underline" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
         </ul>
       </div>
     </div>

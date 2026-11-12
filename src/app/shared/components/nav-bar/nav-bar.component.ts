@@ -5,6 +5,7 @@ import { TranslateService, TranslateModule } from '@ngx-translate/core';
 import { ThemeService } from '../../services/theming.service';
 import { StorageService } from '../../services/storageService.service';
 import { SharedTranslationService } from 'src/app/core/translation/shared-translation-service.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'nav-bar-component',
@@ -21,6 +22,7 @@ import { SharedTranslationService } from 'src/app/core/translation/shared-transl
 export class NavBarComponent {
   @Output() switchLang = new EventEmitter<string>();
 
+  readonly isOpenToWork: boolean = Boolean(environment.openToWork);
   theme: boolean = false; // false = light, true = dark
   currentLang: string = '';
 

@@ -9,9 +9,13 @@
           <h1 class="t-primary text-4xl font-bold">
             {{"TITLE_01" | translate }} <span class="t-secondary">{{"TITLE_02" | translate }}</span>
           </h1>
-          <div class="pt-6">
-            <H3>{{"SUBTITLE" | translate }} <span class="t-secondary">{{ 'NAME' | translate }}</span>{{"SUBTITLE_01" |
-              translate }}</H3>
+          <div class="pt-6 max-w-4xl">
+            <h3 class="text-xl font-medium leading-relaxed">
+              {{"SUBTITLE" | translate }} <span class="t-secondary font-semibold">{{ 'NAME' | translate }}</span>{{"SUBTITLE_01" | translate }}
+            </h3>
+            <p class="t-fifth text-sm sm:text-base leading-relaxed mt-3">
+              {{"SUBTITLE_BIO" | translate }}
+            </p>
           </div>
 
           <div class="pt-6">
@@ -44,12 +48,12 @@
                     </div>
                     <div class="flex items-center gap-3">
                       <a href="https://github.com/devyat009/redragon_m719_pro" target="_blank" rel="noopener noreferrer"
-                        class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded transition">
-                        {{'BUTTON_VISIT' | translate }}
+                        class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition font-medium cursor-pointer">
+                        {{'BUTTON_VIEW_GITHUB' | translate }}
                       </a>
                       <button type="button"
                         (click)="openImage('https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/redragon_m719_pro/img1.png', 'PROJECTS_REDRAGON_TITLE', 'PROJECTS_REDRAGON_DESCRIPTION', 'PROJECTS_REDRAGON_TITLE')"
-                        class="px-3 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition flex items-center justify-center"
+                        class="px-3 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition flex items-center justify-center cursor-pointer"
                         title="Ampliar imagem (Zoom & Pan)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <circle cx="11" cy="11" r="8"></circle>
@@ -71,18 +75,17 @@
                 <!-- Overlay de hover -->
                 <div class="absolute inset-0 bg-black/70 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div class="project-overlay-content pl-8">
-                    <h1 class="text-white text-lg font-semibold mb-2">{{'PROJECTS_01_TITLE' | translate }}</h1>
-                    <div class="text-white text-sm mb-4 pr-4 text-left">
-                      {{'PROJECTS_01_DESCRIPTION' | translate }}
+                    <h1 class="text-white text-lg font-semibold mb-2" [innerHTML]="'PROJECTS_01_TITLE' | translate"></h1>
+                    <div class="text-white text-sm mb-4 pr-4 text-left" [innerHTML]="'PROJECTS_01_DESCRIPTION' | translate">
                     </div>
                     <div class="flex items-center gap-3">
                       <a href="https://empregatransporte.com.br" target="_blank" rel="noopener noreferrer"
-                        class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded transition">
-                        {{'BUTTON_VISIT' | translate }}
+                        class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition font-medium cursor-pointer">
+                        {{'BUTTON_ACCESS' | translate }}
                       </a>
                       <button type="button"
                         (click)="openImage('https://publicador.sestsenat.org.br/arquivos/4cb790ab-38d5-43f3-96b8-0f9db1b8fa51.png', 'PROJECTS_01_TITLE', 'PROJECTS_01_DESCRIPTION', 'PROJECTS_01_TITLE')"
-                        class="px-3 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition flex items-center justify-center"
+                        class="px-3 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition flex items-center justify-center cursor-pointer"
                         title="Ampliar imagem (Zoom & Pan)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <circle cx="11" cy="11" r="8"></circle>
@@ -105,18 +108,17 @@
                 <div
                   class="absolute inset-0 bg-black/70 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div class="project-overlay-content pl-8">
-                    <h1 class="text-white text-lg font-semibold mb-2">{{'PROJECTS_02_TITLE' | translate }}</h1>
-                    <div class="text-white text-sm mb-4 pr-4 text-left">
-                      {{'PROJECTS_02_DESCRIPTION' | translate }}
+                    <h1 class="text-white text-lg font-semibold mb-2" [innerHTML]="'PROJECTS_02_TITLE' | translate"></h1>
+                    <div class="text-white text-sm mb-4 pr-4 text-left" [innerHTML]="'PROJECTS_02_DESCRIPTION' | translate">
                     </div>
                     <div class="flex items-center gap-3">
                       <a href="https://www.sestsenat.org.br" target="_blank" rel="noopener noreferrer"
-                        class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded transition">
-                        {{'BUTTON_VISIT' | translate }}
+                        class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition font-medium cursor-pointer">
+                        {{'BUTTON_ACCESS' | translate }}
                       </a>
                       <button type="button"
                         (click)="openImage('assets/img/projects/portalsestsenat.png', 'PROJECTS_02_TITLE', 'PROJECTS_02_DESCRIPTION', 'PROJECTS_02_TITLE')"
-                        class="px-3 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition flex items-center justify-center"
+                        class="px-3 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition flex items-center justify-center cursor-pointer"
                         title="Ampliar imagem (Zoom & Pan)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <circle cx="11" cy="11" r="8"></circle>
@@ -139,18 +141,17 @@
                 <div
                   class="absolute inset-0 bg-black/70 flex flex-col justify-center items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div class="project-overlay-content pl-8">
-                    <h1 class="text-white text-lg font-semibold mb-2">{{'PROJECTS_MAISMOTORISTAS_TITLE' | translate }}</h1>
-                    <div class="text-white text-sm mb-4 pr-4 text-left">
-                      {{'PROJECTS_MAISMOTORISTAS_DESCRIPTION' | translate }}
+                    <h1 class="text-white text-lg font-semibold mb-2" [innerHTML]="'PROJECTS_MAISMOTORISTAS_TITLE' | translate"></h1>
+                    <div class="text-white text-sm mb-4 pr-4 text-left" [innerHTML]="'PROJECTS_MAISMOTORISTAS_DESCRIPTION' | translate">
                     </div>
                     <div class="flex items-center gap-3">
                       <a href="https://sispac.sestsenat.org.br" target="_blank" rel="noopener noreferrer"
-                        class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded transition">
-                        {{'BUTTON_VISIT' | translate }}
+                        class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition font-medium cursor-pointer">
+                        {{'BUTTON_ACCESS' | translate }}
                       </a>
                       <button type="button"
                         (click)="openImage('assets/img/projects/mais-motoristas.png', 'PROJECTS_MAISMOTORISTAS_TITLE', 'PROJECTS_MAISMOTORISTAS_DESCRIPTION', 'PROJECTS_MAISMOTORISTAS_TITLE')"
-                        class="px-3 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition flex items-center justify-center"
+                        class="px-3 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition flex items-center justify-center cursor-pointer"
                         title="Ampliar imagem (Zoom & Pan)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <circle cx="11" cy="11" r="8"></circle>
@@ -178,12 +179,12 @@
                     </div>
                     <div class="flex items-center gap-3">
                       <a href="https://github.com/devyat009/onibus-df-app" target="_blank" rel="noopener noreferrer"
-                        class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white rounded transition">
-                        {{'BUTTON_VISIT' | translate }}
+                        class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition font-medium cursor-pointer">
+                        {{'BUTTON_VIEW_GITHUB' | translate }}
                       </a>
                       <button type="button"
                         (click)="openImage('https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/bus-tracker/mockups/busmapmockup.png', 'PROJECTS_BUS_TITLE', 'PROJECTS_BUS_DESCRIPTION', 'PROJECTS_BUS_TITLE')"
-                        class="px-3 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition flex items-center justify-center"
+                        class="px-3 py-2 bg-white/20 hover:bg-white/30 text-white rounded transition flex items-center justify-center cursor-pointer"
                         title="Ampliar imagem (Zoom & Pan)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <circle cx="11" cy="11" r="8"></circle>
@@ -196,6 +197,36 @@
                   </div>
                 </div>
               </div>
+            </div>
+
+            <!-- Card 06 - Ver Mais Projetos -->
+            <div class="flex items-center justify-center min-h-[400px] max-h-[500px] w-full">
+              <a routerLink="/projects"
+                class="more-projects-card group flex flex-col justify-center items-center rounded-2xl shadow-lg w-full max-w-[340px] h-[200px] min-h-[200px] p-6 text-center cursor-pointer">
+                <div class="flex flex-col items-center justify-center gap-3 transition-transform duration-300 group-hover:scale-105">
+                  <div class="more-projects-icon w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="transition-transform duration-300 group-hover:translate-x-1">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+
+                  <div class="flex flex-col items-center gap-1">
+                    <h2 class="text-xl font-bold t-primary flex items-center gap-1.5">
+                      {{ 'VIEW_MORE_PROJECTS' | translate }}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                        class="transition-transform duration-300 group-hover:translate-x-1">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </h2>
+                    <p class="text-xs t-fifth max-w-[260px] leading-relaxed">
+                      {{ 'VIEW_MORE_PROJECTS_DESC' | translate }}
+                    </p>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>

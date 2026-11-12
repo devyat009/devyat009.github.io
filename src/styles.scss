@@ -17,3 +17,11 @@
   background-color: var(--selection-bg, #596dc7);
   color: var(--selection-text, #ffffff);
 }
+
+// Brand styling for SEST SENAT (heavy bold italic font)
+.sest-senat-brand {
+  font-family: 'Arial Black', Impact, 'Roboto', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}

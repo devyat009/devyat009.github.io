@@ -10,12 +10,13 @@
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-a {
+a:not([class*="bg-"]) {
   color: var(--primary-color-text);
   font-weight: 400;
-}
-a:hover {
-  border-bottom: 1px solid var(--secondary-color-text);
-  color: var(--secondary-color-text);
-  scale: 1.1;
+  transition: color 0.2s ease, font-weight 0.2s ease;
+
+  &:hover {
+    font-weight: 700;
+    color: var(--primary-color, #596dc7) !important;
+  }
 }
