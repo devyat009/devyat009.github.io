@@ -38,5 +38,6 @@
   "PROJECTS_SMARTHOME_ENTERPRISE": "Access Link",
   "PROJECTS_YOUTUBE_TITLE": "YouTube Downloader",
   "PROJECTS_YOUTUBE_DESCRIPTION": "Desktop Python application for easily downloading YouTube videos and audio tracks in high resolution, featuring a clean and intuitive user interface.",
-  "PROJECTS_YOUTUBE_ENTERPRISE": "Personal Project"
+  "PROJECTS_YOUTUBE_ENTERPRISE": "Personal Project",
+  "BUTTON_ACCESS": "Access"
 }
