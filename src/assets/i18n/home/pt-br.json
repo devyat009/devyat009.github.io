@@ -28,6 +28,8 @@
   "PROJECTS_BUS_DESCRIPTION": "Aplicativo para consulta de horários, itinerários e localização de ônibus em tempo real no Distrito Federal. Permite visualizar paradas próximas e planejar rotas.",
   "PROJECTS_BUS_ENTERPRISE": "GitHub",
   "BUTTON_VISIT": "Visitar site",
+  "BUTTON_ACCESS": "Acessar",
+  "BUTTON_VIEW_GITHUB": "Ver no GitHub",
   "CURRENT_WORKING": "Atual",
   "CURRENT_WORKING_SUBTITLE": "disponibilidade",
   "CURRENT_WORKING_MESSAGE": "Atualmente estou envolvido em projetos, mas estou sempre aberto a novas oportunidades empolgantes — vamos nos conectar!",

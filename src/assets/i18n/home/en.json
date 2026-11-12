@@ -28,6 +28,8 @@
   "PROJECTS_BUS_DESCRIPTION": "App for checking schedules, routes, and real-time bus locations in Brasília/DF. Allows you to view nearby stops and plan routes.",
   "PROJECTS_BUS_ENTERPRISE": "GitHub",
   "BUTTON_VISIT": "Visit site",
+  "BUTTON_ACCESS": "Access",
+  "BUTTON_VIEW_GITHUB": "View on GitHub",
   "CURRENT_WORKING": "Current",
   "CURRENT_WORKING_SUBTITLE": "availability",
   "CURRENT_WORKING_MESSAGE": "I’m currently engaged in projects, but always open to exciting new opportunities —let’s connect!",
