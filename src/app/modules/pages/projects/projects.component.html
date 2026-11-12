@@ -25,7 +25,7 @@
             <div class="cover-overlay p-3 absolute bottom-0 left-0 w-full z-10">
               <div class="text-white font-bold text-sm sm:text-base leading-tight select-none line-clamp-2">{{"PROJECTS_01_TITLE" | translate }}</div>
               <div class="flex items-center gap-1.5 mt-1">
-                <span class="text-gray-300 text-xs font-medium">{{"PROJECTS_01_ENTERPRISE" | translate}}</span>
+                <span class="text-gray-300 text-xs font-medium" [innerHTML]="'PROJECTS_01_ENTERPRISE' | translate"></span>
                 <a href="https://empregatransporte.sestsenat.org.br" rel="noopener noreferrer" target="_blank" (click)="$event.stopPropagation()" class="external-link" title="Visitar site">
                   <i class="material-symbols-outlined align-middle">open_in_new</i>
                 </a>
@@ -66,9 +66,9 @@
               </span>
             </div>
             <div class="cover-overlay p-3 absolute bottom-0 left-0 w-full z-10">
-              <div class="text-white font-bold text-sm sm:text-base leading-tight select-none line-clamp-2">{{"PROJECTS_02_TITLE" | translate }}</div>
+              <div class="text-white font-bold text-sm sm:text-base leading-tight select-none line-clamp-2" [innerHTML]="'PROJECTS_02_TITLE' | translate"></div>
               <div class="flex items-center gap-1.5 mt-1">
-                <span class="text-gray-300 text-xs font-medium">{{"PROJECTS_02_ENTERPRISE" | translate}}</span>
+                <span class="text-gray-300 text-xs font-medium" [innerHTML]="'PROJECTS_02_ENTERPRISE' | translate"></span>
                 <a href="https://www.sestsenat.org.br/" rel="noopener noreferrer" target="_blank" (click)="$event.stopPropagation()" class="external-link" title="Visitar site">
                   <i class="material-symbols-outlined align-middle">open_in_new</i>
                 </a>
@@ -78,8 +78,7 @@
           <!-- Data -->
           <div class="data">
             <div class="category-tag">Portal Institucional</div>
-            <div class="description">
-              {{"PROJECTS_02_DESCRIPTION" | translate}}
+            <div class="description" [innerHTML]="'PROJECTS_02_DESCRIPTION' | translate">
             </div>
             <div class="tech-stack">
               <span class="tech-pill">Angular</span>
@@ -111,7 +110,7 @@
             <div class="cover-overlay p-3 absolute bottom-0 left-0 w-full z-10">
               <div class="text-white font-bold text-sm sm:text-base leading-tight select-none line-clamp-2">{{"PROJECTS_MAISMOTORISTAS_TITLE" | translate }}</div>
               <div class="flex items-center gap-1.5 mt-1">
-                <span class="text-gray-300 text-xs font-medium">{{"PROJECTS_MAISMOTORISTAS_ENTERPRISE" | translate}}</span>
+                <span class="text-gray-300 text-xs font-medium" [innerHTML]="'PROJECTS_MAISMOTORISTAS_ENTERPRISE' | translate"></span>
                 <a href="https://sispac.sestsenat.org.br" rel="noopener noreferrer" target="_blank" (click)="$event.stopPropagation()" class="external-link" title="Visitar site">
                   <i class="material-symbols-outlined align-middle">open_in_new</i>
                 </a>
@@ -121,8 +120,7 @@
           <!-- Data -->
           <div class="data">
             <div class="category-tag">Sistema de Gestão</div>
-            <div class="description">
-              {{"PROJECTS_MAISMOTORISTAS_DESCRIPTION" | translate}}
+            <div class="description" [innerHTML]="'PROJECTS_MAISMOTORISTAS_DESCRIPTION' | translate">
             </div>
             <div class="tech-stack">
               <span class="tech-pill">Angular</span>
@@ -144,7 +142,7 @@
             <div class="cover-overlay p-3 absolute bottom-0 left-0 w-full z-10">
               <div class="text-white font-bold text-sm sm:text-base leading-tight select-none line-clamp-2">{{"PROJECTS_03_TITLE" | translate }}</div>
               <div class="flex items-center gap-1.5 mt-1">
-                <span class="text-gray-300 text-xs font-medium">{{"PROJECTS_03_ENTERPRISE" | translate}}</span>
+                <span class="text-gray-300 text-xs font-medium" [innerHTML]="'PROJECTS_03_ENTERPRISE' | translate"></span>
                 <a href="https://www.sestsenat.org.br/" rel="noopener noreferrer" target="_blank" class="external-link" title="Institucional">
                   <i class="material-symbols-outlined align-middle">open_in_new</i>
                 </a>
