@@ -38,7 +38,6 @@
               }
             ],
             "styles": [
-              "node_modules/primeicons/primeicons.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -115,9 +114,6 @@
               }
             ],
             "styles": [
-              "node_modules/primeng/themes/lara-light-indigo/theme.css",
-              "node_modules/primeng/themes/primeng.min.css",
-              "node_modules/primeicons/primeicons.css",
               "src/styles.scss",
 
               {
@@ -140,5 +136,31 @@
   },
   "cli": {
     "analytics": false
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
+    }
   }
 }

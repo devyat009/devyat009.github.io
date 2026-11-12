@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
+
 import { FormsModule } from "@angular/forms";
 import { TranslateModule } from "@ngx-translate/core";
 import { FooterComponent } from "src/app/shared/components/footer/footer.component";
@@ -9,13 +9,13 @@ import { StarsComponent } from "src/app/shared/components/stars/stars.component"
   selector: 'contact-page',
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
-    CommonModule,
     FormsModule,
     TranslateModule,
     FooterComponent,
     StarsComponent
-  ]
+]
 })
 export class ContactComponent {
   formData = {

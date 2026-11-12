@@ -1,13 +1,14 @@
 import { TranslateModule } from "@ngx-translate/core";
-import { Component } from "@angular/core";
-import { CommonModule} from "@angular/common";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
+
 
 
 @Component({
   selector: 'app-loading',
   standalone: true,
-  imports: [CommonModule, TranslateModule],
+  imports: [TranslateModule],
   templateUrl: './app-loading.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./app-loading.component.scss']
 })
 export class AppLoadingComponent {}

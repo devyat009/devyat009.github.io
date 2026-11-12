@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, HostListener, Output, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslateService, TranslateModule } from '@ngx-translate/core';
@@ -10,6 +10,7 @@ import { SharedTranslationService } from 'src/app/core/translation/shared-transl
   selector: 'nav-bar-component',
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     TranslateModule,

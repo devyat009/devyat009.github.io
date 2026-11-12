@@ -1,4 +1,4 @@
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd, NavigationCancel, NavigationError, RouterModule } from '@angular/router';
 import { ThemeService } from './shared/services/theming.service';
 import { NavBarComponent } from "./shared/components/nav-bar/nav-bar.component";
@@ -6,19 +6,19 @@ import { StorageService } from './shared/services/storageService.service';
 import { SharedTranslationService } from './core/translation/shared-translation-service.component';
 import { AppLoadingComponent } from './shared/components/app-loading/app-loading.component';
 import { ImageModalComponent } from './shared/components/image-modal/image-modal.component';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     RouterModule,
     NavBarComponent,
     AppLoadingComponent,
-    ImageModalComponent,
-    CommonModule
-  ],
+    ImageModalComponent
+],
 })
 export class AppComponent {
   title = 'my-page';

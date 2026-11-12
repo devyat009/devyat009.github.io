@@ -7,7 +7,8 @@ import {
   OnDestroy,
   Inject,
   PLATFORM_ID,
-  NgZone
+  NgZone,
+  ChangeDetectionStrategy
 } from "@angular/core";
 import { isPlatformBrowser } from "@angular/common";
 
@@ -27,6 +28,7 @@ interface Star {
   selector: 'stars-component',
   standalone: true,
   templateUrl: './stars.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrls: ['./stars.component.scss']
 })
 export class StarsComponent implements OnInit, AfterViewInit, OnDestroy {
