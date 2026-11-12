@@ -195,6 +195,16 @@
               alt="Looking Forward" class="cover-img w-full h-full object-cover">
             <div class="cover-overlay p-3 absolute bottom-0 left-0 w-full z-10">
               <div class="text-white font-bold text-sm sm:text-base leading-tight select-none line-clamp-2">{{"PROJECTS_LOKING_TITLE" | translate }}</div>
+              @if (!isOpenToWork) {
+                <div class="mt-1.5">
+                  <a routerLink="/contact"
+                    class="inline-flex items-center justify-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold whitespace-nowrap bg-zinc-700/70 hover:bg-zinc-600/80 text-zinc-300 hover:text-white border border-zinc-500/30 backdrop-blur-sm transition-all duration-200 cursor-pointer shadow-sm hover:scale-[1.03]"
+                    title="Entre em Contato">
+                    <i class="material-symbols-outlined text-[13px] leading-none align-middle">mail</i>
+                    <span>{{"PROJECTS_LOKING_ENTERPRISE" | translate}}</span>
+                  </a>
+                </div>
+              }
             </div>
           </div>
           <!-- Data -->
@@ -220,6 +230,15 @@
                 {{"PROJECTS_LOKING_DESCRIPTION_UNAVAILABLE" | translate}}
               }
             </div>
+            @if (isOpenToWork) {
+              <div class="my-2">
+                <a routerLink="/contact"
+                   class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-semibold bg-emerald-500 hover:bg-emerald-600 text-white transition-all duration-200 shadow-sm hover:scale-105 cursor-pointer w-fit">
+                  <i class="material-symbols-outlined text-sm leading-none">mail</i>
+                  {{"PROJECTS_LOKING_ENTERPRISE" | translate}}
+                </a>
+              </div>
+            }
             <div class="tech-stack">
               <span class="tech-pill">Full Stack</span>
               <span class="tech-pill">Front End</span>

@@ -65,10 +65,8 @@
           }
         </p>
         @if (isOpenToWork) {
-          <a href="mailto:stanleyhigor1&#64;gmail.com"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="inline-flex items-center gap-1.5 mt-2.5 px-3 py-1 rounded-md text-xs font-semibold bg-emerald-500 hover:bg-emerald-600 text-white transition-all duration-200 shadow-sm hover:scale-105">
+          <a routerLink="/contact"
+             class="inline-flex items-center gap-1.5 mt-2.5 px-3 py-1 rounded-md text-xs font-semibold bg-emerald-500 hover:bg-emerald-600 text-white transition-all duration-200 shadow-sm hover:scale-105 cursor-pointer">
             <i class="material-symbols-outlined text-sm">mail</i>
             {{"CURRENT_WORKING_ACTION_AVAILABLE" | translate}}
           </a>

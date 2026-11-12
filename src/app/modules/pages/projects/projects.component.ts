@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { RouterLink } from "@angular/router";
 import { TranslateModule } from "@ngx-translate/core";
 import { FooterComponent } from "src/app/shared/components/footer/footer.component";
 import { StarsComponent } from "src/app/shared/components/stars/stars.component";
@@ -13,7 +14,8 @@ import { environment } from "src/environments/environment";
   imports: [
     TranslateModule,
     FooterComponent,
-    StarsComponent
+    StarsComponent,
+    RouterLink
   ]
 })
 export class ProjectsComponent {
