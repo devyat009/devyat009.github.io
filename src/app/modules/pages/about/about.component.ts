@@ -191,6 +191,31 @@ export class AboutComponent implements AfterViewInit, OnInit {
           caption: 'ABOUT_TIMELINE_07_IMG2_CAPTION'
         }
       ]
+    },
+    {
+      date: 'ABOUT_TIMELINE_08_DATE',
+      tag: 'ABOUT_TIMELINE_08_TAG',
+      title: 'ABOUT_TIMELINE_08_TITLE',
+      subtitle: 'ABOUT_TIMELINE_08_SUBTITLE',
+      description: 'ABOUT_TIMELINE_08_DESCRIPTION',
+      footer: 'ABOUT_TIMELINE_08_FOOTER',
+      type: 'personal',
+      link: 'https://github.com/devyat009/compressIt',
+      linkIcon: 'github',
+      images: [
+        {
+          src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/CompressIt/readme/startUp.png',
+          alt: 'CompressIt - Tela Inicial e Configuração Automática do FFmpeg',
+          type: 'desktop',
+          caption: 'ABOUT_TIMELINE_08_IMG1_CAPTION'
+        },
+        {
+          src: 'https://raw.githubusercontent.com/devyat009/image-repo-for-my-repo/refs/heads/main/CompressIt/readme/editing.png',
+          alt: 'CompressIt - Edição, Timeline Interativa e Compressão',
+          type: 'desktop',
+          caption: 'ABOUT_TIMELINE_08_IMG2_CAPTION'
+        }
+      ]
     }
   ];
   hobbyPhotos: HobbyPhoto[] = [
